@@ -1,0 +1,77 @@
+.HeadLines-Container {
+  width: 20%;
+  height: fit-content;
+  min-height: fit-content;
+  margin-left: 2.1rem;
+  background-color: #ffff;
+  padding: 1.25rem;
+}
+
+.HeadLines-Container div:first-child {
+  display: flex;
+  align-items: baseline;
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-bottom: var(--border-bottom);
+  height: 35px;
+  justify-content: space-between;
+}
+
+.HeadLines-Container div:first-child span {
+  text-transform: uppercase;
+  font-family: titleFont;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 0.8;
+  margin-right: 0.5rem;
+}
+
+.HeadLines-Container div:first-child a {
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.25;
+  margin-left: 0.5rem;
+  color: var(--link-color);
+}
+
+.HeadLines-Container div:first-child a:hover {
+  text-decoration: underline;
+}
+
+.HeadLines-Container div:last-child {
+  margin-top: 35px;
+}
+
+.HeadLines-Container div:last-child li {
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  list-style-type: none;
+  margin-left: 0.5rem;
+  border-bottom: var(--border-bottom);
+}
+
+.HeadLines-Container div:last-child li:last-child {
+  border-bottom: none;
+}
+
+.HeadLines-Container div:last-child a {
+  cursor: pointer;
+}
+
+.HeadLines-Container div:last-child ul {
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 1050px) {
+  .HeadLines-Container {
+    width: 96%;
+    margin-top: 30px;
+    margin-left: 0;
+  }
+}

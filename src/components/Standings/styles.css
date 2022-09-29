@@ -1,0 +1,191 @@
+.Standings-Container {
+  width: 98%;
+  min-height: 840px;
+  height: fit-content;
+  background-color: #ffff;
+  padding: 1.25rem;
+  position: relative;
+  top: -30%;
+}
+
+.Standings-Container div:first-child {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Standings-Container div:first-child h1 {
+  min-width: fit-content;
+}
+
+.Standings-Container div:first-child a {
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.25;
+  margin-left: 0.5rem;
+  min-width: fit-content;
+  color: var(--link-color);
+}
+
+.Standings-Container div:first-child a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.Standings-Buttons {
+  display: flex;
+  font-family: Roboto Condensed, Arial, sans-serif;
+  margin-top: 1.5rem;
+}
+
+.Standings-Buttons button {
+  border-top-left-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+  margin-left: 0;
+  align-items: center;
+  flex: 1 1;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  border-width: 1px;
+  background: #fff;
+  border-color: #e5e7eb;
+  border: .7px solid #e5e7eb;
+  border-radius: .3rem;
+}
+
+.Teams-List table {
+  max-width: 100%;
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  margin: 0;
+  border-collapse: collapse;
+  position: relative;
+  font-variant: proportional-width;
+  font-size: 12px;
+  border-spacing: 0;
+  background-color: transparent;
+}
+
+.Teams-List thead tr {
+  width: 100%;
+}
+
+.Teams-List thead tr th:first-child {
+  text-align: start;
+}
+
+.Teams-List thead tr th {
+  background-color: #fff;
+  color: #343232;
+  border-color: #ebe9e7;
+  vertical-align: bottom;
+  font-family: Roboto Condensed, Arial, sans-serif;
+  text-align: right;
+  white-space: nowrap;
+  letter-spacing: 1px;
+  font-size: 10px;
+  padding: 14px 6px;
+}
+
+.Teams-List tbody tr {
+  cursor: pointer;
+  border-bottom: 1px solid #ebe9e7;
+  width: 100%;
+}
+
+.Teams-List tbody tr td {
+  text-align: right;
+  width: 100%;
+  font-size: 0.8rem;
+}
+
+.Teams-List tbody tr td:last-child div {
+  display: flex;
+  width: 90%;
+  height: 1.5rem;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 0.4rem;
+  border-radius: 0.25rem;
+  color: #000;
+  margin-left: 0.4rem;
+}
+
+.Teams-List tbody tr td:first-child {
+  min-width: 100px;
+  max-width: 100px;
+  overflow: hidden;
+  font-weight: 400;
+  font-size: 0.875rem;
+  font-family: Roboto Condensed, Arial, sans-serif;
+  line-height: 1.25;
+  white-space: nowrap;
+  background-color: #fff;
+  color: #000;
+  border-top: 1px #ebe9e7;
+  padding: 8px;
+  font-stretch: condensed;
+}
+
+.Teams-List tbody tr td:first-child a {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.Teams-List tbody tr td:first-child a span:first-child {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 0.9rem;
+  line-height: 2;
+  color: #000;
+  text-align: center;
+  width: 1rem;
+}
+
+.Team-Name {
+  text-transform: uppercase;
+  font-family: titleFont;
+  font-weight: 400; 
+  font-size: 1rem !important;
+  line-height: 1.25;
+}
+
+.Teams-List tbody tr td:first-child a span:last-child {
+  color: var(--link-color);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 1800px) {
+  .Standings-Container div:first-child a,
+  .Standings-Container div:first-child h1 {
+    min-width: 10px;
+    line-height: 1;
+  }
+}
+
+@media (max-width: 1660px) {
+  .Standings-Container {
+    top: 6rem;
+  }
+}
+
+@media (max-width: 1050px) {
+  .Standings-Container {
+    top: 12rem;
+    width: 91vw;
+  }
+
+  .Teams-List table {
+    width: 100vw;
+  }
+
+  .Teams-List tbody tr td {
+    width: 25%;
+  }
+}

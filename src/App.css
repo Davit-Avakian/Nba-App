@@ -1,38 +1,64 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: titleFont;
+  src: url(./font/Knockout\ HTF49Liteweight\ Regular.otf);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --border-bottom: 1px solid #ebe9e7;
+  --secondary-text-color: #ebe9e7;
+  --link-color: rgb(98, 98, 221);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f6f6f6;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Main-Wrapper, .Second-Wrapper {
+  width: 75%;
+  height: 200px;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 200px;
 }
 
-.App-link {
-  color: #61dafb;
+.Second-Wrapper {
+  margin-top: 550px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.Main-Content{
+  width: 75%;
+}
+
+.Side-Bar {
+  width: 20%;
+  margin: 0 auto;
+}
+
+@media (max-width: 1400px) {
+  .Main-Wrapper, .Second-Wrapper {
+    width: 95%;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media (max-width: 1050px) {
+  .App {
+    overflow-x: hidden;
+  }
+
+  .Main-Wrapper, .Second-Wrapper {
+    flex-direction: column;
+  }
+
+  .Main-Content, .Side-Bar {
+    width: 100%;
+  }
+
+  .Side-Bar {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
   }
 }
