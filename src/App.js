@@ -25,6 +25,7 @@ function App() {
         <Menu />
       ) : (
         <>
+        
           <div className="Main-Wrapper">
             <NewsTopics />
             <HeadLines />
