@@ -212,17 +212,13 @@
 }
 
 
-@media (max-width: 640px) {
+@media (max-width: 670px) {
   .Footer-Container {
-    margin-top: 440rem;
+    margin-top: 445rem;
   }
 }
 
 @media (max-width: 560px) {
-  .Footer-Container {
-    margin-top: 445rem;
-  }
-
   .Footer-Bottom {
     flex-direction: column-reverse;
   }

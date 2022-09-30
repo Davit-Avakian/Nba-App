@@ -175,10 +175,20 @@
   }
 }
 
+@media (max-width: 1361px) {
+  .Standings-Container div:first-child {
+    height: 3.5rem;
+  }
+}
+
 @media (max-width: 1050px) {
   .Standings-Container {
     top: 12rem;
     width: 91vw;
+  }
+
+  .Standings-Container div:first-child {
+    height: 2.5rem;
   }
 
   .Teams-List table {

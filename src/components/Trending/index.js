@@ -19,7 +19,8 @@ const images = {
 };
 
 const Trending = () => {
-  const [page, setPage] = useState(1);
+  const [scrolledWidth, setScrolledWidth] = useState(0);
+  const [containerWidth] = useState(trending.length * 240);
   const containerRef = useRef();
 
   return (
@@ -27,23 +28,31 @@ const Trending = () => {
       <div className="Container-Title">
         <h1>Trending Now</h1>
 
-        {page > 1 && (
+        {scrolledWidth > 0 && (
           <button
             className="Scroll-Button Left-Arrow"
             onClick={() => {
-              containerRef.current.style.transform = "translateX(0)";
-              setPage((prev) => prev - 1);
+              const { offsetWidth } = containerRef.current;
+
+              containerRef.current.style.transform = `translateX(-${
+                scrolledWidth - offsetWidth
+              }px)`;
+              setScrolledWidth((prev) => prev - offsetWidth);
             }}
           >
             <img src={rightArrow} />
           </button>
         )}
-        {page < trending.length / 3 && (
+        {scrolledWidth + 95 + (containerRef?.current?.offsetWidth || 240) < containerWidth && (
           <button
             className="Scroll-Button Right-Arrow"
             onClick={() => {
-              containerRef.current.style.transform = "translateX(-840px)";
-              setPage((prev) => prev + 1);
+              const { offsetWidth } = containerRef.current;
+
+              containerRef.current.style.transform = `translateX(-${
+                scrolledWidth + offsetWidth + 95
+              }px)`;
+              setScrolledWidth((prev) => prev + offsetWidth);
             }}
           >
             <img src={rightArrow} />
