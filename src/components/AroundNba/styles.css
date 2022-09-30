@@ -57,7 +57,11 @@
 
 @media (max-width: 1050px) {
   .AroundNba-Container {
-    width: 91vw;
+    width: 100%;
+  }
+
+  .AroundNba-Container ul {
+    margin-right: 1.5rem;
   }
 }
 

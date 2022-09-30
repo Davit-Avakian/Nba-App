@@ -199,6 +199,13 @@
   }
 }
 
+@media (max-width: 1050px) {
+  .Footer-Bottom {
+    margin: 1rem auto;
+    width: 95%;
+  }
+}
+
 @media (max-width: 800px) {
   .Footer-Container {
     margin-top: 420rem;

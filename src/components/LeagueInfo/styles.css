@@ -63,7 +63,7 @@
 
 @media (max-width: 1050px) {
   .LeagueInfo-Container {
-    width: 91vw;
+    width: 100%;
     max-height: fit-content;
     top: 5rem;
   }

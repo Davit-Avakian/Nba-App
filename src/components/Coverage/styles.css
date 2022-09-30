@@ -54,7 +54,11 @@
 
 @media (max-width: 1050px) {
   .Coverage-Container {
-    width: 91vw;
+    width: 100%;
+  }
+
+  .Coverage-Container div:last-child {
+    margin-right: 1rem;
   }
 }
 

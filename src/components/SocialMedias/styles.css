@@ -39,6 +39,6 @@
 @media (max-width: 1050px) {
   .SocialMedias-Container {
     top: 7rem;
-    width: 91vw;
+    width: 100%;
   }
 }

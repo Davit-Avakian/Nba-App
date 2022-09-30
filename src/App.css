@@ -49,6 +49,7 @@ body {
   }
 
   .Main-Wrapper, .Second-Wrapper {
+    width: 100%;
     flex-direction: column;
   }
 

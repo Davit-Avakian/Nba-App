@@ -108,7 +108,11 @@
 @media (max-width: 1050px) {
   .Trending-Container {
     margin-top: 25rem;
-    width: 91vw;
+    width: 100%;
+  }
+
+  .Right-Arrow {
+    right: 2rem;
   }
 }
 

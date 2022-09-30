@@ -184,18 +184,25 @@
 @media (max-width: 1050px) {
   .Standings-Container {
     top: 12rem;
-    width: 91vw;
+    width: 100%;
   }
 
   .Standings-Container div:first-child {
     height: 2.5rem;
+    margin-right: 2rem;
   }
 
   .Teams-List table {
-    width: 100vw;
+    width: 95%;
   }
 
   .Teams-List tbody tr td {
     width: 25%;
+  }
+}
+
+@media (max-width: 520px) {
+  .Teams-List table {
+    width: 92%;
   }
 }
