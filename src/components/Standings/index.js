@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import "./styles.css";
-import { eastTeams } from "../../data/teams";
-import { westTeams } from "../../data/teams";
+import React, { useState } from 'react';
+import './styles.css';
+import { eastTeams, westTeams } from '@data/teams';
 
 const Standings = () => {
-  const [conference, setConference] = useState("East");
+  const [conference, setConference] = useState('East');
 
   return (
     <div className="Standings-Container">
@@ -17,20 +16,18 @@ const Standings = () => {
         <div className="Standings-Buttons">
           <button
             style={{
-              backgroundColor: `${conference === "East" ? "black" : "white"}`,
-              color: `${conference === "East" ? "white" : "black"}`,
+              backgroundColor: `${conference === 'East' ? 'black' : 'white'}`,
+              color: `${conference === 'East' ? 'white' : 'black'}`
             }}
-            onClick={() => setConference("East")}
-          >
+            onClick={() => setConference('East')}>
             EASTERN
           </button>
           <button
             style={{
-              backgroundColor: `${conference === "West" ? "black" : "white"}`,
-              color: `${conference === "West" ? "white" : "black"}`,
+              backgroundColor: `${conference === 'West' ? 'black' : 'white'}`,
+              color: `${conference === 'West' ? 'white' : 'black'}`
             }}
-            onClick={() => setConference("West")}
-          >
+            onClick={() => setConference('West')}>
             WESTERN
           </button>
         </div>
@@ -47,7 +44,7 @@ const Standings = () => {
             </thead>
 
             <tbody>
-              {conference === "East"
+              {conference === 'East'
                 ? eastTeams.map(
                     (
                       {
@@ -58,7 +55,7 @@ const Standings = () => {
                         awayWin,
                         awayLoss,
                         nearlyTenWin,
-                        nearlyTenLoss,
+                        nearlyTenLoss
                       },
                       index
                     ) => {
@@ -81,15 +78,14 @@ const Standings = () => {
                               style={{
                                 backgroundColor: `${
                                   nearlyTenWin - nearlyTenLoss >= 4
-                                    ? "#64bc61"
+                                    ? '#64bc61'
                                     : nearlyTenWin - nearlyTenLoss >= 2
-                                    ? "#d7ee8e"
+                                    ? '#d7ee8e'
                                     : nearlyTenWin - nearlyTenLoss >= -2
-                                    ? "#fedd8d"
-                                    : "#f16e43"
-                                }`,
-                              }}
-                            >
+                                    ? '#fedd8d'
+                                    : '#f16e43'
+                                }`
+                              }}>
                               {nearlyTenWin} - {nearlyTenLoss}
                             </div>
                           </td>
@@ -107,7 +103,7 @@ const Standings = () => {
                         awayWin,
                         awayLoss,
                         nearlyTenWin,
-                        nearlyTenLoss,
+                        nearlyTenLoss
                       },
                       index
                     ) => {
@@ -130,15 +126,14 @@ const Standings = () => {
                               style={{
                                 backgroundColor: `${
                                   nearlyTenWin - nearlyTenLoss >= 4
-                                    ? "#64bc61"
+                                    ? '#64bc61'
                                     : nearlyTenWin - nearlyTenLoss >= 2
-                                    ? "#d7ee8e"
+                                    ? '#d7ee8e'
                                     : nearlyTenWin - nearlyTenLoss >= -2
-                                    ? "#fedd8d"
-                                    : "#f16e43"
-                                }`,
-                              }}
-                            >
+                                    ? '#fedd8d'
+                                    : '#f16e43'
+                                }`
+                              }}>
                               {nearlyTenWin} - {nearlyTenLoss}
                             </div>
                           </td>

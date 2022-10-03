@@ -1,14 +1,14 @@
-import React from "react";
-import "./styles.css";
-import footerImage from "../../images/footerImage.svg";
-import fbImage from "../../images/footerFb.png";
-import instaImage from "../../images/footerInsta.png";
-import snapImage from "../../images/footerSnap.png";
-import tiktokImage from "../../images/footerTiktok.jpg";
-import twitterImage from "../../images/footerTwitter.png";
-import ytImage from "../../images/footerYt.jpeg";
-import twitchImage from "../../images/footerTwitch.png";
-import downArrow from "../../images/downArrow.png";
+import React from 'react';
+import './styles.css';
+import footerImage from '@images/footerImage.svg';
+import fbImage from '@images/footerFb.png';
+import instaImage from '@images/footerInsta.png';
+import snapImage from '@images/footerSnap.png';
+import tiktokImage from '@images/footerTiktok.jpg';
+import twitterImage from '@images/footerTwitter.png';
+import ytImage from '@images/footerYt.jpeg';
+import twitchImage from '@images/footerTwitch.png';
+import downArrow from '@images/downArrow.png';
 
 const Footer = () => {
   return (
@@ -111,14 +111,11 @@ const Footer = () => {
           </ul>
 
           <p>
-            If you are having difficulty accessing any content on this website,
-            please visit our <a>Accessibility page.</a>
+            If you are having difficulty accessing any content on this website, please visit our{' '}
+            <a>Accessibility page.</a>
           </p>
 
-          <p>
-            NBA.com is part of Warner Media, LLCs Turner Sports Entertainment
-            Digital Network
-          </p>
+          <p>NBA.com is part of Warner Media, LLCs Turner Sports Entertainment Digital Network</p>
 
           <img src={footerImage} alt="" />
         </div>

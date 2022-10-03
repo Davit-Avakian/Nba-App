@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from "react";
-import news from "../../data/news";
-import "./styles.css";
-import firstTopic from "../../images/firstTopic.png";
-import secondTopic from "../../images/secondTopic.png";
-import thirdTopic from "../../images/thirdTopic.png";
-import fourthTopic from "../../images/fourthTopic.png";
-import fifthTopic from "../../images/fifthTopic.png";
+import React, { useEffect, useState } from 'react';
+import news from '@data/news';
+import './styles.css';
+import firstTopic from '@images/firstTopic.png';
+import secondTopic from '@images/secondTopic.png';
+import thirdTopic from '@images/thirdTopic.png';
+import fourthTopic from '@images/fourthTopic.png';
+import fifthTopic from '@images/fifthTopic.png';
 
 const images = {
   firstTopic,
   secondTopic,
   thirdTopic,
   fourthTopic,
-  fifthTopic,
+  fifthTopic
 };
 
 const NewsTopics = () => {
@@ -57,9 +57,8 @@ const NewsTopics = () => {
           <div
             className="Active-Image"
             style={{
-              backgroundImage: `url(${images[activeTopic.image]})`,
-            }}
-          ></div>
+              backgroundImage: `url(${images[activeTopic.image]})`
+            }}></div>
         </div>
       </div>
 
@@ -74,8 +73,7 @@ const NewsTopics = () => {
                 clearTimeout(timerId);
                 setActiveTopic(news[index]);
                 setNewsChanged(true);
-              }}
-            >
+              }}>
               <div className="Progress-Bar"></div>
               <p>{type}</p>
 
@@ -84,9 +82,7 @@ const NewsTopics = () => {
           );
         })}
       </div>
-      <p className="Next-Topic-Mobile">
-        Next: {news[activeTopic.id]?.title || news[0].title}
-      </p>
+      <p className="Next-Topic-Mobile">Next: {news[activeTopic.id]?.title || news[0].title}</p>
     </div>
   );
 };

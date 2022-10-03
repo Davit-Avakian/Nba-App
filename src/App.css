@@ -1,6 +1,6 @@
 @font-face {
   font-family: titleFont;
-  src: url(./font/Knockout\ HTF49Liteweight\ Regular.otf);
+  src: url(../src/assets/font/Knockout\ HTF49Liteweight\ Regular.otf);
 }
 
 :root {

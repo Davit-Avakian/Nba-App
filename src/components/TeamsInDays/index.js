@@ -1,13 +1,13 @@
-import React, { useRef, useState } from "react";
-import "./styles.css";
-import teamsInDays from "../../data/teamsInDays";
-import firstTeam from "../../images/firstTeam.jpeg";
-import secondTeam from "../../images/secondTeam.jpeg";
-import thirdTeam from "../../images/thirdTeam.jpeg";
-import fourthTeam from "../../images/fourthTeam.jpeg";
-import fifthTeam from "../../images/fifthTeam.jpeg";
-import sixthTeam from "../../images/sixthTeam.jpeg";
-import rightArrow from "../../images/rightArrow.png";
+import React, { useRef, useState } from 'react';
+import './styles.css';
+import teamsInDays from '@data/teamsInDays';
+import firstTeam from '@images/firstTeam.jpeg';
+import secondTeam from '@images/secondTeam.jpeg';
+import thirdTeam from '@images/thirdTeam.jpeg';
+import fourthTeam from '@images/fourthTeam.jpeg';
+import fifthTeam from '@images/fifthTeam.jpeg';
+import sixthTeam from '@images/sixthTeam.jpeg';
+import rightArrow from '@images/rightArrow.png';
 
 const images = {
   firstTeam,
@@ -15,7 +15,7 @@ const images = {
   thirdTeam,
   fourthTeam,
   fifthTeam,
-  sixthTeam,
+  sixthTeam
 };
 
 const TeamsInDays = () => {
@@ -38,13 +38,11 @@ const TeamsInDays = () => {
                 scrolledWidth - offsetWidth
               }px)`;
               setScrolledWidth((prev) => prev - offsetWidth);
-            }}
-          >
+            }}>
             <img src={rightArrow} />
           </button>
         )}
-        {scrolledWidth + 95 + (containerRef?.current?.offsetWidth || 240) <
-          containerWidth && (
+        {scrolledWidth + 95 + (containerRef?.current?.offsetWidth || 240) < containerWidth && (
           <button
             className="Scroll-Button Right-Arrow"
             onClick={() => {
@@ -54,8 +52,7 @@ const TeamsInDays = () => {
                 scrolledWidth + offsetWidth + 95
               }px)`;
               setScrolledWidth((prev) => prev + offsetWidth);
-            }}
-          >
+            }}>
             <img src={rightArrow} />
           </button>
         )}

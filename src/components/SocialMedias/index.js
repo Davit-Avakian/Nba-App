@@ -1,12 +1,12 @@
-import React from "react";
-import "./styles.css";
-import facebook from "../../images/facebook.svg";
-import instagram from "../../images/instagram.svg";
-import snapchat from "../../images/snapchat.svg";
-import tiktok from "../../images/tiktok.svg";
-import twitter from "../../images/twitter.svg";
-import youtube from "../../images/youtube.svg";
-import twitch from "../../images/twitch.svg";
+import React from 'react';
+import './styles.css';
+import facebook from '@images/facebook.svg';
+import instagram from '@images/instagram.svg';
+import snapchat from '@images/snapchat.svg';
+import tiktok from '@images/tiktok.svg';
+import twitter from '@images/twitter.svg';
+import youtube from '@images/youtube.svg';
+import twitch from '@images/twitch.svg';
 
 const SocialMedias = () => {
   return (

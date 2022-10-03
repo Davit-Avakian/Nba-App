@@ -1,17 +1,17 @@
-import React from "react";
-import "./styles.css";
-import aroundNba from "../../data/aroundNba";
-import firstAround from "../../images/firstAround.jpg";
-import secondAround from "../../images/secondAround.jpg";
-import thirdAround from "../../images/thirdAround.jpg";
-import fourthAround from "../../images/fourthAround.jpg";
-import fifthAround from "../../images/fifthAround.jpg";
-import sixthAround from "../../images/sixthAround.jpg";
-import seventhAround from "../../images/seventhAround.jpg";
-import eighthAround from "../../images/eighthAround.jpg";
-import ninthAround from "../../images/ninthAround.jpg";
-import tenthAround from "../../images/tenthAround.jpg";
-import eleventhAround from "../../images/eleventhAround.jpg";
+import React from 'react';
+import './styles.css';
+import aroundNba from '@data/aroundNba';
+import firstAround from '@images/firstAround.jpg';
+import secondAround from '@images/secondAround.jpg';
+import thirdAround from '@images/thirdAround.jpg';
+import fourthAround from '@images/fourthAround.jpg';
+import fifthAround from '@images/fifthAround.jpg';
+import sixthAround from '@images/sixthAround.jpg';
+import seventhAround from '@images/seventhAround.jpg';
+import eighthAround from '@images/eighthAround.jpg';
+import ninthAround from '@images/ninthAround.jpg';
+import tenthAround from '@images/tenthAround.jpg';
+import eleventhAround from '@images/eleventhAround.jpg';
 
 const images = {
   firstAround,
@@ -24,7 +24,7 @@ const images = {
   eighthAround,
   ninthAround,
   tenthAround,
-  eleventhAround,
+  eleventhAround
 };
 
 const AroundNba = () => {

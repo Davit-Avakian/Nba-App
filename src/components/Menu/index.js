@@ -1,15 +1,15 @@
-import React from "react";
-import "./styles.css";
-import storeImage from "../../images/storeImage.svg";
-import leagueInfo from "../../data/leagueInfo";
-import firstLeague from "../../images/firstLeague.svg";
-import secondLeague from "../../images/secondLeague.svg";
-import thirdLeague from "../../images/thirdLeague.svg";
-import fourthLeague from "../../images/fourthLeague.svg";
-import fifthLeague from "../../images/fifthLeague.svg";
-import sixthLeague from "../../images/sixthLeague.svg";
-import seventhLeague from "../../images/seventhLeague.svg";
-import eighthLeague from "../../images/eighthLeague.svg";
+import React from 'react';
+import './styles.css';
+import storeImage from '@images/storeImage.svg';
+import leagueInfo from '@data/leagueInfo';
+import firstLeague from '@images/firstLeague.svg';
+import secondLeague from '@images/secondLeague.svg';
+import thirdLeague from '@images/thirdLeague.svg';
+import fourthLeague from '@images/fourthLeague.svg';
+import fifthLeague from '@images/fifthLeague.svg';
+import sixthLeague from '@images/sixthLeague.svg';
+import seventhLeague from '@images/seventhLeague.svg';
+import eighthLeague from '@images/eighthLeague.svg';
 
 const images = {
   firstLeague,
@@ -19,7 +19,7 @@ const images = {
   fifthLeague,
   sixthLeague,
   seventhLeague,
-  eighthLeague,
+  eighthLeague
 };
 
 const Menu = () => {
@@ -168,7 +168,7 @@ const Menu = () => {
           <div className="Menu-PopUp Store-PopUp">
             <ul>
               <li>
-                <img src={storeImage} style={{ width: '100px' }}/>
+                <img src={storeImage} style={{ width: '100px' }} />
               </li>
               <li>Jerseys</li>
               <li>Men</li>
@@ -195,21 +195,21 @@ const Menu = () => {
         </div>
 
         <div className="Menu-Link Affiliates-Link">
-        <span>Affiliates</span>
+          <span>Affiliates</span>
 
-        <div className="Menu-PopUp Affiliates-PopUp">
-          <ul>
-            {leagueInfo.map(({ id, title, image }) => {
-              return (
-                <li key={id}>
-                  <img src={images[image]} />
-                  <span>{title}</span>
-                </li>
-              );
-            })}
-          </ul>
+          <div className="Menu-PopUp Affiliates-PopUp">
+            <ul>
+              {leagueInfo.map(({ id, title, image }) => {
+                return (
+                  <li key={id}>
+                    <img src={images[image]} />
+                    <span>{title}</span>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
-      </div>
       </div>
     </div>
   );

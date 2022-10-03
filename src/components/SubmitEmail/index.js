@@ -1,6 +1,6 @@
-import React from "react";
-import "./styles.css";
-import logoImg from "../../images/headerLogo.svg";
+import React from 'react';
+import './styles.css';
+import logoImg from '@images/headerLogo.svg';
 
 const SubmitEmail = () => {
   return (
@@ -10,10 +10,7 @@ const SubmitEmail = () => {
       </div>
 
       <div>
-        <p>
-          Want every headline right at your fingertips? Sign up to receive NBA
-          emails!
-        </p>
+        <p>Want every headline right at your fingertips? Sign up to receive NBA emails!</p>
 
         <form>
           <input type="email" placeholder="Email address" />
@@ -22,12 +19,11 @@ const SubmitEmail = () => {
         </form>
 
         <p>
-          By clicking "Submit", you agree to the Terms and Conditions and
-          Privacy Policy. You agree that your personal information will be used
-          to send you messages about NBA related products and services, and
-          share your personal information with NBA partners and affiliates so
-          that they can also contact you about products and services that might
-          be of interest to you.
+          By clicking "Submit", you agree to the Terms and Conditions and Privacy Policy. You agree
+          that your personal information will be used to send you messages about NBA related
+          products and services, and share your personal information with NBA partners and
+          affiliates so that they can also contact you about products and services that might be of
+          interest to you.
         </p>
       </div>
     </div>

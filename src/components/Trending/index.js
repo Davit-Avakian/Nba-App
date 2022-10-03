@@ -1,13 +1,13 @@
-import React, { useRef, useState } from "react";
-import "./styles.css";
-import trending from "../../data/trending.js";
-import firstTrending from "../../images/firstTrending.jpg";
-import secondTrending from "../../images/secondTrending.jpg";
-import thirdTrending from "../../images/thirdTrending.jpg";
-import fourthTrending from "../../images/fourthTrending.jpg";
-import fifthTrending from "../../images/fifthTrending.jpg";
-import sixthTrending from "../../images/sixthTrending.jpg";
-import rightArrow from "../../images/rightArrow.png";
+import React, { useRef, useState } from 'react';
+import './styles.css';
+import trending from '@data/trending.js';
+import firstTrending from '@images/firstTrending.jpg';
+import secondTrending from '@images/secondTrending.jpg';
+import thirdTrending from '@images/thirdTrending.jpg';
+import fourthTrending from '@images/fourthTrending.jpg';
+import fifthTrending from '@images/fifthTrending.jpg';
+import sixthTrending from '@images/sixthTrending.jpg';
+import rightArrow from '@images/rightArrow.png';
 
 const images = {
   firstTrending,
@@ -15,7 +15,7 @@ const images = {
   thirdTrending,
   fourthTrending,
   fifthTrending,
-  sixthTrending,
+  sixthTrending
 };
 
 const Trending = () => {
@@ -38,13 +38,11 @@ const Trending = () => {
                 scrolledWidth - offsetWidth
               }px)`;
               setScrolledWidth((prev) => prev - offsetWidth);
-            }}
-          >
+            }}>
             <img src={rightArrow} />
           </button>
         )}
-        {scrolledWidth + 95 + (containerRef?.current?.offsetWidth || 240) <
-          containerWidth && (
+        {scrolledWidth + 95 + (containerRef?.current?.offsetWidth || 240) < containerWidth && (
           <button
             className="Scroll-Button Right-Arrow"
             onClick={() => {
@@ -54,8 +52,7 @@ const Trending = () => {
                 scrolledWidth + offsetWidth + 95
               }px)`;
               setScrolledWidth((prev) => prev + offsetWidth);
-            }}
-          >
+            }}>
             <img src={rightArrow} />
           </button>
         )}

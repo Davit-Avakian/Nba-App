@@ -6,7 +6,7 @@
   background-color: black;
   display: flex;
   justify-content: space-around;
-  font: 14px "Roboto", "arial", "sans-serif";
+  font: 14px 'Roboto', 'arial', 'sans-serif';
   z-index: 5;
 }
 
@@ -15,8 +15,11 @@
   color: #ffff;
   height: 55px;
   font-size: 0.875rem;
-  font-weight: 600;
   padding: 0 0.5rem;
+}
+
+.Header-Main-Container span, .League-Link span, .Store-Link span, .Tickets-Link span {
+  font-weight: 600;
 }
 
 .Header-Main-Container {

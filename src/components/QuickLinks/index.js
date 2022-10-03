@@ -1,6 +1,6 @@
-import React from "react";
-import "./styles.css";
-import share from "../../images/share.jpg";
+import React from 'react';
+import './styles.css';
+import share from '@images/share.jpg';
 
 const QuickLinks = () => {
   return (
