@@ -65,7 +65,9 @@ const TeamsInDays = () => {
         {teamsInDays.map(({ id, image, title }) => {
           return (
             <div key={id} className="Team">
-              <img src={images[image]} />
+              <div>
+                <img src={images[image]} />
+              </div>
               <span>{title}</span>
             </div>
           );

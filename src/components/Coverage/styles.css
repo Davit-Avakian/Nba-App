@@ -34,7 +34,6 @@
   line-height: 0.8;
   margin-right: 0.5rem;
   line-height: 1.4;
-  margin-top: 1.4rem;
 }
 
 .Coverage div span:nth-child(2) {
@@ -42,6 +41,10 @@
   font-weight: 400;
   font-size: 0.875rem;
   margin: 0.8rem 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
 .Coverage div span:nth-child(3) {

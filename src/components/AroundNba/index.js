@@ -38,12 +38,11 @@ const AroundNba = () => {
         {aroundNba.map(({ id, image, title, description, date }) => {
           return (
             <li className="AroundNba-Item" key={id}>
-              <img src={images[image]} />
-
+              <a href="">
+                <img src={images[image]} />
+              </a>
               <div>
-                <span className="title">
-                  {title}
-                </span>
+                <span className="title">{title}</span>
                 <span className="description">{description}</span>
                 <span className="date">{date}</span>
               </div>

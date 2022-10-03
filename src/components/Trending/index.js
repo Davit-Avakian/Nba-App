@@ -43,7 +43,8 @@ const Trending = () => {
             <img src={rightArrow} />
           </button>
         )}
-        {scrolledWidth + 95 + (containerRef?.current?.offsetWidth || 240) < containerWidth && (
+        {scrolledWidth + 95 + (containerRef?.current?.offsetWidth || 240) <
+          containerWidth && (
           <button
             className="Scroll-Button Right-Arrow"
             onClick={() => {
@@ -64,7 +65,9 @@ const Trending = () => {
         {trending.map(({ id, image, title }) => {
           return (
             <div className="Trending" key={id}>
-              <img src={images[image]} />
+              <div>
+                <img src={images[image]} />
+              </div>
               <span>{title}</span>
             </div>
           );

@@ -207,32 +207,36 @@ const Header = ({ setShowMenu, showMenu }) => {
               </div>
             </div>
           )}
-          {!showMenu && <div className="Header-Link Tickets-Link">
-            <span>Tickets</span>
-            <div className="Header-PopUp Tickets-PopUp">
+          {!showMenu && (
+            <div className="Header-Link Tickets-Link">
+              <span>Tickets</span>
+              <div className="Header-PopUp Tickets-PopUp">
+                <ul>
+                  <li>NBATickets.com</li>
+                  <li>Official Tickets by Ticketmaster</li>
+                </ul>
+              </div>
+            </div>
+          )}
+        </div>
+        {!showMenu && (
+          <div className="Header-Link Image-Link">
+            <img src={moreImg} alt="" />
+
+            <div className="Header-PopUp Image-PopUp">
               <ul>
-                <li>NBATickets.com</li>
-                <li>Official Tickets by Ticketmaster</li>
+                {leagueInfo.map(({ id, title, image }) => {
+                  return (
+                    <li key={id}>
+                      <img src={images[image]} />
+                      <span>{title}</span>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
-          </div>}
-        </div>
-        <div className="Header-Link Image-Link">
-          <img src={moreImg} alt="" />
-
-          <div className="Header-PopUp Image-PopUp">
-            <ul>
-              {leagueInfo.map(({ id, title, image }) => {
-                return (
-                  <li key={id}>
-                    <img src={images[image]} />
-                    <span>{title}</span>
-                  </li>
-                );
-              })}
-            </ul>
           </div>
-        </div>
+        )}
         <div className="Header-Link SignIn-Link">
           <span>Sign in</span>
           <div className="Header-PopUp SignIn-PopUp">

@@ -11,13 +11,15 @@ const SubmitEmail = () => {
 
       <div>
         <p>
-            Want every headline right at your fingertips? Sign up to receive NBA
-            emails!
+          Want every headline right at your fingertips? Sign up to receive NBA
+          emails!
         </p>
 
-        <input placeholder="Email address" />
+        <form>
+          <input type="email" placeholder="Email address" />
 
-        <button>Submit</button>
+          <button>Submit</button>
+        </form>
 
         <p>
           By clicking "Submit", you agree to the Terms and Conditions and

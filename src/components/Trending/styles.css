@@ -45,10 +45,17 @@
   height: 234px;
 }
 
-.Trending img {
+.Trending div {
   width: 100%;
   height: 140px;
+  overflow: hidden;
+}
+
+.Trending img {
+  width: 100%;
+  height: 100%;
   transition: scale 0.35s ease-in-out;
+  overflow: hidden;
 }
 
 .Trending img:hover {

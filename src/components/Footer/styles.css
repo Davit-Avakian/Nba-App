@@ -70,6 +70,7 @@
   color: #ffff;
   width: 75%;
   margin: 0 auto;
+  margin-top: 2rem;
   color: #ffff;
 }
 
@@ -185,7 +186,7 @@
 
   .Down-Arrow {
     display: block;
-    height: .6rem;
+    height: 0.6rem;
     width: 1.2rem;
     margin-right: 3rem;
   }
@@ -217,7 +218,6 @@
     margin-top: 430rem;
   }
 }
-
 
 @media (max-width: 670px) {
   .Footer-Container {
