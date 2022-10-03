@@ -37,6 +37,12 @@ body {
   margin: 0 auto;
 }
 
+@media (max-width: 1600px) {
+  .Main-Wrapper, .Second-Wrapper {
+    width: 90%;
+  }
+}
+
 @media (max-width: 1400px) {
   .Main-Wrapper, .Second-Wrapper {
     width: 95%;

@@ -26,11 +26,12 @@
   display: block;
   width: 100%;
   list-style-type: none;
-  margin-bottom: 1rem;
+  margin-bottom: .7rem;
+  white-space: nowrap;
 }
 
 .Footer-Top div {
-  margin-right: 7rem;
+  width: 18%;
 }
 
 .Footer-Top div:last-child {
@@ -137,9 +138,20 @@
   display: none;
 }
 
+@media (max-width: 1600px) {
+  .Footer-Top, .Footer-Bottom, .Footer-Container hr {
+    width: 100%;
+  }
+}
+
 @media (max-width: 1350px) {
   .Footer-Container {
     margin-top: 220rem;
+  }
+
+  .Footer-Top div {
+    width: 20%;
+    margin-right: 2.5rem;
   }
 }
 
@@ -204,6 +216,17 @@
   .Footer-Bottom {
     margin: 1rem auto;
     width: 95%;
+    flex-direction: column-reverse;
+  }
+
+  .Footer-Bottom div:last-child {
+    margin: 0;
+    padding: 1rem 0 1.7rem 0;
+  }
+
+  .Footer-Bottom div:last-child img {
+    margin-left: 0;
+    margin-right: 1.2rem;
   }
 }
 
@@ -226,12 +249,4 @@
 }
 
 @media (max-width: 560px) {
-  .Footer-Bottom {
-    flex-direction: column-reverse;
-  }
-
-  .Footer-Bottom div:last-child {
-    margin-left: 0;
-    margin-bottom: 2rem;
-  }
 }

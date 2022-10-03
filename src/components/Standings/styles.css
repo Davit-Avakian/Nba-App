@@ -97,7 +97,7 @@
 }
 
 .Teams-List tbody tr:hover {
-  background: rgb(208, 219, 223);
+  background-color: #e4eaf1;
 }
 
 .Teams-List tbody tr td {
