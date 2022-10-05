@@ -1,13 +1,14 @@
 import React from 'react';
-import './styles.css';
 import share from '@images/share.jpg';
+import { LinksContainer } from './styles';
+import { ContainerTitle } from '../../App.styled';
 
 const QuickLinks = () => {
   return (
-    <div className="QuickLinks-Container">
-      <div className="Container-Title">
+    <LinksContainer>
+      <ContainerTitle>
         <h1>QUICK LINKS</h1>
-      </div>
+      </ContainerTitle>
 
       <ul>
         <li>
@@ -73,7 +74,7 @@ const QuickLinks = () => {
           </a>
         </li>
       </ul>
-    </div>
+    </LinksContainer>
   );
 };
 

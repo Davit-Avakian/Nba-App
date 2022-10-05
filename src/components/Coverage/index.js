@@ -1,8 +1,9 @@
 import React from 'react';
-import './styles.css';
 import coverage from '@data/coverage';
 import firstCoverage from '@images/firstCoverage.jpg';
 import secondCoverage from '@images/secondCoverage.jpg';
+import { CoverageContainer, CoverageItem } from './styles';
+import { ContainerTitle } from '../../App.styled';
 
 const images = {
   firstCoverage,
@@ -11,15 +12,15 @@ const images = {
 
 const Coverage = () => {
   return (
-    <div className="Coverage-Container">
-      <div className="Container-Title">
+    <CoverageContainer>
+      <ContainerTitle>
         <h1>FULL COVERAGE</h1>
-      </div>
+      </ContainerTitle>
 
       <div>
         {coverage.map(({ id, image, title, description, date }) => {
           return (
-            <div className="Coverage" key={id}>
+            <CoverageItem key={id}>
               <img src={images[image]} />
 
               <div>
@@ -27,11 +28,11 @@ const Coverage = () => {
                 <span>{description}</span>
                 <span>{date}</span>
               </div>
-            </div>
+            </CoverageItem>
           );
         })}
       </div>
-    </div>
+    </CoverageContainer>
   );
 };
 

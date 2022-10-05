@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
 import './styles.css';
 import { eastTeams, westTeams } from '@data/teams';
+import { ContainerTitle } from '../../App.styled';
+import { ButtonsContainer, StandingsContainer, TeamList, TeamName } from './styles';
 
 const Standings = () => {
   const [conference, setConference] = useState('East');
 
   return (
-    <div className="Standings-Container">
-      <div className="Container-Title">
+    <StandingsContainer>
+      <ContainerTitle>
         <h1>2021-22 STANDINGS</h1>
         <a>Go to Standings</a>
-      </div>
+      </ContainerTitle>
 
       <div>
-        <div className="Standings-Buttons">
+        <ButtonsContainer>
           <button
             style={{
               backgroundColor: `${conference === 'East' ? 'black' : 'white'}`,
@@ -30,9 +32,9 @@ const Standings = () => {
             onClick={() => setConference('West')}>
             WESTERN
           </button>
-        </div>
+        </ButtonsContainer>
 
-        <div className="Teams-List">
+        <TeamList>
           <table>
             <thead>
               <tr>
@@ -66,7 +68,7 @@ const Standings = () => {
                               <span>
                                 <b>{index + 1}</b>
                               </span>
-                              <span className="Team-Name">{teamName}</span>
+                              <TeamName>{teamName}</TeamName>
                             </a>
                           </td>
 
@@ -114,7 +116,7 @@ const Standings = () => {
                               <span>
                                 <b>{index + 1}</b>
                               </span>
-                              <span className="Team-Name">{teamName}</span>
+                              <TeamName>{teamName}</TeamName>
                             </a>
                           </td>
 
@@ -143,9 +145,9 @@ const Standings = () => {
                   )}
             </tbody>
           </table>
-        </div>
+        </TeamList>
       </div>
-    </div>
+    </StandingsContainer>
   );
 };
 

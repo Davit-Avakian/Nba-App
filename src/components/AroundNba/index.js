@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles.css';
 import aroundNba from '@data/aroundNba';
 import firstAround from '@images/firstAround.jpg';
 import secondAround from '@images/secondAround.jpg';
@@ -12,6 +11,8 @@ import eighthAround from '@images/eighthAround.jpg';
 import ninthAround from '@images/ninthAround.jpg';
 import tenthAround from '@images/tenthAround.jpg';
 import eleventhAround from '@images/eleventhAround.jpg';
+import { AroundContainer } from './styles';
+import { ContainerTitle } from '../../App.styled';
 
 const images = {
   firstAround,
@@ -29,15 +30,15 @@ const images = {
 
 const AroundNba = () => {
   return (
-    <div className="AroundNba-Container">
-      <div className="Container-Title">
+    <AroundContainer>
+      <ContainerTitle>
         <h1>AROUND THE NBA</h1>
-      </div>
+      </ContainerTitle>
 
       <ul>
         {aroundNba.map(({ id, image, title, description, date }) => {
           return (
-            <li className="AroundNba-Item" key={id}>
+            <li key={id}>
               <a href="">
                 <img src={images[image]} />
               </a>
@@ -50,7 +51,7 @@ const AroundNba = () => {
           );
         })}
       </ul>
-    </div>
+    </AroundContainer>
   );
 };
 

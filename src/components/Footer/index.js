@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles.css';
 import footerImage from '@images/footerImage.svg';
 import fbImage from '@images/footerFb.png';
 import instaImage from '@images/footerInsta.png';
@@ -9,14 +8,15 @@ import twitterImage from '@images/footerTwitter.png';
 import ytImage from '@images/footerYt.jpeg';
 import twitchImage from '@images/footerTwitch.png';
 import downArrow from '@images/downArrow.png';
+import { Arrow, BottomContainer, FooterContainer, TopContainer } from './styles';
 
 const Footer = () => {
   return (
-    <div className="Footer-Container">
-      <div className="Footer-Top">
+    <FooterContainer>
+      <TopContainer>
         <div>
           <span>NBA ORGANIZATION</span>
-          <img className="Down-Arrow" src={downArrow} />
+          <Arrow src={downArrow} />
           <ul>
             <li>
               <a>NBA Official</a>
@@ -29,7 +29,7 @@ const Footer = () => {
 
         <div>
           <span>NBA INITIATIVES</span>
-          <img className="Down-Arrow" src={downArrow} />
+          <Arrow src={downArrow} />
           <ul>
             <li>
               <a>NBA Cares</a>
@@ -48,7 +48,7 @@ const Footer = () => {
 
         <div>
           <span>ACROSS THE LEAGUE</span>
-          <img className="Down-Arrow" src={downArrow} />
+          <Arrow src={downArrow} />
           <ul>
             <li>
               <a>NBA Communications</a>
@@ -64,7 +64,7 @@ const Footer = () => {
 
         <div>
           <span>SHOP</span>
-          <img className="Down-Arrow" src={downArrow} />
+          <Arrow src={downArrow} />
           <ul>
             <li>
               <a>Global Stores</a>
@@ -83,7 +83,7 @@ const Footer = () => {
 
         <div>
           <span>SUBSCRIPTIONS</span>
-          <img className="Down-Arrow" src={downArrow} />
+          <Arrow src={downArrow} />
           <ul>
             <li>
               <a>League Pass</a>
@@ -93,11 +93,11 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-      </div>
+      </TopContainer>
 
       <hr></hr>
 
-      <div className="Footer-Bottom">
+      <BottomContainer>
         <div>
           <div>© 2022 NBA Media Ventures, LLC. All rights reserved.</div>
 
@@ -129,8 +129,8 @@ const Footer = () => {
           <img src={ytImage} />
           <img src={twitchImage} />
         </div>
-      </div>
-    </div>
+      </BottomContainer>
+    </FooterContainer>
   );
 };
 

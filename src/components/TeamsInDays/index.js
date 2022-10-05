@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import './styles.css';
 import teamsInDays from '@data/teamsInDays';
 import firstTeam from '@images/firstTeam.jpeg';
 import secondTeam from '@images/secondTeam.jpeg';
@@ -8,6 +7,8 @@ import fourthTeam from '@images/fourthTeam.jpeg';
 import fifthTeam from '@images/fifthTeam.jpeg';
 import sixthTeam from '@images/sixthTeam.jpeg';
 import rightArrow from '@images/rightArrow.png';
+import { LeftArrow, RightArrow, Team, TeamsContainer } from './styles';
+import { ContainerTitle } from '../../App.styled';
 
 const images = {
   firstTeam,
@@ -24,13 +25,12 @@ const TeamsInDays = () => {
   const containerRef = useRef(null);
 
   return (
-    <div className="TeamsInDays-Container">
-      <div className="Container-Title">
+    <TeamsContainer>
+      <ContainerTitle>
         <h1>30 TEAMS IN 30 DAYS</h1>
 
         {scrolledWidth > 0 && (
-          <button
-            className="Scroll-Button Left-Arrow"
+          <LeftArrow
             onClick={() => {
               const { offsetWidth } = containerRef.current;
 
@@ -40,11 +40,10 @@ const TeamsInDays = () => {
               setScrolledWidth((prev) => prev - offsetWidth);
             }}>
             <img src={rightArrow} />
-          </button>
+          </LeftArrow>
         )}
         {scrolledWidth + 95 + (containerRef?.current?.offsetWidth || 240) < containerWidth && (
-          <button
-            className="Scroll-Button Right-Arrow"
+          <RightArrow
             onClick={() => {
               const { offsetWidth } = containerRef.current;
 
@@ -54,23 +53,23 @@ const TeamsInDays = () => {
               setScrolledWidth((prev) => prev + offsetWidth);
             }}>
             <img src={rightArrow} />
-          </button>
+          </RightArrow>
         )}
-      </div>
+      </ContainerTitle>
 
       <div ref={containerRef}>
         {teamsInDays.map(({ id, image, title }) => {
           return (
-            <div key={id} className="Team">
+            <Team key={id}>
               <div>
                 <img src={images[image]} />
               </div>
               <span>{title}</span>
-            </div>
+            </Team>
           );
         })}
       </div>
-    </div>
+    </TeamsContainer>
   );
 };
 

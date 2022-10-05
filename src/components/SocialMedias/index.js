@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles.css';
 import facebook from '@images/facebook.svg';
 import instagram from '@images/instagram.svg';
 import snapchat from '@images/snapchat.svg';
@@ -7,13 +6,15 @@ import tiktok from '@images/tiktok.svg';
 import twitter from '@images/twitter.svg';
 import youtube from '@images/youtube.svg';
 import twitch from '@images/twitch.svg';
+import { MediasContainer } from './styles';
+import { ContainerTitle } from '../../App.styled';
 
 const SocialMedias = () => {
   return (
-    <div className="SocialMedias-Container">
-      <div className="Container-Title">
+    <MediasContainer>
+      <ContainerTitle>
         <h1>FOLLOW THE NBA</h1>
-      </div>
+      </ContainerTitle>
 
       <div>
         <a>
@@ -38,7 +39,7 @@ const SocialMedias = () => {
           <img src={twitch} />
         </a>
       </div>
-    </div>
+    </MediasContainer>
   );
 };
 

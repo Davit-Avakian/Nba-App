@@ -1,10 +1,10 @@
 import React from 'react';
-import './styles.css';
 import headlines from '@data/headlines';
+import { HeadLinesContainer } from './styles';
 
 const HeadLines = () => {
   return (
-    <div className="HeadLines-Container">
+    <HeadLinesContainer>
       <div>
         <span>HEADLINES</span>
         <a>See more</a>
@@ -21,7 +21,7 @@ const HeadLines = () => {
           })}
         </ul>
       </div>
-    </div>
+    </HeadLinesContainer>
   );
 };
 

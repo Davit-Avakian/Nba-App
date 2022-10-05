@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import './styles.css';
 import trending from '@data/trending.js';
 import firstTrending from '@images/firstTrending.jpg';
 import secondTrending from '@images/secondTrending.jpg';
@@ -8,6 +7,8 @@ import fourthTrending from '@images/fourthTrending.jpg';
 import fifthTrending from '@images/fifthTrending.jpg';
 import sixthTrending from '@images/sixthTrending.jpg';
 import rightArrow from '@images/rightArrow.png';
+import { ImageContainer, LeftArrow, RightArrow, TrendingContainer, TrendingItem } from './styles';
+import { ContainerTitle } from '../../App.styled';
 
 const images = {
   firstTrending,
@@ -24,13 +25,12 @@ const Trending = () => {
   const containerRef = useRef();
 
   return (
-    <div className="Trending-Container">
-      <div className="Container-Title">
+    <TrendingContainer>
+      <ContainerTitle>
         <h1>Trending Now</h1>
 
         {scrolledWidth > 0 && (
-          <button
-            className="Scroll-Button Left-Arrow"
+          <LeftArrow
             onClick={() => {
               const { offsetWidth } = containerRef.current;
 
@@ -40,10 +40,10 @@ const Trending = () => {
               setScrolledWidth((prev) => prev - offsetWidth);
             }}>
             <img src={rightArrow} />
-          </button>
+          </LeftArrow>
         )}
         {scrolledWidth + 95 + (containerRef?.current?.offsetWidth || 240) < containerWidth && (
-          <button
+          <RightArrow
             className="Scroll-Button Right-Arrow"
             onClick={() => {
               const { offsetWidth } = containerRef.current;
@@ -54,23 +54,23 @@ const Trending = () => {
               setScrolledWidth((prev) => prev + offsetWidth);
             }}>
             <img src={rightArrow} />
-          </button>
+          </RightArrow>
         )}
-      </div>
+      </ContainerTitle>
 
       <div ref={containerRef}>
         {trending.map(({ id, image, title }) => {
           return (
-            <div className="Trending" key={id}>
-              <div>
+            <TrendingItem className="Trending" key={id}>
+              <ImageContainer>
                 <img src={images[image]} />
-              </div>
+              </ImageContainer>
               <span>{title}</span>
-            </div>
+            </TrendingItem>
           );
         })}
       </div>
-    </div>
+    </TrendingContainer>
   );
 };
 

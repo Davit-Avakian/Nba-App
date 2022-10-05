@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import './App.css';
 import AroundNba from '@components/AroundNba';
 import Coverage from '@components/Coverage';
 import Footer from '@components/Footer';
@@ -14,43 +13,61 @@ import Standings from '@components/Standings';
 import SubmitEmail from '@components/SubmitEmail';
 import TeamsInDays from '@components/TeamsInDays';
 import Trending from '@components/Trending';
+import {
+  GlobalStyles,
+  AppContainer,
+  MainContent,
+  MainWrapper,
+  SecondWrapper,
+  SideBar
+} from './App.styled';
+import { ThemeProvider } from 'styled-components';
+
+const theme = {
+  borderBottom: '1px solid #ebe9e7',
+  secondaryTextColor: '#ebe9e7',
+  linkColor: '#1070d8'
+};
 
 function App() {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <div className="App">
-      <Header setShowMenu={setShowMenu} showMenu={showMenu} />
-      {showMenu ? (
-        <Menu />
-      ) : (
-        <>
-          <div className="Main-Wrapper">
-            <NewsTopics />
-            <HeadLines />
-          </div>
+    <AppContainer>
+      <GlobalStyles />
+      <ThemeProvider theme={theme}>
+        <Header setShowMenu={setShowMenu} showMenu={showMenu} />
+        {showMenu ? (
+          <Menu />
+        ) : (
+          <>
+            <MainWrapper>
+              <NewsTopics />
+              <HeadLines />
+            </MainWrapper>
 
-          <div className="Second-Wrapper">
-            <div className="Main-Content">
-              <Trending />
-              <Coverage />
-              <TeamsInDays />
-              <AroundNba />
-            </div>
+            <SecondWrapper>
+              <MainContent>
+                <Trending />
+                <Coverage />
+                <TeamsInDays />
+                <AroundNba />
+              </MainContent>
 
-            <div className="Side-Bar">
-              <LeagueInfo />
-              <SocialMedias />
-              <QuickLinks />
-              <Standings />
-              <SubmitEmail />
-            </div>
-          </div>
+              <SideBar>
+                <LeagueInfo />
+                <SocialMedias />
+                <QuickLinks />
+                <Standings />
+                <SubmitEmail />
+              </SideBar>
+            </SecondWrapper>
 
-          <Footer />
-        </>
-      )}
-    </div>
+            <Footer />
+          </>
+        )}
+      </ThemeProvider>
+    </AppContainer>
   );
 }
 

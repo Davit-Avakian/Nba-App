@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles.css';
 import leagueInfo from '@data/leagueInfo';
 import firstLeague from '@images/firstLeague.svg';
 import secondLeague from '@images/secondLeague.svg';
@@ -10,6 +9,8 @@ import sixthLeague from '@images/sixthLeague.svg';
 import seventhLeague from '@images/seventhLeague.svg';
 import eighthLeague from '@images/eighthLeague.svg';
 import share from '@images/share.jpg';
+import { LeagueContainer } from './styles';
+import { ContainerTitle } from '../../App.styled';
 
 const images = {
   firstLeague,
@@ -24,10 +25,10 @@ const images = {
 
 const LeagueInfo = () => {
   return (
-    <div className="LeagueInfo-Container">
-      <div className="Container-Title">
+    <LeagueContainer>
+      <ContainerTitle>
         <h1>More League Info</h1>
-      </div>
+      </ContainerTitle>
 
       <div>
         <ul>
@@ -44,7 +45,7 @@ const LeagueInfo = () => {
           })}
         </ul>
       </div>
-    </div>
+    </LeagueContainer>
   );
 };
 
