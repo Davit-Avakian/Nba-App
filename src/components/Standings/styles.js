@@ -139,6 +139,10 @@ export const TeamList = styled.div`
       width: 95%;
     }
 
+    thead tr th {
+      text-align: center;
+    }
+
     tbody tr td {
       width: 25%;
     }

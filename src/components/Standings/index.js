@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './styles.css';
 import { eastTeams, westTeams } from '@data/teams';
 import { ContainerTitle } from '../../App.styled';
 import { ButtonsContainer, StandingsContainer, TeamList, TeamName } from './styles';

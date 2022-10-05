@@ -1,5 +1,4 @@
 import React from 'react';
-import './styles.css';
 import storeImage from '@images/storeImage.svg';
 import leagueInfo from '@data/leagueInfo';
 import firstLeague from '@images/firstLeague.svg';

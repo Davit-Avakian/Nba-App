@@ -86,6 +86,14 @@ export const RightArrow = styled.button`
   img {
     height: 1.2rem;
   }
+
+  @media (max-width: 1050px) {
+    right: 5%;
+  }
+
+  @media (max-width: 500px) {
+    right: 8%;
+  }
 `;
 
 export const TeamsContainer = styled.div`

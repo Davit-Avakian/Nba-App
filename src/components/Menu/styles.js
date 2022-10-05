@@ -8,8 +8,6 @@ export const Link = styled.div`
   font-size: 1rem;
   line-height: 1.25;
   opacity: 0.6;
-  padding-bottom: 0.3rem;
-  margin-bottom: 0.4rem;
 
   &:hover {
     opacity: 1;
