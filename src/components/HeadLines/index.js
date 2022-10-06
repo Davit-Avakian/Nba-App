@@ -2,6 +2,10 @@ import React from 'react';
 import headlines from 'data/headlines';
 import { HeadLinesContainer } from './styles';
 
+/**
+ *  Creates component for headlines section
+ *  @returns {component} HeadLines Component shows main headlines of the day
+ */
 const HeadLines = () => {
   return (
     <HeadLinesContainer>

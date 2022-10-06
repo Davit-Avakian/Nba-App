@@ -15,6 +15,7 @@ import {
   TopicsContainer
 } from './styles';
 
+// keeps imported images
 const images = {
   firstTopic,
   secondTopic,
@@ -23,20 +24,31 @@ const images = {
   fifthTopic
 };
 
+/**
+ *  Creates component for main news
+ *  @returns {component} NewsTopics component shows 5 main news of the day
+ */
 const NewsTopics = () => {
+  // keeps information about active topic
   const [activeTopic, setActiveTopic] = useState(news[0]);
+
+  // keeps boolean value for changing animation
   const [newsChanged, setNewsChanged] = useState(false);
+
+  // keeps timer id for clearing later
   const [timerId, setTimerId] = useState();
 
   useEffect(() => {
     const { id } = activeTopic;
 
+    // checks if news has been changed by the user
     if (newsChanged) return;
 
     const timerId = setTimeout(() => {
       setActiveTopic(id < news.length ? news[id] : news[0]);
     }, 4000);
 
+    // saves created timer id in state
     setTimerId(timerId);
   }, [activeTopic.id]);
 

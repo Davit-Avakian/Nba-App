@@ -48,6 +48,7 @@ import {
   WatchPopUp
 } from './styles';
 
+// keeps imported images for this component
 const images = {
   firstLeague,
   secondLeague,
@@ -59,6 +60,12 @@ const images = {
   eighthLeague
 };
 
+/**
+ *  Creates header and its items
+ *  @param {function} setShowMenu function for showing or hiding menu
+ *  @param {boolean} showMenu boolean that shows if menu is open or closed
+ *  @returns {component} Header Component
+ */
 const Header = ({ setShowMenu, showMenu }) => {
   return (
     <HeaderContainer>

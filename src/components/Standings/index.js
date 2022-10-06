@@ -1,11 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import { ContainerTitle } from '../../App.styled';
 import { ButtonsContainer, StandingsContainer, TeamList, TeamName } from './styles';
 
+/**
+ *  Creates component for Teams Standings
+ *  @returns {component} Standings component shows league's teams stats and standings
+ */
 const Standings = () => {
+  // keeps information about league type
   const [conference, setConference] = useState('East');
+
+  // keeps eastern teams data
   const [eastTeams, setEastTeams] = useState([]);
+
+  // keeps western teams data
   const [westTeams, setWestTeams] = useState([]);
 
   useEffect(() => {
@@ -14,13 +23,13 @@ const Standings = () => {
       const wstTeams = [];
 
       try {
-        const {
-          data: { data }
-        } = await axios.get(`http://api.isportsapi.com/sport/basketball/standing/league?api_key=oL4R9ztcBsE1CoZI
-        &leagueId=111&season=21-22`);
+        // fetch teams data from api
+        // const {
+        //   data: { data }
+        // } = await axios.get(`http://api.isportsapi.com/sport/basketball/standing/league?api_key=oL4R9ztcBsE1CoZI
+        // &leagueId=111&season=21-22`);
 
-        console.log(data);
-
+        // split fetched data into 2 arrays by league type
         data.forEach((team) => {
           if (team.leagueName === 'NBA Eastern') {
             estTeams.push(team);
@@ -29,6 +38,7 @@ const Standings = () => {
           }
         });
 
+        // store teams in state
         setEastTeams(estTeams);
         setWestTeams(wstTeams);
       } catch (error) {

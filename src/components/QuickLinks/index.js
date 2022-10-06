@@ -3,6 +3,10 @@ import share from 'assets/images/share.jpg';
 import { LinksContainer } from './styles';
 import { ContainerTitle } from '../../App.styled';
 
+/**
+ *  Creates Quick Links component
+ *  @returns {component} QuickLinks component shows all the quick links of the app
+ */
 const QuickLinks = () => {
   return (
     <LinksContainer>

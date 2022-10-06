@@ -12,6 +12,7 @@ import share from 'assets/images/share.jpg';
 import { LeagueContainer } from './styles';
 import { ContainerTitle } from '../../App.styled';
 
+// keeps all imported images
 const images = {
   firstLeague,
   secondLeague,
@@ -23,6 +24,10 @@ const images = {
   eighthLeague
 };
 
+/**
+ *  Creates component width information about leagues
+ *  @returns {component} LeagueInfo Component contains links to all nba leagues
+ */
 const LeagueInfo = () => {
   return (
     <LeagueContainer>

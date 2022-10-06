@@ -36,6 +36,7 @@ import {
   WatchPopUp
 } from './styles';
 
+// keeps imported images
 const images = {
   firstLeague,
   secondLeague,
@@ -47,6 +48,10 @@ const images = {
   eighthLeague
 };
 
+/**
+ *  Creates Menu component for mobile
+ *  @returns {component} Menu component contains all header information for mobile users
+ */
 const Menu = () => {
   return (
     <MenuContainer>

@@ -10,6 +10,7 @@ import rightArrow from 'assets/images/rightArrow.png';
 import { LeftArrow, RightArrow, Team, TeamsContainer } from './styles';
 import { ContainerTitle } from '../../App.styled';
 
+// keeps imported images
 const images = {
   firstTeam,
   secondTeam,
@@ -19,9 +20,17 @@ const images = {
   sixthTeam
 };
 
+/**
+ *  Creates component for 30 teams in 30 days section
+ *  @returns {component} TeamsInDays component shows news about teams in the last 30 days
+ */
 const TeamsInDays = () => {
+  // keeps container's scrolled width in px
   const [scrolledWidth, setScrolledWidth] = useState(0);
+
+  // keeps container's full width
   const [containerWidth] = useState(teamsInDays.length * 240);
+
   const containerRef = useRef(null);
 
   return (

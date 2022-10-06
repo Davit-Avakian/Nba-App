@@ -5,11 +5,16 @@ import secondCoverage from 'assets/images/secondCoverage.jpg';
 import { CoverageContainer, CoverageItem } from './styles';
 import { ContainerTitle } from '../../App.styled';
 
+//keeps imported images for this component
 const images = {
   firstCoverage,
   secondCoverage
 };
 
+/**
+ *  Creates component for full coverage section
+ *  @returns {component} Coverage component
+ */
 const Coverage = () => {
   return (
     <CoverageContainer>

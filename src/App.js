@@ -29,7 +29,12 @@ const theme = {
   linkColor: '#1070d8'
 };
 
+/**
+ *  Creates App component containing all components of the page
+ *  @returns {component} App component including the components of the page
+ */
 function App() {
+  // keeps boolean value for showing menu
   const [showMenu, setShowMenu] = useState(false);
 
   return (

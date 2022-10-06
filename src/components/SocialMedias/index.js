@@ -9,6 +9,10 @@ import twitch from 'assets/images/twitch.svg';
 import { MediasContainer } from './styles';
 import { ContainerTitle } from '../../App.styled';
 
+/**
+ *  Creates component for social medias
+ *  @returns {component} SocialMedias component shows social media icons with links
+ */
 const SocialMedias = () => {
   return (
     <MediasContainer>

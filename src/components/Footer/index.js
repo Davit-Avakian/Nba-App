@@ -10,6 +10,10 @@ import twitchImage from 'assets/images/footerTwitch.png';
 import downArrow from 'assets/images/downArrow.png';
 import { Arrow, BottomContainer, FooterContainer, TopContainer } from './styles';
 
+/**
+ *  Creates Footer component
+ *  @returns {component} Footer Component shows all social media and shop links
+ */
 const Footer = () => {
   return (
     <FooterContainer>

@@ -2,6 +2,10 @@ import React from 'react';
 import logoImg from 'assets/images/headerLogo.svg';
 import { EmailContainer } from './styles';
 
+/**
+ *  Creates component for submitting emails
+ *  @returns {component} SubmitEmail component
+ */
 const SubmitEmail = () => {
   return (
     <EmailContainer>

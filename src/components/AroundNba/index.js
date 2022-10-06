@@ -14,6 +14,7 @@ import eleventhAround from 'assets/images/eleventhAround.jpg';
 import { AroundContainer } from './styles';
 import { ContainerTitle } from '../../App.styled';
 
+//keeps imported images for this component
 const images = {
   firstAround,
   secondAround,
@@ -28,6 +29,10 @@ const images = {
   eleventhAround
 };
 
+/**
+ *  Creates component for Around Nba section with styles
+ *  @returns {component} AroundNba component
+ */
 const AroundNba = () => {
   return (
     <AroundContainer>

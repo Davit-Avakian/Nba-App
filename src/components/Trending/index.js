@@ -10,6 +10,7 @@ import rightArrow from 'assets/images/rightArrow.png';
 import { ImageContainer, LeftArrow, RightArrow, TrendingContainer, TrendingItem } from './styles';
 import { ContainerTitle } from '../../App.styled';
 
+// keeps imported images
 const images = {
   firstTrending,
   secondTrending,
@@ -19,9 +20,17 @@ const images = {
   sixthTrending
 };
 
+/**
+ *  Creates compnent for tending news
+ *  @returns {component} Trending component for trending news topics of the day
+ */
 const Trending = () => {
+  // keeps container's scrolled width in px
   const [scrolledWidth, setScrolledWidth] = useState(0);
+
+  // keeps container's full width
   const [containerWidth] = useState(trending.length * 240);
+
   const containerRef = useRef();
 
   return (
