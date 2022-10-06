@@ -1,14 +1,14 @@
 import React from 'react';
-import leagueInfo from '@data/leagueInfo';
-import firstLeague from '@images/firstLeague.svg';
-import secondLeague from '@images/secondLeague.svg';
-import thirdLeague from '@images/thirdLeague.svg';
-import fourthLeague from '@images/fourthLeague.svg';
-import fifthLeague from '@images/fifthLeague.svg';
-import sixthLeague from '@images/sixthLeague.svg';
-import seventhLeague from '@images/seventhLeague.svg';
-import eighthLeague from '@images/eighthLeague.svg';
-import share from '@images/share.jpg';
+import leagueInfo from 'data/leagueInfo';
+import firstLeague from 'assets/images/firstLeague.svg';
+import secondLeague from 'assets/images/secondLeague.svg';
+import thirdLeague from 'assets/images/thirdLeague.svg';
+import fourthLeague from 'assets/images/fourthLeague.svg';
+import fifthLeague from 'assets/images/fifthLeague.svg';
+import sixthLeague from 'assets/images/sixthLeague.svg';
+import seventhLeague from 'assets/images/seventhLeague.svg';
+import eighthLeague from 'assets/images/eighthLeague.svg';
+import share from 'assets/images/share.jpg';
 import { LeagueContainer } from './styles';
 import { ContainerTitle } from '../../App.styled';
 

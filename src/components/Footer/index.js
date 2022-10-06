@@ -1,13 +1,13 @@
 import React from 'react';
-import footerImage from '@images/footerImage.svg';
-import fbImage from '@images/footerFb.png';
-import instaImage from '@images/footerInsta.png';
-import snapImage from '@images/footerSnap.png';
-import tiktokImage from '@images/footerTiktok.jpg';
-import twitterImage from '@images/footerTwitter.png';
-import ytImage from '@images/footerYt.jpeg';
-import twitchImage from '@images/footerTwitch.png';
-import downArrow from '@images/downArrow.png';
+import footerImage from 'assets/images/footerImage.svg';
+import fbImage from 'assets/images/footerFb.png';
+import instaImage from 'assets/images/footerInsta.png';
+import snapImage from 'assets/images/footerSnap.png';
+import tiktokImage from 'assets/images/footerTiktok.jpg';
+import twitterImage from 'assets/images/footerTwitter.png';
+import ytImage from 'assets/images/footerYt.jpeg';
+import twitchImage from 'assets/images/footerTwitch.png';
+import downArrow from 'assets/images/downArrow.png';
 import { Arrow, BottomContainer, FooterContainer, TopContainer } from './styles';
 
 const Footer = () => {

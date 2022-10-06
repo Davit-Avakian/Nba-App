@@ -1,12 +1,12 @@
 import React, { useRef, useState } from 'react';
-import trending from '@data/trending.js';
-import firstTrending from '@images/firstTrending.jpg';
-import secondTrending from '@images/secondTrending.jpg';
-import thirdTrending from '@images/thirdTrending.jpg';
-import fourthTrending from '@images/fourthTrending.jpg';
-import fifthTrending from '@images/fifthTrending.jpg';
-import sixthTrending from '@images/sixthTrending.jpg';
-import rightArrow from '@images/rightArrow.png';
+import trending from 'data/trending.js';
+import firstTrending from 'assets/images/firstTrending.jpg';
+import secondTrending from 'assets/images/secondTrending.jpg';
+import thirdTrending from 'assets/images/thirdTrending.jpg';
+import fourthTrending from 'assets/images/fourthTrending.jpg';
+import fifthTrending from 'assets/images/fifthTrending.jpg';
+import sixthTrending from 'assets/images/sixthTrending.jpg';
+import rightArrow from 'assets/images/rightArrow.png';
 import { ImageContainer, LeftArrow, RightArrow, TrendingContainer, TrendingItem } from './styles';
 import { ContainerTitle } from '../../App.styled';
 

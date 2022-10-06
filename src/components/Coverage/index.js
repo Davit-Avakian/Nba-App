@@ -1,7 +1,7 @@
 import React from 'react';
-import coverage from '@data/coverage';
-import firstCoverage from '@images/firstCoverage.jpg';
-import secondCoverage from '@images/secondCoverage.jpg';
+import coverage from 'data/coverage';
+import firstCoverage from 'assets/images/firstCoverage.jpg';
+import secondCoverage from 'assets/images/secondCoverage.jpg';
 import { CoverageContainer, CoverageItem } from './styles';
 import { ContainerTitle } from '../../App.styled';
 

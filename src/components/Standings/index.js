@@ -1,10 +1,41 @@
-import React, { useState } from 'react';
-import { eastTeams, westTeams } from '@data/teams';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { ContainerTitle } from '../../App.styled';
 import { ButtonsContainer, StandingsContainer, TeamList, TeamName } from './styles';
 
 const Standings = () => {
   const [conference, setConference] = useState('East');
+  const [eastTeams, setEastTeams] = useState([]);
+  const [westTeams, setWestTeams] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const estTeams = [];
+      const wstTeams = [];
+
+      try {
+        const {
+          data: { data }
+        } = await axios.get(`http://api.isportsapi.com/sport/basketball/standing/league?api_key=oL4R9ztcBsE1CoZI
+        &leagueId=111&season=21-22`);
+
+        console.log(data);
+
+        data.forEach((team) => {
+          if (team.leagueName === 'NBA Eastern') {
+            estTeams.push(team);
+          } else {
+            wstTeams.push(team);
+          }
+        });
+
+        setEastTeams(estTeams);
+        setWestTeams(wstTeams);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, []);
 
   return (
     <StandingsContainer>
@@ -67,7 +98,7 @@ const Standings = () => {
                               <span>
                                 <b>{index + 1}</b>
                               </span>
-                              <TeamName>{teamName}</TeamName>
+                              <TeamName>{teamName.split(' ')[0]}</TeamName>
                             </a>
                           </td>
 
@@ -115,7 +146,7 @@ const Standings = () => {
                               <span>
                                 <b>{index + 1}</b>
                               </span>
-                              <TeamName>{teamName}</TeamName>
+                              <TeamName>{teamName.split(' ')[0]}</TeamName>
                             </a>
                           </td>
 

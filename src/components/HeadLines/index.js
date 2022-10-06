@@ -1,5 +1,5 @@
 import React from 'react';
-import headlines from '@data/headlines';
+import headlines from 'data/headlines';
 import { HeadLinesContainer } from './styles';
 
 const HeadLines = () => {

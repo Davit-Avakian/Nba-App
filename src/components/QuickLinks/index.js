@@ -1,5 +1,5 @@
 import React from 'react';
-import share from '@images/share.jpg';
+import share from 'assets/images/share.jpg';
 import { LinksContainer } from './styles';
 import { ContainerTitle } from '../../App.styled';
 

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import news from '@data/news';
-import firstTopic from '@images/firstTopic.png';
-import secondTopic from '@images/secondTopic.png';
-import thirdTopic from '@images/thirdTopic.png';
-import fourthTopic from '@images/fourthTopic.png';
-import fifthTopic from '@images/fifthTopic.png';
+import news from 'data/news';
+import firstTopic from 'assets/images/firstTopic.png';
+import secondTopic from 'assets/images/secondTopic.png';
+import thirdTopic from 'assets/images/thirdTopic.png';
+import fourthTopic from 'assets/images/fourthTopic.png';
+import fifthTopic from 'assets/images/fifthTopic.png';
 import {
   ActiveImage,
   ActiveTopic,

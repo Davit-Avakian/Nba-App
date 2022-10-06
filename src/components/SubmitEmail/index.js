@@ -1,5 +1,5 @@
 import React from 'react';
-import logoImg from '@images/headerLogo.svg';
+import logoImg from 'assets/images/headerLogo.svg';
 import { EmailContainer } from './styles';
 
 const SubmitEmail = () => {

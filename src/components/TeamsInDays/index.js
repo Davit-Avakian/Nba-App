@@ -1,12 +1,12 @@
 import React, { useRef, useState } from 'react';
-import teamsInDays from '@data/teamsInDays';
-import firstTeam from '@images/firstTeam.jpeg';
-import secondTeam from '@images/secondTeam.jpeg';
-import thirdTeam from '@images/thirdTeam.jpeg';
-import fourthTeam from '@images/fourthTeam.jpeg';
-import fifthTeam from '@images/fifthTeam.jpeg';
-import sixthTeam from '@images/sixthTeam.jpeg';
-import rightArrow from '@images/rightArrow.png';
+import teamsInDays from 'data/teamsInDays';
+import firstTeam from 'assets/images/firstTeam.jpeg';
+import secondTeam from 'assets/images/secondTeam.jpeg';
+import thirdTeam from 'assets/images/thirdTeam.jpeg';
+import fourthTeam from 'assets/images/fourthTeam.jpeg';
+import fifthTeam from 'assets/images/fifthTeam.jpeg';
+import sixthTeam from 'assets/images/sixthTeam.jpeg';
+import rightArrow from 'assets/images/rightArrow.png';
 import { LeftArrow, RightArrow, Team, TeamsContainer } from './styles';
 import { ContainerTitle } from '../../App.styled';
 

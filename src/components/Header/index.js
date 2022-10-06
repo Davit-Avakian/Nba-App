@@ -1,18 +1,18 @@
 import React from 'react';
-import logoImg from '@images/headerLogo.svg';
-import moreImg from '@images/headerMore.png';
-import closeImg from '@images/closeImg.png';
-import menuImg from '@images/menuImage.png';
-import storeImage from '@images/storeImage.svg';
-import leagueInfo from '../../data/leagueInfo';
-import firstLeague from '@images/firstLeague.svg';
-import secondLeague from '@images/secondLeague.svg';
-import thirdLeague from '@images/thirdLeague.svg';
-import fourthLeague from '@images/fourthLeague.svg';
-import fifthLeague from '@images/fifthLeague.svg';
-import sixthLeague from '@images/sixthLeague.svg';
-import seventhLeague from '@images/seventhLeague.svg';
-import eighthLeague from '@images/eighthLeague.svg';
+import logoImg from 'assets/images/headerLogo.svg';
+import moreImg from 'assets/images/headerMore.png';
+import closeImg from 'assets/images/closeImg.png';
+import menuImg from 'assets/images/menuImage.png';
+import storeImage from 'assets/images/storeImage.svg';
+import leagueInfo from 'data/leagueInfo';
+import firstLeague from 'assets/images/firstLeague.svg';
+import secondLeague from 'assets/images/secondLeague.svg';
+import thirdLeague from 'assets/images/thirdLeague.svg';
+import fourthLeague from 'assets/images/fourthLeague.svg';
+import fifthLeague from 'assets/images/fifthLeague.svg';
+import sixthLeague from 'assets/images/sixthLeague.svg';
+import seventhLeague from 'assets/images/seventhLeague.svg';
+import eighthLeague from 'assets/images/eighthLeague.svg';
 import {
   FantasyLink,
   GamesLink,
