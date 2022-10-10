@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 // import axios from 'axios';
 import { ContainerTitle } from '../../App.styled';
 import { ButtonsContainer, StandingsContainer, TeamList, TeamName } from './styles';
+import { eastTeams, westTeams } from 'data/teams';
 
 /**
  *  Creates component for Teams Standings
@@ -12,40 +13,40 @@ const Standings = () => {
   const [conference, setConference] = useState('East');
 
   // keeps eastern teams data
-  const [eastTeams, setEastTeams] = useState([]);
+  // const [eastTeams, setEastTeams] = useState([]);
 
   // keeps western teams data
-  const [westTeams, setWestTeams] = useState([]);
+  // const [westTeams, setWestTeams] = useState([]);
 
-  useEffect(() => {
-    (async () => {
-      const estTeams = [];
-      const wstTeams = [];
+  // useEffect(() => {
+  //   (async () => {
+  //     const estTeams = [];
+  //     const wstTeams = [];
 
-      try {
-        // fetch teams data from api
-        // const {
-        //   data: { data }
-        // } = await axios.get(`http://api.isportsapi.com/sport/basketball/standing/league?api_key=oL4R9ztcBsE1CoZI
-        // &leagueId=111&season=21-22`);
+  //     try {
+  //       // fetch teams data from api
+  //       const {
+  //         data: { data }
+  //       } = await axios.get(`http://api.isportsapi.com/sport/basketball/standing/league?api_key=oL4R9ztcBsE1CoZI
+  //       &leagueId=111&season=21-22`);
 
-        // split fetched data into 2 arrays by league type
-        data.forEach((team) => {
-          if (team.leagueName === 'NBA Eastern') {
-            estTeams.push(team);
-          } else {
-            wstTeams.push(team);
-          }
-        });
+  //       // split fetched data into 2 arrays by league type
+  //       data.forEach((team) => {
+  //         if (team.leagueName === 'NBA Eastern') {
+  //           estTeams.push(team);
+  //         } else {
+  //           wstTeams.push(team);
+  //         }
+  //       });
 
-        // store teams in state
-        setEastTeams(estTeams);
-        setWestTeams(wstTeams);
-      } catch (error) {
-        console.log(error);
-      }
-    })();
-  }, []);
+  //       // store teams in state
+  //       setEastTeams(estTeams);
+  //       setWestTeams(wstTeams);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   })();
+  // }, []);
 
   return (
     <StandingsContainer>
