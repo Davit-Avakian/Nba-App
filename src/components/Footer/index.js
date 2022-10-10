@@ -22,12 +22,13 @@ const Footer = () => {
           <span>NBA ORGANIZATION</span>
           <Arrow src={downArrow} />
           <ul>
-            <li>
-              <a>NBA Official</a>
-            </li>
-            <li>
-              <a>NBA Careers</a>
-            </li>
+            {['NBA Official', 'NBA Careers'].map((el) => {
+              return (
+                <li key={el}>
+                  <a>{el}</a>
+                </li>
+              );
+            })}
           </ul>
         </div>
 
@@ -35,18 +36,13 @@ const Footer = () => {
           <span>NBA INITIATIVES</span>
           <Arrow src={downArrow} />
           <ul>
-            <li>
-              <a>NBA Cares</a>
-            </li>
-            <li>
-              <a>Jr. NBA</a>
-            </li>
-            <li>
-              <a>NBA Foundation</a>
-            </li>
-            <li>
-              <a>Social Justice Coalition</a>
-            </li>
+            {['NBA Cares', 'Jr. NBA', 'NBA Foundation', 'Social Justice Coalition'].map((el) => {
+              return (
+                <li key={el}>
+                  <a>{el}</a>
+                </li>
+              );
+            })}
           </ul>
         </div>
 
@@ -54,15 +50,15 @@ const Footer = () => {
           <span>ACROSS THE LEAGUE</span>
           <Arrow src={downArrow} />
           <ul>
-            <li>
-              <a>NBA Communications</a>
-            </li>
-            <li>
-              <a>Lockervision</a>
-            </li>
-            <li>
-              <a>NBA Transactions</a>
-            </li>
+            {['NBA Communications', 'Lockervision', 'NBA Foundation', 'NBA Transactions'].map(
+              (el) => {
+                return (
+                  <li key={el}>
+                    <a>{el}</a>
+                  </li>
+                );
+              }
+            )}
           </ul>
         </div>
 
@@ -70,18 +66,13 @@ const Footer = () => {
           <span>SHOP</span>
           <Arrow src={downArrow} />
           <ul>
-            <li>
-              <a>Global Stores</a>
-            </li>
-            <li>
-              <a>NYC Store</a>
-            </li>
-            <li>
-              <a>NBA Auctions</a>
-            </li>
-            <li>
-              <a>NBA Photostore</a>
-            </li>
+            {['Global Stores', 'NYC Store', 'NBA Auctions', 'NBA Photostore'].map((el) => {
+              return (
+                <li key={el}>
+                  <a>{el}</a>
+                </li>
+              );
+            })}
           </ul>
         </div>
 
@@ -89,12 +80,13 @@ const Footer = () => {
           <span>SUBSCRIPTIONS</span>
           <Arrow src={downArrow} />
           <ul>
-            <li>
-              <a>League Pass</a>
-            </li>
-            <li>
-              <a>Customer Support</a>
-            </li>
+            {['League Pass', 'Customer Support'].map((el) => {
+              return (
+                <li key={el}>
+                  <a>{el}</a>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </TopContainer>
@@ -106,12 +98,16 @@ const Footer = () => {
           <div>© 2022 NBA Media Ventures, LLC. All rights reserved.</div>
 
           <ul>
-            <li>Privacy Policy</li>
-            <li>Terms of Use</li>
-            <li>Accessibility and Closed Captions</li>
-            <li>Do Not Sell My Personal Information</li>
-            <li>Cusomer Support</li>
-            <li>Manage Cookies</li>
+            {[
+              'Privacy Policy',
+              'Terms of Use',
+              'Accessibility and Closed Captions',
+              'Do Not Sell My Personazl Information',
+              'Customef Support',
+              'Manage Cookies'
+            ].map((el) => {
+              return <li key={el}>{el}</li>;
+            })}
           </ul>
 
           <p>

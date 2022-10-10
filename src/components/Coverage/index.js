@@ -4,6 +4,7 @@ import firstCoverage from 'assets/images/firstCoverage.jpg';
 import secondCoverage from 'assets/images/secondCoverage.jpg';
 import { CoverageContainer, CoverageItem } from './styles';
 import { ContainerTitle } from '../../App.styled';
+import { NewsItem } from 'components/SharedComponents';
 
 //keeps imported images for this component
 const images = {
@@ -28,11 +29,11 @@ const Coverage = () => {
             <CoverageItem key={id}>
               <img src={images[image]} />
 
-              <div>
+              <NewsItem>
                 <span>{title}</span>
                 <span>{description}</span>
                 <span>{date}</span>
-              </div>
+              </NewsItem>
             </CoverageItem>
           );
         })}

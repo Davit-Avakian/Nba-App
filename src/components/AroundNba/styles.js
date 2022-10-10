@@ -23,37 +23,6 @@ export const AroundContainer = styled.div`
       img {
         height: 7.3rem;
       }
-
-      div {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 0.5rem 0.75rem;
-      }
-    }
-
-    .title {
-      text-transform: uppercase;
-      font-family: titleFont;
-      font-weight: 400;
-      font-size: 1.5rem;
-      line-height: normal;
-      margin-right: 0.5rem;
-    }
-
-    .description {
-      font-family: Roboto, Arial, sans-serif;
-      font-weight: 400;
-      font-size: 0.875rem;
-      margin: 0.8rem 0;
-    }
-
-    .date {
-      font-family: Roboto, Arial, sans-serif;
-      font-weight: 400;
-      font-size: 0.75rem;
-      line-height: 1.25;
-      color: #868481;
     }
   }
 

@@ -14,39 +14,34 @@ import sixthLeague from 'assets/images/sixthLeague.svg';
 import seventhLeague from 'assets/images/seventhLeague.svg';
 import eighthLeague from 'assets/images/eighthLeague.svg';
 import {
-  FantasyLink,
-  GamesLink,
   GamesPopUp,
   HeaderContainer,
   ImageLink,
   ImagePopUp,
-  LeagueLink,
   Logo,
   MainContainer,
   MenuImage,
-  NbaLink,
-  NbaPopUp,
-  NewsLink,
-  NewsPopUp,
-  PlayersLink,
-  PlayersPopUp,
-  ScheduleLink,
   SchedulePopUp,
   SignInContainer,
-  SignInLink,
   SignInPopUp,
-  StandingsLink,
-  StandingsPopUp,
-  StatsLink,
-  StatsPopUp,
   StoreLink,
   StorePopUp,
-  TeamsLink,
   TicketsLink,
-  TicketsPopUp,
-  WatchLink,
-  WatchPopUp
+  PopUp,
+  Link
 } from './styles';
+import {
+  GamesLinks,
+  NbaLinks,
+  NewsLinks,
+  PlayersLinks,
+  ScheduleLinks,
+  StandingsLinks,
+  StatsLinks,
+  StoreLinks,
+  TicketsLinks,
+  WatchLinks
+} from 'data/links';
 
 // keeps imported images for this component
 const images = {
@@ -78,121 +73,96 @@ const Header = ({ setShowMenu, showMenu }) => {
         <Logo src={logoImg} alt="" />
         {!showMenu && (
           <div>
-            <GamesLink>
+            <Link>
               <span>Games</span>
               <GamesPopUp>
                 <ul>
-                  <li>
-                    <a>Home</a>
-                  </li>
-                  <li>
-                    <a>Tickets</a>
-                  </li>
+                  {GamesLinks.map((el) => {
+                    return <li key={el}>{el}</li>;
+                  })}
                 </ul>
               </GamesPopUp>
-            </GamesLink>
-            <ScheduleLink>
+            </Link>
+            <Link>
               <span>Schedule</span>
               <SchedulePopUp>
                 <ul>
-                  <li>
-                    <a>2022-23 Season Schedule</a>
-                  </li>
-                  <li>
-                    <a>League Pass Schedule</a>
-                  </li>
-                  <li>
-                    <a>Key Dates</a>
-                  </li>
-                  <li>
-                    <a>Tickets</a>
-                  </li>
+                  {ScheduleLinks.map((el) => {
+                    return (
+                      <li key={el}>
+                        <a>{el}</a>
+                      </li>
+                    );
+                  })}
                 </ul>
               </SchedulePopUp>
-            </ScheduleLink>
-            <WatchLink>
+            </Link>
+            <Link>
               <span>Watch</span>
-              <WatchPopUp>
+              <PopUp>
                 <ul>
-                  <li>Featured</li>
-                  <li>NBA TV</li>
+                  {WatchLinks.map((el) => {
+                    return <li key={el}>{el}</li>;
+                  })}
                 </ul>
-              </WatchPopUp>
-            </WatchLink>
-            <NewsLink>
+              </PopUp>
+            </Link>
+            <Link>
               <span>News</span>
-              <NewsPopUp>
+              <PopUp width={170}>
                 <ul>
-                  <li>Home</li>
-                  <li>Top Stories</li>
-                  <li>30 Teams in 30 Days</li>
-                  <li>New Uniforms</li>
-                  <li>Hall of Fame</li>
-                  <li>Free Agency</li>
-                  <li>Draft</li>
-                  <li>Features</li>
-                  <li>Writer Archive</li>
-                  <li>More</li>
+                  {NewsLinks.map((el) => {
+                    return <li key={el}>{el}</li>;
+                  })}
                 </ul>
-              </NewsPopUp>
-            </NewsLink>
-            <StatsLink>
+              </PopUp>
+            </Link>
+            <Link>
               <span>Stats</span>
-              <StatsPopUp>
+              <PopUp width={210}>
                 <ul>
-                  <li>Home</li>
-                  <li>Players</li>
-                  <li>Teams</li>
-                  <li>Leaders</li>
-                  <li>Stats 101</li>
-                  <li>Cume Stats</li>
-                  <li>Lineups Tool</li>
-                  <li>Media Central Game Stats</li>
-                  <li>Draft</li>
-                  <li>Quick Links</li>
-                  <li>Contact Us</li>
+                  {StatsLinks.map((el) => {
+                    return <li key={el}>{el}</li>;
+                  })}
                 </ul>
-              </StatsPopUp>
-            </StatsLink>
-            <StandingsLink>
+              </PopUp>
+            </Link>
+            <Link>
               <span>Standings</span>
-              <StandingsPopUp>
+              <PopUp minWidth={250}>
                 <ul>
-                  <li>2021-22 Standings</li>
-                  <li>2022-23 Preseason Results</li>
+                  {StandingsLinks.map((el) => {
+                    return <li key={el}>{el}</li>;
+                  })}
                 </ul>
-              </StandingsPopUp>
-            </StandingsLink>
-            <TeamsLink>
+              </PopUp>
+            </Link>
+            <Link>
               <span>Teams</span>
-            </TeamsLink>
-            <PlayersLink>
+            </Link>
+            <Link>
               <span>Players</span>
-              <PlayersPopUp>
+              <PopUp width={160}>
                 <ul>
-                  <li>Home</li>
-                  <li>Player Stats</li>
-                  <li>Starting Lineups</li>
-                  <li>Transactions</li>
+                  {PlayersLinks.map((el) => {
+                    return <li key={el}>{el}</li>;
+                  })}
                 </ul>
-              </PlayersPopUp>
-            </PlayersLink>
-            <FantasyLink>
+              </PopUp>
+            </Link>
+            <Link>
               <span>Fantasy</span>
-            </FantasyLink>
-            <NbaLink>
+            </Link>
+            <Link>
               <span>NBABet</span>
-              <NbaPopUp>
+              <PopUp width={240}>
                 <ul>
-                  <li>NBABet Home</li>
-                  <li>Authorized Gaming Operators</li>
-                  <li>Yahoo Fantasy Sports</li>
-                  <li>FanDuel DFS</li>
-                  <li>DraftKings DFS</li>
-                  <li>Starting Lineups</li>
+                  {NbaLinks.map((el) => {
+                    return <li key={el}>{el}</li>;
+                  })}
                 </ul>
-              </NbaPopUp>
-            </NbaLink>
+              </PopUp>
+            </Link>
           </div>
         )}
       </MainContainer>
@@ -200,9 +170,9 @@ const Header = ({ setShowMenu, showMenu }) => {
       <SignInContainer>
         <div>
           {!showMenu && (
-            <LeagueLink>
+            <Link>
               <span>League Pass</span>
-            </LeagueLink>
+            </Link>
           )}
 
           {!showMenu && (
@@ -213,17 +183,9 @@ const Header = ({ setShowMenu, showMenu }) => {
                   <li>
                     <img src={storeImage} />
                   </li>
-                  <li>Jerseys</li>
-                  <li>Men</li>
-                  <li>Women</li>
-                  <li>Custom Shop</li>
-                  <li>Hardwood Classic</li>
-                  <li>Hats</li>
-                  <li>Footwear</li>
-                  <li>Auctions</li>
-                  <li>NBA Game Worn</li>
-                  <li>NYC Store</li>
-                  <li>NBA Photo Store</li>
+                  {StoreLinks.map((el) => {
+                    return <li key={el}>{el}</li>;
+                  })}
                 </ul>
               </StorePopUp>
             </StoreLink>
@@ -231,12 +193,13 @@ const Header = ({ setShowMenu, showMenu }) => {
           {!showMenu && (
             <TicketsLink>
               <span>Tickets</span>
-              <TicketsPopUp>
+              <PopUp width={240}>
                 <ul>
-                  <li>NBATickets.com</li>
-                  <li>Official Tickets by Ticketmaster</li>
+                  {TicketsLinks.map((el) => {
+                    return <li key={el}>{el}</li>;
+                  })}
                 </ul>
-              </TicketsPopUp>
+              </PopUp>
             </TicketsLink>
           )}
         </div>
@@ -258,7 +221,7 @@ const Header = ({ setShowMenu, showMenu }) => {
             </ImagePopUp>
           </ImageLink>
         )}
-        <SignInLink>
+        <Link>
           <span>Sign in</span>
           <SignInPopUp>
             <a>
@@ -270,7 +233,7 @@ const Header = ({ setShowMenu, showMenu }) => {
             </div>
             <a>Help</a>
           </SignInPopUp>
-        </SignInLink>
+        </Link>
       </SignInContainer>
     </HeaderContainer>
   );

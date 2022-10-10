@@ -32,15 +32,9 @@ export const SignInContainer = styled.div`
   }
 `;
 
-export const Link = styled.div`
-  box-sizing: border-box;
-  padding-top: 20px;
-  display: inline-block;
-  position: relative;
-  height: 100%;
-`;
-
-const PopUp = styled.div`
+export const PopUp = styled.div`
+  width: ${({ width }) => width};
+  min-width: ${({ minWidth }) => minWidth};
   left: -5%;
   top: 100%;
   position: absolute;
@@ -69,16 +63,22 @@ const PopUp = styled.div`
   }
 `;
 
-export const GamesPopUp = styled(PopUp)`
-  li {
-    width: 52%;
+export const Link = styled.div`
+  box-sizing: border-box;
+  padding-top: 20px;
+  display: inline-block;
+  position: relative;
+  height: 100%;
+
+  &:hover ${PopUp} {
+    visibility: visible;
+    opacity: 1;
   }
 `;
 
-export const GamesLink = styled(Link)`
-  &:hover ${GamesPopUp} {
-    visibility: visible;
-    opacity: 1;
+export const GamesPopUp = styled(PopUp)`
+  li {
+    width: 52%;
   }
 `;
 
@@ -89,83 +89,6 @@ export const SchedulePopUp = styled(PopUp)`
     width: 83%;
   }
 `;
-
-export const ScheduleLink = styled(Link)`
-  &:hover ${SchedulePopUp} {
-    visibility: visible;
-    opacity: 1;
-  }
-`;
-
-export const WatchPopUp = styled(PopUp)``;
-
-export const WatchLink = styled(Link)`
-  &:hover ${WatchPopUp} {
-    visibility: visible;
-    opacity: 1;
-  }
-`;
-
-export const NewsPopUp = styled(PopUp)`
-  width: 170px;
-`;
-
-export const NewsLink = styled(Link)`
-  &:hover ${NewsPopUp} {
-    visibility: visible;
-    opacity: 1;
-  }
-`;
-
-export const StatsPopUp = styled(PopUp)`
-  width: 210px;
-`;
-
-export const StatsLink = styled(Link)`
-  &:hover ${StatsPopUp} {
-    visibility: visible;
-    opacity: 1;
-  }
-`;
-
-export const StandingsPopUp = styled(PopUp)`
-  min-width: 250px;
-`;
-
-export const StandingsLink = styled(Link)`
-  &:hover ${StandingsPopUp} {
-    visibility: visible;
-    opacity: 1;
-  }
-`;
-
-export const TeamsLink = styled(Link)``;
-
-export const PlayersPopUp = styled(PopUp)`
-  width: 160px;
-`;
-
-export const PlayersLink = styled(Link)`
-  &:hover ${PlayersPopUp} {
-    visibility: visible;
-    opacity: 1;
-  }
-`;
-
-export const FantasyLink = styled(Link)``;
-
-export const NbaPopUp = styled(PopUp)`
-  width: 240px;
-`;
-
-export const NbaLink = styled(Link)`
-  &:hover ${NbaPopUp} {
-    visibility: visible;
-    opacity: 1;
-  }
-`;
-
-export const LeagueLink = styled(Link)``;
 
 export const StorePopUp = styled(PopUp)`
   width: 160px;
@@ -185,17 +108,8 @@ export const StoreLink = styled(Link)`
   }
 `;
 
-export const TicketsPopUp = styled(PopUp)`
-  width: 240px;
-`;
-
 export const TicketsLink = styled(Link)`
   height: 55px !important;
-
-  &:hover ${TicketsPopUp} {
-    visibility: visible;
-    opacity: 1;
-  }
 `;
 
 export const ImagePopUp = styled(PopUp)`
@@ -301,13 +215,6 @@ export const SignInPopUp = styled(PopUp)`
   }
 `;
 
-export const SignInLink = styled(Link)`
-  &:hover ${SignInPopUp} {
-    visibility: visible;
-    opacity: 1;
-  }
-`;
-
 export const HeaderContainer = styled.div`
   position: fixed;
   top: 0;
@@ -350,43 +257,47 @@ export const HeaderContainer = styled.div`
   }
 
   @media (max-width: 1000px) {
-    ${StoreLink}, ${LeagueLink} {
+    ${StoreLink}, ${SignInContainer} div:first-child {
       display: none;
     }
   }
 
   @media (max-width: 840px) {
-    ${NbaLink} {
+    ${MainContainer} div:nth-child(10) {
       display: none;
     }
   }
 
   @media (max-width: 770px) {
-    ${FantasyLink} {
+    ${MainContainer} div:nth-child(9) {
       display: none;
     }
   }
 
   @media (max-width: 710px) {
-    ${PlayersLink}, ${TeamsLink} {
+    ${MainContainer} div:nth-child(8),
+    ${MainContainer} div:nth-child(7) {
       display: none;
     }
   }
 
   @media (max-width: 570px) {
-    ${StandingsLink}, ${StatsLink} {
+    ${MainContainer} div:nth-child(6),
+    ${MainContainer} div:nth-child(5) {
       display: none;
     }
   }
 
   @media (max-width: 450px) {
-    ${NewsLink}, ${WatchLink} {
+    ${MainContainer} div:nth-child(4),
+    ${MainContainer} div:nth-child(3) {
       display: none;
     }
   }
 
   @media (max-width: 400px) {
-    ${ScheduleLink}, ${GamesLink} {
+    ${MainContainer} div:nth-child(2),
+    ${MainContainer} div:nth-child(1) {
       display: none;
     }
   }

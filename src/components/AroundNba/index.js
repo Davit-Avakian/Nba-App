@@ -13,6 +13,7 @@ import tenthAround from 'assets/images/tenthAround.jpg';
 import eleventhAround from 'assets/images/eleventhAround.jpg';
 import { AroundContainer } from './styles';
 import { ContainerTitle } from '../../App.styled';
+import { NewsItem } from 'components/SharedComponents';
 
 //keeps imported images for this component
 const images = {
@@ -47,11 +48,11 @@ const AroundNba = () => {
               <a href="">
                 <img src={images[image]} />
               </a>
-              <div>
-                <span className="title">{title}</span>
-                <span className="description">{description}</span>
-                <span className="date">{date}</span>
-              </div>
+              <NewsItem>
+                <span>{title}</span>
+                <span>{description}</span>
+                <span>{date}</span>
+              </NewsItem>
             </li>
           );
         })}
