@@ -1,20 +1,54 @@
-import React from "react";
-import "./styles.css";
-import logoImg from "../../images/headerLogo.svg";
-import moreImg from "../../images/headerMore.png";
-import closeImg from "../../images/closeImage.png";
-import menuImg from "../../images/menuImage.png";
-import storeImage from "../../images/storeImage.svg";
-import leagueInfo from "../../data/leagueInfo";
-import firstLeague from "../../images/firstLeague.svg";
-import secondLeague from "../../images/secondLeague.svg";
-import thirdLeague from "../../images/thirdLeague.svg";
-import fourthLeague from "../../images/fourthLeague.svg";
-import fifthLeague from "../../images/fifthLeague.svg";
-import sixthLeague from "../../images/sixthLeague.svg";
-import seventhLeague from "../../images/seventhLeague.svg";
-import eighthLeague from "../../images/eighthLeague.svg";
+import React from 'react';
+import logoImg from 'assets/images/headerLogo.svg';
+import moreImg from 'assets/images/headerMore.png';
+import closeImg from 'assets/images/closeImg.png';
+import menuImg from 'assets/images/menuImage.png';
+import storeImage from 'assets/images/storeImage.svg';
+import leagueInfo from 'data/leagueInfo';
+import firstLeague from 'assets/images/firstLeague.svg';
+import secondLeague from 'assets/images/secondLeague.svg';
+import thirdLeague from 'assets/images/thirdLeague.svg';
+import fourthLeague from 'assets/images/fourthLeague.svg';
+import fifthLeague from 'assets/images/fifthLeague.svg';
+import sixthLeague from 'assets/images/sixthLeague.svg';
+import seventhLeague from 'assets/images/seventhLeague.svg';
+import eighthLeague from 'assets/images/eighthLeague.svg';
+import {
+  FantasyLink,
+  GamesLink,
+  GamesPopUp,
+  HeaderContainer,
+  ImageLink,
+  ImagePopUp,
+  LeagueLink,
+  Logo,
+  MainContainer,
+  MenuImage,
+  NbaLink,
+  NbaPopUp,
+  NewsLink,
+  NewsPopUp,
+  PlayersLink,
+  PlayersPopUp,
+  ScheduleLink,
+  SchedulePopUp,
+  SignInContainer,
+  SignInLink,
+  SignInPopUp,
+  StandingsLink,
+  StandingsPopUp,
+  StatsLink,
+  StatsPopUp,
+  StoreLink,
+  StorePopUp,
+  TeamsLink,
+  TicketsLink,
+  TicketsPopUp,
+  WatchLink,
+  WatchPopUp
+} from './styles';
 
+// keeps imported images for this component
 const images = {
   firstLeague,
   secondLeague,
@@ -23,25 +57,30 @@ const images = {
   fifthLeague,
   sixthLeague,
   seventhLeague,
-  eighthLeague,
+  eighthLeague
 };
 
+/**
+ *  Creates header and its items
+ *  @param {function} setShowMenu function for showing or hiding menu
+ *  @param {boolean} showMenu boolean that shows if menu is open or closed
+ *  @returns {component} Header Component
+ */
 const Header = ({ setShowMenu, showMenu }) => {
   return (
-    <div className="Header-Container">
-      <div className="Header-Main-Container">
-        <img
+    <HeaderContainer>
+      <MainContainer>
+        <MenuImage
           src={showMenu ? closeImg : menuImg}
-          className="Menu-Icon"
           alt=""
           onClick={() => setShowMenu((prev) => !prev)}
         />
-        <img src={logoImg} className="Header-Logo" alt="" />
+        <Logo src={logoImg} alt="" />
         {!showMenu && (
           <div>
-            <div className="Header-Link Games-Link">
+            <GamesLink>
               <span>Games</span>
-              <div className="Header-PopUp Games-PopUp">
+              <GamesPopUp>
                 <ul>
                   <li>
                     <a>Home</a>
@@ -50,11 +89,11 @@ const Header = ({ setShowMenu, showMenu }) => {
                     <a>Tickets</a>
                   </li>
                 </ul>
-              </div>
-            </div>
-            <div className="Header-Link Schedule-Link">
+              </GamesPopUp>
+            </GamesLink>
+            <ScheduleLink>
               <span>Schedule</span>
-              <div className="Header-PopUp Schedule-PopUp">
+              <SchedulePopUp>
                 <ul>
                   <li>
                     <a>2022-23 Season Schedule</a>
@@ -69,20 +108,20 @@ const Header = ({ setShowMenu, showMenu }) => {
                     <a>Tickets</a>
                   </li>
                 </ul>
-              </div>
-            </div>
-            <div className="Header-Link Watch-Link">
+              </SchedulePopUp>
+            </ScheduleLink>
+            <WatchLink>
               <span>Watch</span>
-              <div className="Header-PopUp Watch-PopUp">
+              <WatchPopUp>
                 <ul>
                   <li>Featured</li>
                   <li>NBA TV</li>
                 </ul>
-              </div>
-            </div>
-            <div className="Header-Link News-Link">
+              </WatchPopUp>
+            </WatchLink>
+            <NewsLink>
               <span>News</span>
-              <div className="Header-PopUp News-PopUp">
+              <NewsPopUp>
                 <ul>
                   <li>Home</li>
                   <li>Top Stories</li>
@@ -95,11 +134,11 @@ const Header = ({ setShowMenu, showMenu }) => {
                   <li>Writer Archive</li>
                   <li>More</li>
                 </ul>
-              </div>
-            </div>
-            <div className="Header-Link Stats-Link">
+              </NewsPopUp>
+            </NewsLink>
+            <StatsLink>
               <span>Stats</span>
-              <div className="Header-PopUp Stats-PopUp">
+              <StatsPopUp>
                 <ul>
                   <li>Home</li>
                   <li>Players</li>
@@ -113,49 +152,37 @@ const Header = ({ setShowMenu, showMenu }) => {
                   <li>Quick Links</li>
                   <li>Contact Us</li>
                 </ul>
-              </div>
-            </div>
-            <div className="Header-Link">
+              </StatsPopUp>
+            </StatsLink>
+            <StandingsLink>
               <span>Standings</span>
-              <div className="Header-PopUp">
+              <StandingsPopUp>
                 <ul>
-                  <li>Home</li>
-                  <li>Tickets</li>
+                  <li>2021-22 Standings</li>
+                  <li>2022-23 Preseason Results</li>
                 </ul>
-              </div>
-            </div>
-            <div className="Header-Link">
+              </StandingsPopUp>
+            </StandingsLink>
+            <TeamsLink>
               <span>Teams</span>
-              <div className="Header-PopUp">
-                <ul>
-                  <li>Home</li>
-                  <li>Tickets</li>
-                </ul>
-              </div>
-            </div>
-            <div className="Header-Link Players-Link">
+            </TeamsLink>
+            <PlayersLink>
               <span>Players</span>
-              <div className="Header-PopUp Players-PopUp">
+              <PlayersPopUp>
                 <ul>
                   <li>Home</li>
                   <li>Player Stats</li>
                   <li>Starting Lineups</li>
                   <li>Transactions</li>
                 </ul>
-              </div>
-            </div>
-            <div className="Header-Link">
+              </PlayersPopUp>
+            </PlayersLink>
+            <FantasyLink>
               <span>Fantasy</span>
-              <div className="Header-PopUp">
-                <ul>
-                  <li>Home</li>
-                  <li>Tickets</li>
-                </ul>
-              </div>
-            </div>
-            <div className="Header-Link NbaBet-Link">
+            </FantasyLink>
+            <NbaLink>
               <span>NBABet</span>
-              <div className="Header-PopUp NbaBet-PopUp">
+              <NbaPopUp>
                 <ul>
                   <li>NBABet Home</li>
                   <li>Authorized Gaming Operators</li>
@@ -164,30 +191,24 @@ const Header = ({ setShowMenu, showMenu }) => {
                   <li>DraftKings DFS</li>
                   <li>Starting Lineups</li>
                 </ul>
-              </div>
-            </div>
+              </NbaPopUp>
+            </NbaLink>
           </div>
         )}
-      </div>
+      </MainContainer>
 
-      <div className="Header-SignIn-Container">
+      <SignInContainer>
         <div>
           {!showMenu && (
-            <div className="Header-Link League-Link">
+            <LeagueLink>
               <span>League Pass</span>
-              <div className="Header-PopUp">
-                <ul>
-                  <li>Home</li>
-                  <li>Tickets</li>
-                </ul>
-              </div>
-            </div>
+            </LeagueLink>
           )}
 
           {!showMenu && (
-            <div className="Header-Link Store-Link">
+            <StoreLink>
               <span>Store</span>
-              <div className="Header-PopUp Store-PopUp">
+              <StorePopUp>
                 <ul>
                   <li>
                     <img src={storeImage} />
@@ -204,38 +225,42 @@ const Header = ({ setShowMenu, showMenu }) => {
                   <li>NYC Store</li>
                   <li>NBA Photo Store</li>
                 </ul>
-              </div>
-            </div>
+              </StorePopUp>
+            </StoreLink>
           )}
-          {!showMenu && <div className="Header-Link Tickets-Link">
-            <span>Tickets</span>
-            <div className="Header-PopUp Tickets-PopUp">
-              <ul>
-                <li>NBATickets.com</li>
-                <li>Official Tickets by Ticketmaster</li>
-              </ul>
-            </div>
-          </div>}
+          {!showMenu && (
+            <TicketsLink>
+              <span>Tickets</span>
+              <TicketsPopUp>
+                <ul>
+                  <li>NBATickets.com</li>
+                  <li>Official Tickets by Ticketmaster</li>
+                </ul>
+              </TicketsPopUp>
+            </TicketsLink>
+          )}
         </div>
-        <div className="Header-Link Image-Link">
-          <img src={moreImg} alt="" />
+        {!showMenu && (
+          <ImageLink>
+            <img src={moreImg} alt="" />
 
-          <div className="Header-PopUp Image-PopUp">
-            <ul>
-              {leagueInfo.map(({ id, title, image }) => {
-                return (
-                  <li key={id}>
-                    <img src={images[image]} />
-                    <span>{title}</span>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        </div>
-        <div className="Header-Link SignIn-Link">
+            <ImagePopUp>
+              <ul>
+                {leagueInfo.map(({ id, title, image }) => {
+                  return (
+                    <li key={id}>
+                      <img src={images[image]} />
+                      <span>{title}</span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </ImagePopUp>
+          </ImageLink>
+        )}
+        <SignInLink>
           <span>Sign in</span>
-          <div className="Header-PopUp SignIn-PopUp">
+          <SignInPopUp>
             <a>
               <b>Sign in with NBA ID</b>
             </a>
@@ -244,10 +269,10 @@ const Header = ({ setShowMenu, showMenu }) => {
               <span></span>
             </div>
             <a>Help</a>
-          </div>
-        </div>
-      </div>
-    </div>
+          </SignInPopUp>
+        </SignInLink>
+      </SignInContainer>
+    </HeaderContainer>
   );
 };
 

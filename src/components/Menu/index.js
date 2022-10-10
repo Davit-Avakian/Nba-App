@@ -1,16 +1,42 @@
-import React from "react";
-import "./styles.css";
-import storeImage from "../../images/storeImage.svg";
-import leagueInfo from "../../data/leagueInfo";
-import firstLeague from "../../images/firstLeague.svg";
-import secondLeague from "../../images/secondLeague.svg";
-import thirdLeague from "../../images/thirdLeague.svg";
-import fourthLeague from "../../images/fourthLeague.svg";
-import fifthLeague from "../../images/fifthLeague.svg";
-import sixthLeague from "../../images/sixthLeague.svg";
-import seventhLeague from "../../images/seventhLeague.svg";
-import eighthLeague from "../../images/eighthLeague.svg";
+import React from 'react';
+import storeImage from 'assets/images/storeImage.svg';
+import leagueInfo from 'data/leagueInfo';
+import firstLeague from 'assets/images/firstLeague.svg';
+import secondLeague from 'assets/images/secondLeague.svg';
+import thirdLeague from 'assets/images/thirdLeague.svg';
+import fourthLeague from 'assets/images/fourthLeague.svg';
+import fifthLeague from 'assets/images/fifthLeague.svg';
+import sixthLeague from 'assets/images/sixthLeague.svg';
+import seventhLeague from 'assets/images/seventhLeague.svg';
+import eighthLeague from 'assets/images/eighthLeague.svg';
+import {
+  AffiliatesLink,
+  AffiliatesPopUp,
+  GamesLink,
+  GamesPopUp,
+  Link,
+  MenuContainer,
+  NbaLink,
+  NbaPopUp,
+  NewsLink,
+  NewsPopUp,
+  PlayersLink,
+  PlayersPopUp,
+  ScheduleLink,
+  SchedulePopUp,
+  StandingsLink,
+  StandingsPopUp,
+  StatsLink,
+  StatsPopUp,
+  StoreLink,
+  StorePopUp,
+  TicketsLink,
+  TicketsPopUp,
+  WatchLink,
+  WatchPopUp
+} from './styles';
 
+// keeps imported images
 const images = {
   firstLeague,
   secondLeague,
@@ -19,16 +45,20 @@ const images = {
   fifthLeague,
   sixthLeague,
   seventhLeague,
-  eighthLeague,
+  eighthLeague
 };
 
+/**
+ *  Creates Menu component for mobile
+ *  @returns {component} Menu component contains all header information for mobile users
+ */
 const Menu = () => {
   return (
-    <div className="Menu-Container">
+    <MenuContainer>
       <div>
-        <div className="Menu-Link Games-Link">
+        <GamesLink>
           <span>Games</span>
-          <div className="Menu-PopUp Games-PopUp">
+          <GamesPopUp>
             <ul>
               <li>
                 <a>Home</a>
@@ -37,11 +67,11 @@ const Menu = () => {
                 <a>Tickets</a>
               </li>
             </ul>
-          </div>
-        </div>
-        <div className="Menu-Link Schedule-Link">
+          </GamesPopUp>
+        </GamesLink>
+        <ScheduleLink>
           <span>Schedule</span>
-          <div className="Menu-PopUp Schedule-PopUp">
+          <SchedulePopUp>
             <ul>
               <li>
                 <a>2022-23 Season Schedule</a>
@@ -56,20 +86,20 @@ const Menu = () => {
                 <a>Tickets</a>
               </li>
             </ul>
-          </div>
-        </div>
-        <div className="Menu-Link Watch-Link">
+          </SchedulePopUp>
+        </ScheduleLink>
+        <WatchLink>
           <span>Watch</span>
-          <div className="Menu-PopUp Watch-PopUp">
+          <WatchPopUp>
             <ul>
               <li>Featured</li>
               <li>NBA TV</li>
             </ul>
-          </div>
-        </div>
-        <div className="Menu-Link News-Link">
+          </WatchPopUp>
+        </WatchLink>
+        <NewsLink>
           <span>News</span>
-          <div className="Menu-PopUp News-PopUp">
+          <NewsPopUp>
             <ul>
               <li>Home</li>
               <li>Top Stories</li>
@@ -82,11 +112,11 @@ const Menu = () => {
               <li>Writer Archive</li>
               <li>More</li>
             </ul>
-          </div>
-        </div>
-        <div className="Menu-Link Stats-Link">
+          </NewsPopUp>
+        </NewsLink>
+        <StatsLink>
           <span>Stats</span>
-          <div className="Menu-PopUp Stats-PopUp">
+          <StatsPopUp>
             <ul>
               <li>Home</li>
               <li>Players</li>
@@ -100,49 +130,37 @@ const Menu = () => {
               <li>Quick Links</li>
               <li>Contact Us</li>
             </ul>
-          </div>
-        </div>
-        <div className="Menu-Link">
+          </StatsPopUp>
+        </StatsLink>
+        <StandingsLink>
           <span>Standings</span>
-          <div className="Menu-PopUp">
+          <StandingsPopUp>
             <ul>
-              <li>Home</li>
-              <li>Tickets</li>
+              <li>2021-22 Standings</li>
+              <li>2022-23 Preseason Results</li>
             </ul>
-          </div>
-        </div>
-        <div className="Menu-Link">
+          </StandingsPopUp>
+        </StandingsLink>
+        <Link>
           <span>Teams</span>
-          <div className="Menu-PopUp">
-            <ul>
-              <li>Home</li>
-              <li>Tickets</li>
-            </ul>
-          </div>
-        </div>
-        <div className="Menu-Link Players-Link">
+        </Link>
+        <PlayersLink>
           <span>Players</span>
-          <div className="Menu-PopUp Players-PopUp">
+          <PlayersPopUp>
             <ul>
               <li>Home</li>
               <li>Player Stats</li>
               <li>Starting Lineups</li>
               <li>Transactions</li>
             </ul>
-          </div>
-        </div>
-        <div className="Menu-Link">
+          </PlayersPopUp>
+        </PlayersLink>
+        <Link>
           <span>Fantasy</span>
-          <div className="Menu-PopUp">
-            <ul>
-              <li>Home</li>
-              <li>Tickets</li>
-            </ul>
-          </div>
-        </div>
-        <div className="Menu-Link Nba-Link">
+        </Link>
+        <NbaLink>
           <span>NBABet</span>
-          <div className="Menu-PopUp NbaBet-PopUp">
+          <NbaPopUp>
             <ul>
               <li>NBABet Home</li>
               <li>Authorized Gaming Operators</li>
@@ -151,24 +169,18 @@ const Menu = () => {
               <li>DraftKings DFS</li>
               <li>Starting Lineups</li>
             </ul>
-          </div>
-        </div>
+          </NbaPopUp>
+        </NbaLink>
 
-        <div className="Menu-Link League-Link">
+        <Link>
           <span>League Pass</span>
-          <div className="Menu-PopUp">
-            <ul>
-              <li>Home</li>
-              <li>Tickets</li>
-            </ul>
-          </div>
-        </div>
-        <div className="Menu-Link Store-Link">
+        </Link>
+        <StoreLink>
           <span>Store</span>
-          <div className="Menu-PopUp Store-PopUp">
+          <StorePopUp>
             <ul>
               <li>
-                <img src={storeImage} style={{ width: '100px' }}/>
+                <img src={storeImage} style={{ width: '100px' }} />
               </li>
               <li>Jerseys</li>
               <li>Men</li>
@@ -182,36 +194,36 @@ const Menu = () => {
               <li>NYC Store</li>
               <li>NBA Photo Store</li>
             </ul>
-          </div>
-        </div>
-        <div className="Menu-Link Tickets-Link">
+          </StorePopUp>
+        </StoreLink>
+        <TicketsLink>
           <span>Tickets</span>
-          <div className="Menu-PopUp Tickets-PopUp">
+          <TicketsPopUp>
             <ul>
               <li>NBATickets.com</li>
               <li>Official Tickets by Ticketmaster</li>
             </ul>
-          </div>
-        </div>
+          </TicketsPopUp>
+        </TicketsLink>
 
-        <div className="Menu-Link Affiliates-Link">
-        <span>Affiliates</span>
+        <AffiliatesLink>
+          <span>Affiliates</span>
 
-        <div className="Menu-PopUp Affiliates-PopUp">
-          <ul>
-            {leagueInfo.map(({ id, title, image }) => {
-              return (
-                <li key={id}>
-                  <img src={images[image]} />
-                  <span>{title}</span>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+          <AffiliatesPopUp>
+            <ul>
+              {leagueInfo.map(({ id, title, image }) => {
+                return (
+                  <li key={id}>
+                    <img src={images[image]} />
+                    <span>{title}</span>
+                  </li>
+                );
+              })}
+            </ul>
+          </AffiliatesPopUp>
+        </AffiliatesLink>
       </div>
-      </div>
-    </div>
+    </MenuContainer>
   );
 };
 

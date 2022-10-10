@@ -1,41 +1,81 @@
-import React, { useState } from "react";
-import "./styles.css";
-import { eastTeams } from "../../data/teams";
-import { westTeams } from "../../data/teams";
+import React, { useState } from 'react';
+// import axios from 'axios';
+import { ContainerTitle } from '../../App.styled';
+import { ButtonsContainer, StandingsContainer, TeamList, TeamName } from './styles';
+import { eastTeams, westTeams } from 'data/teams';
 
+/**
+ *  Creates component for Teams Standings
+ *  @returns {component} Standings component shows league's teams stats and standings
+ */
 const Standings = () => {
-  const [conference, setConference] = useState("East");
+  // keeps information about league type
+  const [conference, setConference] = useState('East');
+
+  // keeps eastern teams data
+  // const [eastTeams, setEastTeams] = useState([]);
+
+  // keeps western teams data
+  // const [westTeams, setWestTeams] = useState([]);
+
+  // useEffect(() => {
+  //   (async () => {
+  //     const estTeams = [];
+  //     const wstTeams = [];
+
+  //     try {
+  //       // fetch teams data from api
+  //       const {
+  //         data: { data }
+  //       } = await axios.get(`http://api.isportsapi.com/sport/basketball/standing/league?api_key=oL4R9ztcBsE1CoZI
+  //       &leagueId=111&season=21-22`);
+
+  //       // split fetched data into 2 arrays by league type
+  //       data.forEach((team) => {
+  //         if (team.leagueName === 'NBA Eastern') {
+  //           estTeams.push(team);
+  //         } else {
+  //           wstTeams.push(team);
+  //         }
+  //       });
+
+  //       // store teams in state
+  //       setEastTeams(estTeams);
+  //       setWestTeams(wstTeams);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   })();
+  // }, []);
 
   return (
-    <div className="Standings-Container">
-      <div className="Container-Title">
+    <StandingsContainer>
+      <ContainerTitle>
         <h1>2021-22 STANDINGS</h1>
         <a>Go to Standings</a>
-      </div>
+      </ContainerTitle>
 
       <div>
-        <div className="Standings-Buttons">
+        <ButtonsContainer>
           <button
             style={{
-              backgroundColor: `${conference === "East" ? "black" : "white"}`,
-              color: `${conference === "East" ? "white" : "black"}`,
+              backgroundColor: `${conference === 'East' ? 'black' : 'white'}`,
+              color: `${conference === 'East' ? 'white' : 'black'}`
             }}
-            onClick={() => setConference("East")}
-          >
+            onClick={() => setConference('East')}>
             EASTERN
           </button>
           <button
             style={{
-              backgroundColor: `${conference === "West" ? "black" : "white"}`,
-              color: `${conference === "West" ? "white" : "black"}`,
+              backgroundColor: `${conference === 'West' ? 'black' : 'white'}`,
+              color: `${conference === 'West' ? 'white' : 'black'}`
             }}
-            onClick={() => setConference("West")}
-          >
+            onClick={() => setConference('West')}>
             WESTERN
           </button>
-        </div>
+        </ButtonsContainer>
 
-        <div className="Teams-List">
+        <TeamList>
           <table>
             <thead>
               <tr>
@@ -47,7 +87,7 @@ const Standings = () => {
             </thead>
 
             <tbody>
-              {conference === "East"
+              {conference === 'East'
                 ? eastTeams.map(
                     (
                       {
@@ -58,7 +98,7 @@ const Standings = () => {
                         awayWin,
                         awayLoss,
                         nearlyTenWin,
-                        nearlyTenLoss,
+                        nearlyTenLoss
                       },
                       index
                     ) => {
@@ -69,7 +109,7 @@ const Standings = () => {
                               <span>
                                 <b>{index + 1}</b>
                               </span>
-                              <span className="Team-Name">{teamName}</span>
+                              <TeamName>{teamName.split(' ')[0]}</TeamName>
                             </a>
                           </td>
 
@@ -81,15 +121,14 @@ const Standings = () => {
                               style={{
                                 backgroundColor: `${
                                   nearlyTenWin - nearlyTenLoss >= 4
-                                    ? "#64bc61"
+                                    ? '#64bc61'
                                     : nearlyTenWin - nearlyTenLoss >= 2
-                                    ? "#d7ee8e"
+                                    ? '#d7ee8e'
                                     : nearlyTenWin - nearlyTenLoss >= -2
-                                    ? "#fedd8d"
-                                    : "#f16e43"
-                                }`,
-                              }}
-                            >
+                                    ? '#fedd8d'
+                                    : '#f16e43'
+                                }`
+                              }}>
                               {nearlyTenWin} - {nearlyTenLoss}
                             </div>
                           </td>
@@ -107,7 +146,7 @@ const Standings = () => {
                         awayWin,
                         awayLoss,
                         nearlyTenWin,
-                        nearlyTenLoss,
+                        nearlyTenLoss
                       },
                       index
                     ) => {
@@ -118,7 +157,7 @@ const Standings = () => {
                               <span>
                                 <b>{index + 1}</b>
                               </span>
-                              <span className="Team-Name">{teamName}</span>
+                              <TeamName>{teamName.split(' ')[0]}</TeamName>
                             </a>
                           </td>
 
@@ -130,15 +169,14 @@ const Standings = () => {
                               style={{
                                 backgroundColor: `${
                                   nearlyTenWin - nearlyTenLoss >= 4
-                                    ? "#64bc61"
+                                    ? '#64bc61'
                                     : nearlyTenWin - nearlyTenLoss >= 2
-                                    ? "#d7ee8e"
+                                    ? '#d7ee8e'
                                     : nearlyTenWin - nearlyTenLoss >= -2
-                                    ? "#fedd8d"
-                                    : "#f16e43"
-                                }`,
-                              }}
-                            >
+                                    ? '#fedd8d'
+                                    : '#f16e43'
+                                }`
+                              }}>
                               {nearlyTenWin} - {nearlyTenLoss}
                             </div>
                           </td>
@@ -148,9 +186,9 @@ const Standings = () => {
                   )}
             </tbody>
           </table>
-        </div>
+        </TeamList>
       </div>
-    </div>
+    </StandingsContainer>
   );
 };
 

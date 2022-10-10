@@ -1,22 +1,26 @@
-import React from "react";
-import "./styles.css";
-import footerImage from "../../images/footerImage.svg";
-import fbImage from "../../images/footerFb.png";
-import instaImage from "../../images/footerInsta.png";
-import snapImage from "../../images/footerSnap.png";
-import tiktokImage from "../../images/footerTiktok.jpg";
-import twitterImage from "../../images/footerTwitter.png";
-import ytImage from "../../images/footerYt.jpeg";
-import twitchImage from "../../images/footerTwitch.png";
-import downArrow from "../../images/downArrow.png";
+import React from 'react';
+import footerImage from 'assets/images/footerImage.svg';
+import fbImage from 'assets/images/footerFb.png';
+import instaImage from 'assets/images/footerInsta.png';
+import snapImage from 'assets/images/footerSnap.png';
+import tiktokImage from 'assets/images/footerTiktok.jpg';
+import twitterImage from 'assets/images/footerTwitter.png';
+import ytImage from 'assets/images/footerYt.jpeg';
+import twitchImage from 'assets/images/footerTwitch.png';
+import downArrow from 'assets/images/downArrow.png';
+import { Arrow, BottomContainer, FooterContainer, TopContainer } from './styles';
 
+/**
+ *  Creates Footer component
+ *  @returns {component} Footer Component shows all social media and shop links
+ */
 const Footer = () => {
   return (
-    <div className="Footer-Container">
-      <div className="Footer-Top">
+    <FooterContainer>
+      <TopContainer>
         <div>
           <span>NBA ORGANIZATION</span>
-          <img className="Down-Arrow" src={downArrow} />
+          <Arrow src={downArrow} />
           <ul>
             <li>
               <a>NBA Official</a>
@@ -29,7 +33,7 @@ const Footer = () => {
 
         <div>
           <span>NBA INITIATIVES</span>
-          <img className="Down-Arrow" src={downArrow} />
+          <Arrow src={downArrow} />
           <ul>
             <li>
               <a>NBA Cares</a>
@@ -48,7 +52,7 @@ const Footer = () => {
 
         <div>
           <span>ACROSS THE LEAGUE</span>
-          <img className="Down-Arrow" src={downArrow} />
+          <Arrow src={downArrow} />
           <ul>
             <li>
               <a>NBA Communications</a>
@@ -64,7 +68,7 @@ const Footer = () => {
 
         <div>
           <span>SHOP</span>
-          <img className="Down-Arrow" src={downArrow} />
+          <Arrow src={downArrow} />
           <ul>
             <li>
               <a>Global Stores</a>
@@ -83,7 +87,7 @@ const Footer = () => {
 
         <div>
           <span>SUBSCRIPTIONS</span>
-          <img className="Down-Arrow" src={downArrow} />
+          <Arrow src={downArrow} />
           <ul>
             <li>
               <a>League Pass</a>
@@ -93,11 +97,11 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-      </div>
+      </TopContainer>
 
       <hr></hr>
 
-      <div className="Footer-Bottom">
+      <BottomContainer>
         <div>
           <div>© 2022 NBA Media Ventures, LLC. All rights reserved.</div>
 
@@ -111,14 +115,11 @@ const Footer = () => {
           </ul>
 
           <p>
-            If you are having difficulty accessing any content on this website,
-            please visit our <a>Accessibility page.</a>
+            If you are having difficulty accessing any content on this website, please visit our{' '}
+            <a>Accessibility page.</a>
           </p>
 
-          <p>
-            NBA.com is part of Warner Media, LLCs Turner Sports Entertainment
-            Digital Network
-          </p>
+          <p>NBA.com is part of Warner Media, LLCs Turner Sports Entertainment Digital Network</p>
 
           <img src={footerImage} alt="" />
         </div>
@@ -132,8 +133,8 @@ const Footer = () => {
           <img src={ytImage} />
           <img src={twitchImage} />
         </div>
-      </div>
-    </div>
+      </BottomContainer>
+    </FooterContainer>
   );
 };
 

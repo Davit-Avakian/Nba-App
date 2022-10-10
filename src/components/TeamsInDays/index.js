@@ -1,67 +1,84 @@
-import React, { useRef, useState } from "react";
-import "./styles.css";
-import teamsInDays from "../../data/teamsInDays";
-import firstTeam from "../../images/firstTeam.jpeg";
-import secondTeam from "../../images/secondTeam.jpeg";
-import thirdTeam from "../../images/thirdTeam.jpeg";
-import fourthTeam from "../../images/fourthTeam.jpeg";
-import fifthTeam from "../../images/fifthTeam.jpeg";
-import sixthTeam from "../../images/sixthTeam.jpeg";
-import rightArrow from "../../images/rightArrow.png";
+import React, { useRef, useState } from 'react';
+import teamsInDays from 'data/teamsInDays';
+import firstTeam from 'assets/images/firstTeam.jpeg';
+import secondTeam from 'assets/images/secondTeam.jpeg';
+import thirdTeam from 'assets/images/thirdTeam.jpeg';
+import fourthTeam from 'assets/images/fourthTeam.jpeg';
+import fifthTeam from 'assets/images/fifthTeam.jpeg';
+import sixthTeam from 'assets/images/sixthTeam.jpeg';
+import rightArrow from 'assets/images/rightArrow.png';
+import { LeftArrow, RightArrow, Team, TeamsContainer } from './styles';
+import { ContainerTitle } from '../../App.styled';
 
+// keeps imported images
 const images = {
   firstTeam,
   secondTeam,
   thirdTeam,
   fourthTeam,
   fifthTeam,
-  sixthTeam,
+  sixthTeam
 };
 
+/**
+ *  Creates component for 30 teams in 30 days section
+ *  @returns {component} TeamsInDays component shows news about teams in the last 30 days
+ */
 const TeamsInDays = () => {
-  const [page, setPage] = useState(1);
+  // keeps container's scrolled width in px
+  const [scrolledWidth, setScrolledWidth] = useState(0);
+
+  // keeps container's full width
+  const [containerWidth] = useState(teamsInDays.length * 240);
+
   const containerRef = useRef(null);
 
   return (
-    <div className="TeamsInDays-Container">
-      <div className="Container-Title">
+    <TeamsContainer>
+      <ContainerTitle>
         <h1>30 TEAMS IN 30 DAYS</h1>
 
-        {page > 1 && (
-          <button
-            className="Scroll-Button Left-Arrow"
+        {scrolledWidth > 0 && (
+          <LeftArrow
             onClick={() => {
-              containerRef.current.style.transform = "translateX(0)";
-              setPage((prev) => prev - 1);
-            }}
-          >
+              const { offsetWidth } = containerRef.current;
+
+              containerRef.current.style.transform = `translateX(-${
+                scrolledWidth - offsetWidth
+              }px)`;
+              setScrolledWidth((prev) => prev - offsetWidth);
+            }}>
             <img src={rightArrow} />
-          </button>
+          </LeftArrow>
         )}
-        {page < Math.ceil(teamsInDays.length / 4) && (
-          <button
-            className="Scroll-Button Right-Arrow"
+        {scrolledWidth + 95 + (containerRef?.current?.offsetWidth || 240) < containerWidth && (
+          <RightArrow
             onClick={() => {
-              containerRef.current.style.transform = "translateX(-820px)";
-              setPage((prev) => prev + 1);
-            }}
-          >
+              const { offsetWidth } = containerRef.current;
+
+              containerRef.current.style.transform = `translateX(-${
+                scrolledWidth + offsetWidth + 95
+              }px)`;
+              setScrolledWidth((prev) => prev + offsetWidth);
+            }}>
             <img src={rightArrow} />
-          </button>
+          </RightArrow>
         )}
-      </div>
+      </ContainerTitle>
 
       <div ref={containerRef}>
         {teamsInDays.map(({ id, image, title }) => {
           return (
-            <div key={id} className="Team">
-              <img src={images[image]} />
+            <Team key={id}>
+              <div>
+                <img src={images[image]} />
+              </div>
               <span>{title}</span>
-            </div>
+            </Team>
           );
         })}
       </div>
-    </div>
+    </TeamsContainer>
   );
 };
 
