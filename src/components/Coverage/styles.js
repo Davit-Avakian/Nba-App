@@ -34,6 +34,10 @@ export const CoverageContainer = styled.div`
       flex-direction: column;
     }
 
+    & div ${CoverageItem} {
+      flex-direction: row;
+    }
+
     ${CoverageItem} {
       margin-top: 1rem;
     }
