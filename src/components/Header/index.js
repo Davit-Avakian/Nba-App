@@ -46,7 +46,6 @@ const Header = ({ setShowMenu, showMenu }) => {
     <HeaderContainer>
       <MainContainer>
         <MenuImage
-          data-testid="menuBtn"
           src={showMenu ? closeImg : menuImg}
           alt=""
           onClick={() => setShowMenu((prev) => !prev)}
@@ -56,7 +55,7 @@ const Header = ({ setShowMenu, showMenu }) => {
           <div data-testid="headerLinks">
             <Link>
               <span>Games</span>
-              <GamesPopUp>
+              <GamesPopUp data-testid="headerPopUp">
                 <ul>
                   {GamesLinks.map((el) => {
                     return <li key={el}>{el}</li>;

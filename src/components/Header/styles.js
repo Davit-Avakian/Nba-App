@@ -33,17 +33,18 @@ export const SignInContainer = styled.div`
 `;
 
 export const PopUp = styled.div`
+  display: none;
   width: ${({ width }) => width};
   min-width: ${({ minWidth }) => minWidth};
   left: -5%;
   top: 100%;
   position: absolute;
   z-index: 20;
-  visibility: hidden;
+  /* visibility: hidden; */
   padding: 0.4rem;
   background-color: ${({ theme: { containerBgColor } }) => containerBgColor};
   color: #000;
-  opacity: 0;
+  /* opacity: 0; */
   font-size: 0.875rem;
   font-weight: 600;
 
@@ -71,8 +72,7 @@ export const Link = styled.div`
   height: 100%;
 
   &:hover ${PopUp} {
-    visibility: visible;
-    opacity: 1;
+    display: block;
   }
 `;
 

@@ -21,7 +21,7 @@ const LeagueInfo = () => {
             return (
               <li key={id}>
                 <img src={image} />
-                <a>
+                <a data-testid={`league${id}`}>
                   {title}
                   <img src={share} />
                 </a>

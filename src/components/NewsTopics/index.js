@@ -43,7 +43,7 @@ const NewsTopics = () => {
       <ActiveTopic>
         <div>
           <TopicDesc>
-            <span>{activeTopic.title}</span>
+            <span data-testid="activeTitle">{activeTopic.title}</span>
             <span>{activeTopic.description}</span>
 
             <a href="/">Read</a>
@@ -67,6 +67,7 @@ const NewsTopics = () => {
         {news.map(({ id, title, type }, index) => {
           return (
             <div
+              data-testid={`news${id}`}
               style={{ opacity: `${activeTopic.id === id ? 1 : 0.6}` }}
               key={id}
               onClick={() => {

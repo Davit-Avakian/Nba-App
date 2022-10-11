@@ -24,6 +24,7 @@ const Trending = () => {
 
         {scrolledWidth > 0 && (
           <LeftArrow
+            data-testid="trendingLeftArrow"
             onClick={() => {
               const { offsetWidth } = containerRef.current;
 
@@ -37,6 +38,7 @@ const Trending = () => {
         )}
         {scrolledWidth + 95 + (containerRef?.current?.offsetWidth || 240) < containerWidth && (
           <RightArrow
+            data-testid="trendingRightArrow"
             className="Scroll-Button Right-Arrow"
             onClick={() => {
               const { offsetWidth } = containerRef.current;

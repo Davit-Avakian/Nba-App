@@ -18,8 +18,8 @@ const HeadLines = () => {
         <ul>
           {headlines.map((hl, index) => {
             return (
-              <li key={index}>
-                <a>{hl}</a>
+              <li key={hl}>
+                <a data-testid={`headline${index}`}>{hl}</a>
               </li>
             );
           })}
