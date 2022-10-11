@@ -34,6 +34,7 @@ import {
   TicketsLinks,
   WatchLinks
 } from 'data/links';
+import { drawPopUp } from 'helpers';
 
 /**
  *  Creates header and its items
@@ -55,93 +56,41 @@ const Header = ({ setShowMenu, showMenu }) => {
           <div data-testid="headerLinks">
             <Link>
               <span>Games</span>
-              <GamesPopUp data-testid="headerPopUp">
-                <ul>
-                  {GamesLinks.map((el) => {
-                    return <li key={el}>{el}</li>;
-                  })}
-                </ul>
-              </GamesPopUp>
+              <GamesPopUp data-testid="headerPopUp">{drawPopUp(GamesLinks)}</GamesPopUp>
             </Link>
             <Link>
               <span>Schedule</span>
-              <SchedulePopUp>
-                <ul>
-                  {ScheduleLinks.map((el) => {
-                    return (
-                      <li key={el}>
-                        <a>{el}</a>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </SchedulePopUp>
+              <SchedulePopUp>{drawPopUp(ScheduleLinks)}</SchedulePopUp>
             </Link>
             <Link>
               <span>Watch</span>
-              <PopUp>
-                <ul>
-                  {WatchLinks.map((el) => {
-                    return <li key={el}>{el}</li>;
-                  })}
-                </ul>
-              </PopUp>
+              <PopUp>{drawPopUp(WatchLinks)}</PopUp>
             </Link>
             <Link>
               <span>News</span>
-              <PopUp width={170}>
-                <ul>
-                  {NewsLinks.map((el) => {
-                    return <li key={el}>{el}</li>;
-                  })}
-                </ul>
-              </PopUp>
+              <PopUp width={170}>{drawPopUp(NewsLinks)}</PopUp>
             </Link>
             <Link>
               <span>Stats</span>
-              <PopUp width={210}>
-                <ul>
-                  {StatsLinks.map((el) => {
-                    return <li key={el}>{el}</li>;
-                  })}
-                </ul>
-              </PopUp>
+              <PopUp width={210}>{drawPopUp(StatsLinks)}</PopUp>
             </Link>
             <Link>
               <span>Standings</span>
-              <PopUp minWidth={250}>
-                <ul>
-                  {StandingsLinks.map((el) => {
-                    return <li key={el}>{el}</li>;
-                  })}
-                </ul>
-              </PopUp>
+              <PopUp minWidth={250}>{drawPopUp(StandingsLinks)}</PopUp>
             </Link>
             <Link>
               <span>Teams</span>
             </Link>
             <Link>
               <span>Players</span>
-              <PopUp width={160}>
-                <ul>
-                  {PlayersLinks.map((el) => {
-                    return <li key={el}>{el}</li>;
-                  })}
-                </ul>
-              </PopUp>
+              <PopUp width={160}>{drawPopUp(PlayersLinks)}</PopUp>
             </Link>
             <Link>
               <span>Fantasy</span>
             </Link>
             <Link>
               <span>NBABet</span>
-              <PopUp width={240}>
-                <ul>
-                  {NbaLinks.map((el) => {
-                    return <li key={el}>{el}</li>;
-                  })}
-                </ul>
-              </PopUp>
+              <PopUp width={240}>{drawPopUp(NbaLinks)}</PopUp>
             </Link>
           </div>
         )}
@@ -173,13 +122,7 @@ const Header = ({ setShowMenu, showMenu }) => {
           {!showMenu && (
             <TicketsLink>
               <span>Tickets</span>
-              <PopUp width={240}>
-                <ul>
-                  {TicketsLinks.map((el) => {
-                    return <li key={el}>{el}</li>;
-                  })}
-                </ul>
-              </PopUp>
+              <PopUp width={240}>{drawPopUp(TicketsLinks)}</PopUp>
             </TicketsLink>
           )}
         </div>

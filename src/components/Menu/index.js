@@ -14,6 +14,7 @@ import {
   TicketsLinks,
   WatchLinks
 } from 'data/links';
+import { drawPopUp } from 'helpers';
 
 /**
  *  Creates Menu component for mobile
@@ -25,105 +26,41 @@ const Menu = () => {
       <div>
         <Link>
           <span>Games</span>
-          <PopUp>
-            <ul>
-              {GamesLinks.map((el) => {
-                return (
-                  <li key={el}>
-                    <a>{el}</a>
-                  </li>
-                );
-              })}
-            </ul>
-          </PopUp>
+          <PopUp>{drawPopUp(GamesLinks)}</PopUp>
         </Link>
         <Link>
           <span>Schedule</span>
-          <PopUp>
-            <ul>
-              {ScheduleLinks.map((el) => {
-                return (
-                  <li key={el}>
-                    <a>{el}</a>
-                  </li>
-                );
-              })}
-            </ul>
-          </PopUp>
+          <PopUp>{drawPopUp(ScheduleLinks)}</PopUp>
         </Link>
         <Link>
           <span>Watch</span>
-          <PopUp>
-            <ul>
-              {WatchLinks.map((el) => {
-                return (
-                  <li key={el}>
-                    <a>{el}</a>
-                  </li>
-                );
-              })}
-            </ul>
-          </PopUp>
+          <PopUp>{drawPopUp(WatchLinks)}</PopUp>
         </Link>
         <Link>
           <span>News</span>
-          <PopUp>
-            <ul>
-              {NewsLinks.map((el) => {
-                return <li key={el}>{el}</li>;
-              })}
-            </ul>
-          </PopUp>
+          <PopUp>{drawPopUp(NewsLinks)}</PopUp>
         </Link>
         <Link>
           <span>Stats</span>
-          <PopUp>
-            <ul>
-              {StatsLinks.map((el) => {
-                return <li key={el}>{el}</li>;
-              })}
-            </ul>
-          </PopUp>
+          <PopUp>{drawPopUp(StatsLinks)}</PopUp>
         </Link>
         <Link>
           <span>Standings</span>
-          <PopUp>
-            <ul>
-              {StandingsLinks.map((el) => {
-                return <li key={el}>{el}</li>;
-              })}
-            </ul>
-          </PopUp>
+          <PopUp>{drawPopUp(StandingsLinks)}</PopUp>
         </Link>
         <Link>
           <span>Teams</span>
         </Link>
         <Link>
           <span>Players</span>
-          <PopUp>
-            <ul>
-              {PlayersLinks.map((el) => {
-                return <li key={el}>{el}</li>;
-              })}
-            </ul>
-          </PopUp>
+          <PopUp>{drawPopUp(PlayersLinks)}</PopUp>
         </Link>
         <Link>
           <span>Fantasy</span>
         </Link>
         <Link>
           <span>NBABet</span>
-          <PopUp>
-            <ul>
-              {NbaLinks.map((el) => {
-                return (
-                  <li key={el}>
-                    <a>{el}</a>
-                  </li>
-                );
-              })}
-            </ul>
-          </PopUp>
+          <PopUp>{drawPopUp(NbaLinks)}</PopUp>
         </Link>
 
         <Link>
@@ -144,13 +81,7 @@ const Menu = () => {
         </Link>
         <Link>
           <span>Tickets</span>
-          <PopUp>
-            <ul>
-              {TicketsLinks.map((el) => {
-                return <li key={el}>{el}</li>;
-              })}
-            </ul>
-          </PopUp>
+          <PopUp>{drawPopUp(TicketsLinks)}</PopUp>
         </Link>
 
         <AffiliatesLink>

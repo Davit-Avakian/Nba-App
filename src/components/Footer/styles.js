@@ -107,7 +107,7 @@ export const TopContainer = styled.div`
 
   li {
     display: block;
-    width: 100%;
+    max-width: fit-content;
     list-style-type: none;
     margin-bottom: 0.7rem;
     white-space: nowrap;
@@ -123,7 +123,7 @@ export const TopContainer = styled.div`
       line-height: 1.25;
     }
 
-    a {
+    li {
       font-family: Roboto, Arial, sans-serif;
       font-weight: 400;
       font-size: 0.875rem;
@@ -186,7 +186,7 @@ export const TopContainer = styled.div`
 export const FooterContainer = styled.div`
   background-color: black;
   padding: 2rem;
-  margin-top: 213rem;
+  margin-top: 228rem;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -207,13 +207,9 @@ export const FooterContainer = styled.div`
     }
   }
 
-  @media (max-width: 1350px) {
-    margin-top: 220rem;
-  }
-
   @media (max-width: 1050px) {
     width: 100%;
-    margin-top: 410rem;
+    margin-top: 415rem;
     padding: 0;
 
     ${TopContainer}, ${BottomContainer} {
@@ -230,15 +226,19 @@ export const FooterContainer = styled.div`
     }
   }
 
-  @media (max-width: 800px) {
-    margin-top: 420rem;
+  @media (max-width: 920px) {
+    margin-top: 440rem;
   }
 
   @media (max-width: 740px) {
-    margin-top: 430rem;
+    margin-top: 446rem;
   }
 
-  @media (max-width: 670px) {
-    margin-top: 445rem;
+  @media (max-width: 500px) {
+    margin-top: 450rem;
+  }
+
+  @media (max-width: 380px) {
+    margin-top: 465rem;
   }
 `;

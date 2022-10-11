@@ -1,32 +1,32 @@
 const teamsInDays = [
   {
     id: 1,
-    image: 'http://localhost:3000/static/media/firstTeam.5b71dd1a759143afca0c.jpeg',
+    image: 'https://cdn.nba.com/manage/2022/10/4.png?w=384&h=224',
     title: '30 TEAMS IN 30 DAYS: NEW YORK KNICKS'
   },
   {
     id: 2,
-    image: 'http://localhost:3000/static/media/secondTeam.516ab99c1748a9b5e31d.jpeg',
+    image: 'https://cdn.nba.com/manage/2022/10/3.png?w=384&h=224',
     title: '30 TEAMS IN 30 DAYS: WASHINGTON WIZARDS'
   },
   {
     id: 3,
-    image: 'http://localhost:3000/static/media/thirdTeam.b20aa11eeb4b55d7017c.jpeg',
+    image: 'https://cdn.nba.com/manage/2022/10/GMSurvey-1.png?w=384&h=224',
     title: '30 TEAMS IN 30 DAYS: ATLANTA HAWKS'
   },
   {
     id: 4,
-    image: 'http://localhost:3000/static/media/fourthTeam.6e92028f0377dfb87354.jpeg',
+    image: 'https://cdn.nba.com/manage/2022/09/stephen-curry-winks-reacts.jpg?w=384&h=224',
     title: '30 TEAMS IN 30 DAYS: LOS ANGELES LAKERS'
   },
   {
     id: 5,
-    image: 'http://localhost:3000/static/media/fifthTeam.45e4a887a18d400c78a7.jpeg',
+    image: 'https://cdn.nba.com/manage/2022/09/USATSI_19124009-e1664724914497.jpg?w=384&h=224',
     title: '30 TEAMS IN 30 DAYS: MINNESOTA TIMBERWOLVES'
   },
   {
     id: 6,
-    image: 'http://localhost:3000/static/media/sixthTeam.13d9b3429f2b4799d9f3.jpeg',
+    image: 'https://cdn.nba.com/manage/2022/09/luka092222.jpg?w=384&h=224',
     title: '30 TEAMS IN 30 DAYS: BOSTON CELTICS'
   }
 ];

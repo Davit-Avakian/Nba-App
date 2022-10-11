@@ -1,7 +1,7 @@
 const coverage = [
   {
     id: 1,
-    image: 'http://localhost:3000/static/media/firstCoverage.9ca1eb0a2ed6c03c4246.jpg',
+    image: 'https://cdn.nba.com/manage/2022/10/16x9NBASeasonPreview-2.png?w=384&h=224',
     title: '30 TEAMS IN 30 DAYS',
     description: 'NBA.com evaluates the state of each franchise heading into training camp.',
     date: '6 hours ago'
@@ -9,7 +9,8 @@ const coverage = [
 
   {
     id: 2,
-    image: 'http://localhost:3000/static/media/secondCoverage.0a9c5560a9e2751d1615.jpg',
+    image:
+      'https://cdn.nba.com/manage/2022/10/GettyImages-1306600548-1-e1664990501987.jpg?w=384&h=224',
     title: '2022 MEDIA DAY LIVESTREAM SHEDULES',
     description:
       'Keep up with everything that happens during NBA Media Week, which tips off on Friday in Atlanta.',

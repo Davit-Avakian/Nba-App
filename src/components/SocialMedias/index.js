@@ -21,27 +21,13 @@ const SocialMedias = () => {
       </ContainerTitle>
 
       <div>
-        <a>
-          <img src={facebook} />
-        </a>
-        <a>
-          <img src={instagram} />
-        </a>
-        <a>
-          <img src={snapchat} />
-        </a>
-        <a>
-          <img src={tiktok} />
-        </a>
-        <a>
-          <img src={twitter} />
-        </a>
-        <a>
-          <img src={youtube} />
-        </a>
-        <a>
-          <img src={twitch} />
-        </a>
+        {[facebook, instagram, snapchat, tiktok, twitter, youtube, twitch].map((el) => {
+          return (
+            <a key={el}>
+              <img src={el} />
+            </a>
+          );
+        })}
       </div>
     </MediasContainer>
   );

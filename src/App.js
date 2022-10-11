@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import AroundNba from 'components/AroundNba';
-import Coverage from 'components/Coverage';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
 import HeadLines from 'components/HeadLines';
@@ -22,6 +20,9 @@ import {
   SideBar
 } from './App.styled';
 import { ThemeProvider } from 'styled-components';
+import Feed from 'components/Feed';
+import coverage from 'data/coverage';
+import aroundNba from 'data/aroundNba';
 
 const theme = {
   borderBottom: '1px solid #ebe9e7',
@@ -55,9 +56,9 @@ function App() {
             <SecondaryWrapper>
               <MainContent>
                 <Trending />
-                <Coverage />
+                <Feed title={'FULL COVERAGE'} data={coverage} flexRow />
                 <TeamsInDays />
-                <AroundNba />
+                <Feed title={'AROUND THE NBA'} data={aroundNba} />
               </MainContent>
 
               <SideBar>

@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import { ContainerTitle } from '../../App.styled';
-import { ButtonsContainer, StandingsContainer, TeamList, TeamName } from './styles';
+import {
+  ButtonsContainer,
+  EastButton,
+  StandingsContainer,
+  TeamList,
+  TeamName,
+  WestButton
+} from './styles';
 import { eastTeams, westTeams } from 'data/teams';
 
 /**
@@ -20,22 +27,12 @@ const Standings = () => {
 
       <div>
         <ButtonsContainer>
-          <button
-            style={{
-              backgroundColor: `${conference === 'East' ? 'black' : 'white'}`,
-              color: `${conference === 'East' ? 'white' : 'black'}`
-            }}
-            onClick={() => setConference('East')}>
+          <EastButton conference={conference} onClick={() => setConference('East')}>
             EASTERN
-          </button>
-          <button
-            style={{
-              backgroundColor: `${conference === 'West' ? 'black' : 'white'}`,
-              color: `${conference === 'West' ? 'white' : 'black'}`
-            }}
-            onClick={() => setConference('West')}>
+          </EastButton>
+          <WestButton conference={conference} onClick={() => setConference('West')}>
             WESTERN
-          </button>
+          </WestButton>
         </ButtonsContainer>
 
         <TeamList>

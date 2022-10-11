@@ -1,5 +1,15 @@
 import styled from 'styled-components';
 
+export const EastButton = styled.button`
+  background-color: ${({ conference }) => (conference === 'East' ? 'black' : 'white')};
+  color: ${({ conference }) => (conference === 'East' ? 'white' : 'black')};
+`;
+
+export const WestButton = styled.button`
+  background-color: ${({ conference }) => (conference === 'West' ? 'black' : 'white')};
+  color: ${({ conference }) => (conference === 'West' ? 'white' : 'black')};
+`;
+
 export const ButtonsContainer = styled.div`
   display: flex;
   font-family: Roboto Condensed, Arial, sans-serif;
@@ -16,7 +26,6 @@ export const ButtonsContainer = styled.div`
     font-size: 0.75rem;
     line-height: 1.25rem;
     border-width: 1px;
-    background: #fff;
     border-color: #e5e7eb;
     border: 0.7px solid #e5e7eb;
     border-radius: 0.3rem;
