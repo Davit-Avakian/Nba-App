@@ -1,24 +1,8 @@
 import React, { useRef, useState } from 'react';
 import teamsInDays from 'data/teamsInDays';
-import firstTeam from 'assets/images/firstTeam.jpeg';
-import secondTeam from 'assets/images/secondTeam.jpeg';
-import thirdTeam from 'assets/images/thirdTeam.jpeg';
-import fourthTeam from 'assets/images/fourthTeam.jpeg';
-import fifthTeam from 'assets/images/fifthTeam.jpeg';
-import sixthTeam from 'assets/images/sixthTeam.jpeg';
 import rightArrow from 'assets/images/rightArrow.png';
 import { LeftArrow, RightArrow, Team, TeamsContainer } from './styles';
 import { ContainerTitle } from '../../App.styled';
-
-// keeps imported images
-const images = {
-  firstTeam,
-  secondTeam,
-  thirdTeam,
-  fourthTeam,
-  fifthTeam,
-  sixthTeam
-};
 
 /**
  *  Creates component for 30 teams in 30 days section
@@ -71,7 +55,7 @@ const TeamsInDays = () => {
           return (
             <Team key={id}>
               <div>
-                <img src={images[image]} />
+                <img src={image} />
               </div>
               <span>{title}</span>
             </Team>

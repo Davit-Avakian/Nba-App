@@ -1,16 +1,8 @@
 import React from 'react';
 import coverage from 'data/coverage';
-import firstCoverage from 'assets/images/firstCoverage.jpg';
-import secondCoverage from 'assets/images/secondCoverage.jpg';
 import { CoverageContainer, CoverageItem } from './styles';
 import { ContainerTitle } from '../../App.styled';
 import { NewsItem } from 'components/SharedComponents';
-
-//keeps imported images for this component
-const images = {
-  firstCoverage,
-  secondCoverage
-};
 
 /**
  *  Creates component for full coverage section
@@ -27,7 +19,7 @@ const Coverage = () => {
         {coverage.map(({ id, image, title, description, date }) => {
           return (
             <CoverageItem key={id}>
-              <img src={images[image]} />
+              <img src={image} />
 
               <NewsItem>
                 <span>{title}</span>

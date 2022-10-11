@@ -10,7 +10,7 @@ const news = [
       'Film Study: Impact players back for 2022-23',
       'Will Wall or Beverley make a bigger impact?'
     ],
-    image: 'firstTopic'
+    image: 'http://localhost:3000/static/media/firstTopic.384ad2b2885e7cd5dbfe.png'
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const news = [
       'Film Study: Impact players back for 2022-23',
       'John Wall, Paul George go off at Rico Hines runs'
     ],
-    image: 'secondTopic'
+    image: 'http://localhost:3000/static/media/secondTopic.87ca6d25944961f96e50.png'
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ const news = [
       'Jazz add Sexton, Markkanen in Mitchell trade',
       'Jazz acquire 5 players, 5 picks in Gobert deal'
     ],
-    image: 'thirdTopic'
+    image: 'http://localhost:3000/static/media/thirdTopic.59d6a220c2c083856671.png'
   },
   {
     id: 4,
@@ -49,7 +49,7 @@ const news = [
       'Wizards honor team history with Classic Edition unis',
       "30 Teams in 30 Days: Assessing each team's offseason"
     ],
-    image: 'fourthTopic'
+    image: 'http://localhost:3000/static/media/fourthTopic.0023b7763122b61fe8f2.png'
   },
   {
     id: 5,
@@ -62,7 +62,7 @@ const news = [
       'DeRozan works to improve footwork, range',
       'Karl-Anthony Towns on his summer grind'
     ],
-    image: 'fifthTopic'
+    image: 'http://localhost:3000/static/media/fifthTopic.1cae56c64075fa4436b1.png'
   }
 ];
 

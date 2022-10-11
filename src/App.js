@@ -18,7 +18,7 @@ import {
   AppContainer,
   MainContent,
   MainWrapper,
-  SecondWrapper,
+  SecondaryWrapper,
   SideBar
 } from './App.styled';
 import { ThemeProvider } from 'styled-components';
@@ -26,7 +26,8 @@ import { ThemeProvider } from 'styled-components';
 const theme = {
   borderBottom: '1px solid #ebe9e7',
   secondaryTextColor: '#ebe9e7',
-  linkColor: '#1070d8'
+  linkColor: '#1070d8',
+  containerBgColor: '#ffff'
 };
 
 /**
@@ -51,7 +52,7 @@ function App() {
               <HeadLines />
             </MainWrapper>
 
-            <SecondWrapper>
+            <SecondaryWrapper>
               <MainContent>
                 <Trending />
                 <Coverage />
@@ -66,7 +67,7 @@ function App() {
                 <Standings />
                 <SubmitEmail />
               </SideBar>
-            </SecondWrapper>
+            </SecondaryWrapper>
 
             <Footer />
           </>

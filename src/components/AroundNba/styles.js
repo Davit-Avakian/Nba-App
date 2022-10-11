@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const AroundContainer = styled.div`
   height: fit-content;
-  background-color: #ffff;
+  background-color: ${({ theme: { containerBgColor } }) => containerBgColor};
   padding: 1.25rem;
   margin-top: 7rem;
 

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const MediasContainer = styled.div`
   width: 98%;
   height: fit-content;
-  background-color: #ffff;
+  background-color: ${({ theme: { containerBgColor } }) => containerBgColor};
   padding: 1.25rem;
   position: relative;
   top: -7rem;

@@ -41,7 +41,7 @@ export const PopUp = styled.div`
   z-index: 20;
   visibility: hidden;
   padding: 0.4rem;
-  background-color: #fff;
+  background-color: ${({ theme: { containerBgColor } }) => containerBgColor};
   color: #000;
   opacity: 0;
   font-size: 0.875rem;
@@ -100,7 +100,7 @@ export const StorePopUp = styled(PopUp)`
 `;
 
 export const StoreLink = styled(Link)`
-  height: 55px !important;
+  height: 55px;
 
   &:hover ${StorePopUp} {
     visibility: visible;
@@ -109,7 +109,7 @@ export const StoreLink = styled(Link)`
 `;
 
 export const TicketsLink = styled(Link)`
-  height: 55px !important;
+  height: 55px;
 `;
 
 export const ImagePopUp = styled(PopUp)`

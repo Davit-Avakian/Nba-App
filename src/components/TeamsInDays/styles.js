@@ -99,7 +99,7 @@ export const RightArrow = styled.button`
 export const TeamsContainer = styled.div`
   position: relative;
   height: fit-content;
-  background-color: #ffff;
+  background-color: ${({ theme: { containerBgColor } }) => containerBgColor};
   padding: 1.25rem;
   margin-top: 2rem;
   overflow-x: hidden;

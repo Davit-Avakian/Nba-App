@@ -27,7 +27,7 @@ export const TeamName = styled.span`
   text-transform: uppercase;
   font-family: titleFont;
   font-weight: 400;
-  font-size: 1rem !important;
+  font-size: 1rem;
   line-height: 1.25;
   color: ${({ theme: { linkColor } }) => linkColor};
 `;
@@ -57,7 +57,7 @@ export const TeamList = styled.div`
   }
 
   thead tr th {
-    background-color: #fff;
+    background-color: ${({ theme: { containerBgColor } }) => containerBgColor};
     color: #343232;
     border-color: #ebe9e7;
     vertical-align: bottom;
@@ -163,7 +163,7 @@ export const StandingsContainer = styled.div`
   width: 98%;
   min-height: 840px;
   height: fit-content;
-  background-color: #ffff;
+  background-color: ${({ theme: { containerBgColor } }) => containerBgColor};
   padding: 1.25rem;
   position: relative;
   top: -30%;

@@ -1,24 +1,8 @@
 import React, { useRef, useState } from 'react';
 import trending from 'data/trending.js';
-import firstTrending from 'assets/images/firstTrending.jpg';
-import secondTrending from 'assets/images/secondTrending.jpg';
-import thirdTrending from 'assets/images/thirdTrending.jpg';
-import fourthTrending from 'assets/images/fourthTrending.jpg';
-import fifthTrending from 'assets/images/fifthTrending.jpg';
-import sixthTrending from 'assets/images/sixthTrending.jpg';
 import rightArrow from 'assets/images/rightArrow.png';
 import { ImageContainer, LeftArrow, RightArrow, TrendingContainer, TrendingItem } from './styles';
 import { ContainerTitle } from '../../App.styled';
-
-// keeps imported images
-const images = {
-  firstTrending,
-  secondTrending,
-  thirdTrending,
-  fourthTrending,
-  fifthTrending,
-  sixthTrending
-};
 
 /**
  *  Creates compnent for tending news
@@ -72,7 +56,7 @@ const Trending = () => {
           return (
             <TrendingItem className="Trending" key={id}>
               <ImageContainer>
-                <img src={images[image]} />
+                <img src={image} />
               </ImageContainer>
               <span>{title}</span>
             </TrendingItem>

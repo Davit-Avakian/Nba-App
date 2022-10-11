@@ -89,7 +89,7 @@ export const BottomContainer = styled.div`
 `;
 
 export const Arrow = styled.img`
-  display: none !important;
+  display: none;
 `;
 
 export const TopContainer = styled.div`
@@ -154,7 +154,7 @@ export const TopContainer = styled.div`
 
     div {
       padding: 1.3rem 2rem;
-      cursor: default !important;
+      cursor: default;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -173,13 +173,13 @@ export const TopContainer = styled.div`
         display: none;
       }
     }
-  }
 
-  ${Arrow} {
-    display: block;
-    height: 0.6rem;
-    width: 1.2rem;
-    margin-right: 3rem;
+    ${Arrow} {
+      display: block;
+      height: 0.6rem;
+      width: 1.2rem;
+      margin-right: 3rem;
+    }
   }
 `;
 
@@ -226,7 +226,7 @@ export const FooterContainer = styled.div`
     }
 
     ${Arrow} {
-      display: block !important;
+      display: block;
     }
   }
 

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const CoverageItem = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: row !important;
+  flex-direction: row;
   cursor: pointer;
 
   img {
@@ -13,7 +13,7 @@ export const CoverageItem = styled.div`
 
 export const CoverageContainer = styled.div`
   height: fit-content;
-  background-color: #ffff;
+  background-color: ${({ theme: { containerBgColor } }) => containerBgColor};
   padding: 1.25rem;
   margin-top: 2rem;
 

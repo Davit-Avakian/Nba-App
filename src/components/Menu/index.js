@@ -1,14 +1,6 @@
 import React from 'react';
 import storeImage from 'assets/images/storeImage.svg';
 import leagueInfo from 'data/leagueInfo';
-import firstLeague from 'assets/images/firstLeague.svg';
-import secondLeague from 'assets/images/secondLeague.svg';
-import thirdLeague from 'assets/images/thirdLeague.svg';
-import fourthLeague from 'assets/images/fourthLeague.svg';
-import fifthLeague from 'assets/images/fifthLeague.svg';
-import sixthLeague from 'assets/images/sixthLeague.svg';
-import seventhLeague from 'assets/images/seventhLeague.svg';
-import eighthLeague from 'assets/images/eighthLeague.svg';
 import { AffiliatesLink, Link, MenuContainer, PopUp } from './styles';
 import {
   GamesLinks,
@@ -22,18 +14,6 @@ import {
   TicketsLinks,
   WatchLinks
 } from 'data/links';
-
-// keeps imported images
-const images = {
-  firstLeague,
-  secondLeague,
-  thirdLeague,
-  fourthLeague,
-  fifthLeague,
-  sixthLeague,
-  seventhLeague,
-  eighthLeague
-};
 
 /**
  *  Creates Menu component for mobile
@@ -181,7 +161,7 @@ const Menu = () => {
               {leagueInfo.map(({ id, title, image }) => {
                 return (
                   <li key={id}>
-                    <img src={images[image]} />
+                    <img src={image} />
                     <span>{title}</span>
                   </li>
                 );

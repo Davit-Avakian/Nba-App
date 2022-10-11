@@ -5,7 +5,7 @@ export const HeadLinesContainer = styled.div`
   height: fit-content;
   min-height: fit-content;
   margin-left: 2.1rem;
-  background-color: #ffff;
+  background-color: ${({ theme: { containerBgColor } }) => containerBgColor};
   padding: 1.25rem;
 
   & div:first-child {

@@ -91,7 +91,7 @@ export const RelatedContent = styled.div`
     font-weight: 400;
     font-size: 0.875rem;
     line-height: 1.25;
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0.5rem;
   }
 
   span:hover {
@@ -128,7 +128,6 @@ export const NextTopics = styled.div`
     text-transform: uppercase;
     font-family: titleFont;
     font-weight: 300;
-    font-size: 1rem !important;
     line-height: normal;
   }
 
@@ -152,14 +151,14 @@ export const NextTopics = styled.div`
       width: 100%;
       border-radius: 0.125rem;
       transition-timing-function: linear;
-      background-color: #ffff;
+      background-color: ${({ theme: { containerBgColor } }) => containerBgColor};
       margin-bottom: 20px;
     }
   }
 `;
 
 export const MobileTopic = styled.p`
-  display: none !important;
+  display: none;
 `;
 
 export const TopicsContainer = styled.div`
@@ -167,8 +166,8 @@ export const TopicsContainer = styled.div`
   background-image: linear-gradient(90deg, #000 30%, transparent 52%),
     linear-gradient(0deg, #000 20%, transparent 35%);
   height: 720px;
-  min-height: fit-content !important;
-  max-height: fit-content !important;
+  min-height: fit-content;
+  max-height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -196,7 +195,7 @@ export const TopicsContainer = styled.div`
       width: 100vw;
 
       & span:nth-child(2) {
-        display: none !important;
+        display: none;
       }
     }
 
@@ -220,7 +219,7 @@ export const TopicsContainer = styled.div`
     }
 
     ${MobileTopic} {
-      display: block !important;
+      display: block;
       color: #ffff;
       margin-bottom: 2rem;
       margin-left: 2rem;

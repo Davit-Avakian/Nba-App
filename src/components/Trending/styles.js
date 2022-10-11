@@ -100,7 +100,7 @@ export const RightArrow = styled.button`
 export const TrendingContainer = styled.div`
   height: fit-content;
   position: relative;
-  background-color: #ffff;
+  background-color: ${({ theme: { containerBgColor } }) => containerBgColor};
   padding: 1.25rem;
   overflow: hidden;
 

@@ -5,14 +5,6 @@ import closeImg from 'assets/images/closeImg.png';
 import menuImg from 'assets/images/menuImage.png';
 import storeImage from 'assets/images/storeImage.svg';
 import leagueInfo from 'data/leagueInfo';
-import firstLeague from 'assets/images/firstLeague.svg';
-import secondLeague from 'assets/images/secondLeague.svg';
-import thirdLeague from 'assets/images/thirdLeague.svg';
-import fourthLeague from 'assets/images/fourthLeague.svg';
-import fifthLeague from 'assets/images/fifthLeague.svg';
-import sixthLeague from 'assets/images/sixthLeague.svg';
-import seventhLeague from 'assets/images/seventhLeague.svg';
-import eighthLeague from 'assets/images/eighthLeague.svg';
 import {
   GamesPopUp,
   HeaderContainer,
@@ -43,18 +35,6 @@ import {
   WatchLinks
 } from 'data/links';
 
-// keeps imported images for this component
-const images = {
-  firstLeague,
-  secondLeague,
-  thirdLeague,
-  fourthLeague,
-  fifthLeague,
-  sixthLeague,
-  seventhLeague,
-  eighthLeague
-};
-
 /**
  *  Creates header and its items
  *  @param {function} setShowMenu function for showing or hiding menu
@@ -66,13 +46,14 @@ const Header = ({ setShowMenu, showMenu }) => {
     <HeaderContainer>
       <MainContainer>
         <MenuImage
+          data-testid="menuBtn"
           src={showMenu ? closeImg : menuImg}
           alt=""
           onClick={() => setShowMenu((prev) => !prev)}
         />
         <Logo src={logoImg} alt="" />
         {!showMenu && (
-          <div>
+          <div data-testid="headerLinks">
             <Link>
               <span>Games</span>
               <GamesPopUp>
@@ -212,7 +193,7 @@ const Header = ({ setShowMenu, showMenu }) => {
                 {leagueInfo.map(({ id, title, image }) => {
                   return (
                     <li key={id}>
-                      <img src={images[image]} />
+                      <img src={image} />
                       <span>{title}</span>
                     </li>
                   );

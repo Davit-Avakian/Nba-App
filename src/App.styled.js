@@ -42,7 +42,7 @@ export const MainWrapper = styled.div`
   }
 `;
 
-export const SecondWrapper = styled(MainWrapper)`
+export const SecondaryWrapper = styled(MainWrapper)`
   margin-top: 550px;
 
   @media (max-width: 1600px) {
