@@ -6,9 +6,12 @@ import { ContainerTitle } from '../../App.styled';
 
 /**
  *  Creates compnent for tending news
+ *  @param {string} title title for the container
+ *  @param {array} data trending news data for the component
+ *  @param {string} marginTop value for margin top
  *  @returns {component} Trending component for trending news topics of the day
  */
-const Trending = () => {
+const Trending = ({ title, data, marginTop }) => {
   // keeps container's scrolled width in px
   const [scrolledWidth, setScrolledWidth] = useState(0);
 
@@ -18,9 +21,9 @@ const Trending = () => {
   const containerRef = useRef();
 
   return (
-    <TrendingContainer>
+    <TrendingContainer marginTop={marginTop}>
       <ContainerTitle>
-        <h1>Trending Now</h1>
+        <h1>{title}</h1>
 
         {scrolledWidth > 0 && (
           <LeftArrow
@@ -46,6 +49,7 @@ const Trending = () => {
               containerRef.current.style.transform = `translateX(-${
                 scrolledWidth + offsetWidth + 95
               }px)`;
+              console.log('setScrolledWidth', scrolledWidth + offsetWidth);
               setScrolledWidth((prev) => prev + offsetWidth);
             }}>
             <img src={rightArrow} />
@@ -53,8 +57,8 @@ const Trending = () => {
         )}
       </ContainerTitle>
 
-      <div ref={containerRef}>
-        {trending.map(({ id, image, title }) => {
+      <div ref={containerRef} data-testid="trendingContainer">
+        {data.map(({ id, image, title }) => {
           return (
             <TrendingItem className="Trending" key={id}>
               <ImageContainer>

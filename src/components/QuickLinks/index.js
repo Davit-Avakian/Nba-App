@@ -26,7 +26,7 @@ const QuickLinks = () => {
         <h1>QUICK LINKS</h1>
       </ContainerTitle>
 
-      <ul>
+      <ul data-testid={`quickLinks`}>
         {Links.map((el) => {
           return (
             <li key={el}>

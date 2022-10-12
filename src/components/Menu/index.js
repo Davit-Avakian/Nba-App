@@ -24,9 +24,9 @@ const Menu = () => {
   return (
     <MenuContainer>
       <div>
-        <Link>
+        <Link data-testid="menuLink">
           <span>Games</span>
-          <PopUp>{drawPopUp(GamesLinks)}</PopUp>
+          <PopUp data-testid="menuPopUp">{drawPopUp(GamesLinks)}</PopUp>
         </Link>
         <Link>
           <span>Schedule</span>

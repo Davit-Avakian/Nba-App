@@ -3,8 +3,7 @@ import styled from 'styled-components';
 export const PopUp = styled.div`
   width: 100%;
   height: 100%;
-  visibility: hidden;
-  opacity: 0;
+  display: none;
   position: absolute;
   list-style-type: none;
   left: 31%;
@@ -57,8 +56,7 @@ export const Link = styled.div`
   }
 
   &:hover ${PopUp} {
-    visibility: visible;
-    opacity: 1;
+    display: block;
   }
 
   span {

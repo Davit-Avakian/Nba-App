@@ -1,7 +1,6 @@
 import React from 'react';
-import { FeedContainer, ListItem } from './styles';
+import { FeedContainer, ListItem, NewsItem } from './styles';
 import { ContainerTitle } from '../../App.styled';
-import { NewsItem } from 'components/SharedComponents';
 
 /**
  *  Creates component for full feed sections
@@ -14,7 +13,7 @@ const Feed = ({ title, data, flexRow }) => {
   return (
     <FeedContainer>
       <ContainerTitle>
-        <h1>{title}</h1>
+        <h1 data-testid="feedTitle">{title}</h1>
       </ContainerTitle>
 
       <div>
@@ -25,7 +24,7 @@ const Feed = ({ title, data, flexRow }) => {
 
               <NewsItem>
                 <span>{title}</span>
-                <span>{description}</span>
+                <span data-testid={`feedItem${id}`}>{description}</span>
                 <span>{date}</span>
               </NewsItem>
             </ListItem>

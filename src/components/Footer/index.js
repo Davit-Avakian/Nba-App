@@ -25,7 +25,7 @@ const Footer = () => {
           {drawPopUp(['NBA Official', 'NBA Careers'])}
         </div>
 
-        <div>
+        <div data-testid="footerLink">
           <span>NBA INITIATIVES</span>
           <Arrow src={downArrow} />
           {drawPopUp(['NBA Cares', 'Jr. NBA', 'NBA Foundation', 'Social Justice Coalition'])}

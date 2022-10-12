@@ -48,7 +48,7 @@ const Header = ({ setShowMenu, showMenu }) => {
       <MainContainer>
         <MenuImage
           src={showMenu ? closeImg : menuImg}
-          alt=""
+          alt="menuBtn"
           onClick={() => setShowMenu((prev) => !prev)}
         />
         <Logo src={logoImg} alt="" />

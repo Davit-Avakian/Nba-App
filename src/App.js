@@ -9,7 +9,6 @@ import QuickLinks from 'components/QuickLinks';
 import SocialMedias from 'components/SocialMedias';
 import Standings from 'components/Standings';
 import SubmitEmail from 'components/SubmitEmail';
-import TeamsInDays from 'components/TeamsInDays';
 import Trending from 'components/Trending';
 import {
   GlobalStyles,
@@ -23,6 +22,8 @@ import { ThemeProvider } from 'styled-components';
 import Feed from 'components/Feed';
 import coverage from 'data/coverage';
 import aroundNba from 'data/aroundNba';
+import trending from 'data/trending';
+import teamsInDays from 'data/teamsInDays';
 
 const theme = {
   borderBottom: '1px solid #ebe9e7',
@@ -55,9 +56,9 @@ function App() {
 
             <SecondaryWrapper>
               <MainContent>
-                <Trending />
+                <Trending title={'TRENDING NOW'} data={trending} marginTop={'30rem'} />
                 <Feed title={'FULL COVERAGE'} data={coverage} flexRow />
-                <TeamsInDays />
+                <Trending title={'30 TEAMS IN 30 DAYS'} data={teamsInDays} />
                 <Feed title={'AROUND THE NBA'} data={aroundNba} />
               </MainContent>
 

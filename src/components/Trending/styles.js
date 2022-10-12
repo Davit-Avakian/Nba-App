@@ -102,6 +102,7 @@ export const TrendingContainer = styled.div`
   position: relative;
   background-color: ${({ theme: { containerBgColor } }) => containerBgColor};
   padding: 1.25rem;
+  margin-top: 2rem;
   overflow: hidden;
 
   & div:last-child {
@@ -113,7 +114,6 @@ export const TrendingContainer = styled.div`
   }
 
   @media (max-width: 1050px) {
-    margin-top: 25rem;
     width: 100%;
 
     ${RightArrow} {
@@ -122,6 +122,6 @@ export const TrendingContainer = styled.div`
   }
 
   @media (max-width: 780px) {
-    margin-top: 30rem;
+    margin-top: ${({ marginTop }) => marginTop};
   }
 `;

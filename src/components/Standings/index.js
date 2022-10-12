@@ -27,10 +27,16 @@ const Standings = () => {
 
       <div>
         <ButtonsContainer>
-          <EastButton conference={conference} onClick={() => setConference('East')}>
+          <EastButton
+            data-testid="eastBtn"
+            conference={conference}
+            onClick={() => setConference('East')}>
             EASTERN
           </EastButton>
-          <WestButton conference={conference} onClick={() => setConference('West')}>
+          <WestButton
+            data-testid="westBtn"
+            conference={conference}
+            onClick={() => setConference('West')}>
             WESTERN
           </WestButton>
         </ButtonsContainer>
@@ -69,7 +75,7 @@ const Standings = () => {
                               <span>
                                 <b>{index + 1}</b>
                               </span>
-                              <TeamName>{teamName.split(' ')[0]}</TeamName>
+                              <TeamName data-testid={`teamName${teamId}`}>{teamName}</TeamName>
                             </a>
                           </td>
 
@@ -117,7 +123,9 @@ const Standings = () => {
                               <span>
                                 <b>{index + 1}</b>
                               </span>
-                              <TeamName>{teamName.split(' ')[0]}</TeamName>
+                              <TeamName data-testid={`teamName${teamId}`}>
+                                {teamName.split(' ')[0]}
+                              </TeamName>
                             </a>
                           </td>
 

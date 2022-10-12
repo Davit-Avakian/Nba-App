@@ -20,7 +20,7 @@ const SocialMedias = () => {
         <h1>FOLLOW THE NBA</h1>
       </ContainerTitle>
 
-      <div>
+      <div data-testid="mediaIcons">
         {[facebook, instagram, snapchat, tiktok, twitter, youtube, twitch].map((el) => {
           return (
             <a key={el}>
