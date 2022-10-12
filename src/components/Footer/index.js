@@ -10,14 +10,17 @@ import twitchImage from 'assets/images/footerTwitch.png';
 import downArrow from 'assets/images/downArrow.png';
 import { Arrow, BottomContainer, FooterContainer, TopContainer } from './styles';
 import { drawPopUp } from 'helpers';
+import { useLocation } from 'react-router-dom';
 
 /**
  *  Creates Footer component
  *  @returns {component} Footer Component shows all social media and shop links
  */
 const Footer = () => {
+  const { pathname } = useLocation();
+
   return (
-    <FooterContainer>
+    <FooterContainer useMargin={pathname === '/home'}>
       <TopContainer>
         <div>
           <span>NBA ORGANIZATION</span>

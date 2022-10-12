@@ -186,7 +186,7 @@ export const TopContainer = styled.div`
 export const FooterContainer = styled.div`
   background-color: black;
   padding: 2rem;
-  margin-top: 228rem;
+  margin-top: ${({ useMargin }) => (useMargin ? '228rem' : '3rem')};
   display: flex;
   flex-direction: column;
   position: relative;
