@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import trending from 'data/trending.js';
 import rightArrow from 'assets/images/rightArrow.png';
 import { ImageContainer, LeftArrow, RightArrow, TrendingContainer, TrendingItem } from './styles';
-import { ContainerTitle } from '../../App.styled';
+import { ContainerTitle } from '../../App.styles';
 
 /**
  *  Creates compnent for tending news

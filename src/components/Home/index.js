@@ -4,7 +4,7 @@ import coverage from 'data/coverage';
 import aroundNba from 'data/aroundNba';
 import trending from 'data/trending';
 import teamsInDays from 'data/teamsInDays';
-import { MainContent, MainWrapper, SecondaryWrapper, SideBar } from '../../App.styled';
+import { MainContent, MainWrapper, SecondaryWrapper, SideBar } from '../../App.styles';
 import HeadLines from 'components/HeadLines';
 import LeagueInfo from 'components/LeagueInfo';
 import Menu from 'components/Menu';

@@ -2,7 +2,7 @@ import React from 'react';
 import leagueInfo from 'data/leagueInfo';
 import share from 'assets/images/share.jpg';
 import { LeagueContainer } from './styles';
-import { ContainerTitle } from '../../App.styled';
+import { ContainerTitle } from '../../App.styles';
 
 /**
  *  Creates component width information about leagues

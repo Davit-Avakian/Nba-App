@@ -7,7 +7,7 @@ import twitter from 'assets/images/twitter.svg';
 import youtube from 'assets/images/youtube.svg';
 import twitch from 'assets/images/twitch.svg';
 import { MediasContainer } from './styles';
-import { ContainerTitle } from '../../App.styled';
+import { ContainerTitle } from '../../App.styles';
 
 /**
  *  Creates component for social medias

@@ -1,4 +1,4 @@
-import { GlobalStyles, AppContainer } from './App.styled';
+import { GlobalStyles, AppContainer } from './App.styles';
 import { ThemeProvider } from 'styled-components';
 import { Routes, Route } from 'react-router-dom';
 import Login from 'components/Login/index.js';

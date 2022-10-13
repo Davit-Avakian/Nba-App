@@ -1,4 +1,6 @@
 import axios from 'axios';
+// const axios = require('axios');
+// NODE_OPTIONS=--experimental-vm-modules
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
@@ -9,7 +11,7 @@ import {
   LoginForm,
   LoginTitle,
   SignInBtn
-} from './styles';
+} from './styles.js';
 
 /**
  *  Login and Register page component

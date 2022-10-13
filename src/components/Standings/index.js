@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContainerTitle } from '../../App.styled';
+import { ContainerTitle } from '../../App.styles';
 import {
   ButtonsContainer,
   EastButton,

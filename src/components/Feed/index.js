@@ -1,6 +1,6 @@
 import React from 'react';
 import { FeedContainer, ListItem, NewsItem } from './styles';
-import { ContainerTitle } from '../../App.styled';
+import { ContainerTitle } from '../../App.styles.js';
 
 /**
  *  Creates component for full feed sections

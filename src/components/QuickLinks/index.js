@@ -1,7 +1,7 @@
 import React from 'react';
 import share from 'assets/images/share.jpg';
 import { LinksContainer } from './styles';
-import { ContainerTitle } from '../../App.styled';
+import { ContainerTitle } from '../../App.styles';
 
 const Links = [
   'Fantasy',
