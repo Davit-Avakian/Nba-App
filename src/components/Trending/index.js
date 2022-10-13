@@ -49,7 +49,6 @@ const Trending = ({ title, data, marginTop }) => {
               containerRef.current.style.transform = `translateX(-${
                 scrolledWidth + offsetWidth + 95
               }px)`;
-              console.log('setScrolledWidth', scrolledWidth + offsetWidth);
               setScrolledWidth((prev) => prev + offsetWidth);
             }}>
             <img src={rightArrow} />

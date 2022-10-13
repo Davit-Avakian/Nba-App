@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import Trending from '.';
 import trending from 'data/trending';
 
-describe(Trending, () => {
+describe('Trending Component', () => {
   test('should scroll right on right arrow click', () => {
     render(<Trending data={[]} />);
 

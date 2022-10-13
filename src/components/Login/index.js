@@ -36,14 +36,13 @@ const Login = ({ setSignedIn, register }) => {
 
     try {
       // fetch users from api
-      const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/users`);
-
-      //   find user by provided email
-      const foundUser = data.find((user) => user.email === emailValue);
+      const { data } = await axios.get(
+        `${process.env.REACT_APP_BASE_URL}/users?email=${emailValue}`
+      );
 
       //   check if user exists and password matches
-      if (!foundUser || foundUser.password !== passwordValue) {
-        throw new Error();
+      if (!data.length || data[0].password !== passwordValue) {
+        throw { message: 'Incorrect Password or Email!' };
       }
 
       setSignedIn(true);
@@ -52,7 +51,7 @@ const Login = ({ setSignedIn, register }) => {
       navigate('/home');
     } catch (error) {
       // set error
-      setError('Incorrect Password or Email!');
+      setError(error.message);
     }
   };
 
@@ -61,13 +60,12 @@ const Login = ({ setSignedIn, register }) => {
 
     try {
       // fetch users from api
-      const { data } = await axios.get(`${process.env.REACT_APP_BASE_URL}/users`);
-
-      //   find user by provided email
-      const foundUser = data.find((user) => user.email === emailValue);
+      const { data } = await axios.get(
+        `${process.env.REACT_APP_BASE_URL}/users?email=${emailValue}`
+      );
 
       //   check if user exists
-      if (foundUser) {
+      if (data.length) {
         throw new Error();
       }
 
@@ -82,7 +80,6 @@ const Login = ({ setSignedIn, register }) => {
       //   navigate to home page
       navigate('/home');
     } catch (error) {
-      console.log(error);
       // set error
       setError('Account With That Email Exists');
     }
@@ -109,6 +106,7 @@ const Login = ({ setSignedIn, register }) => {
         />
         <label htmlFor="Password">Password</label>
         <Input
+          data-testid="passwordInput"
           id="password"
           required
           type="password"
@@ -116,11 +114,11 @@ const Login = ({ setSignedIn, register }) => {
           onChange={(e) => setPasswordValue(e.target.value)}
         />
 
-        {error && <Error>{error}</Error>}
+        {error && <Error data-testid="signInError">{error}</Error>}
 
         <ForgotLink>{!register && 'Forgot password?'}</ForgotLink>
 
-        <SignInBtn>{!register ? 'Sign In' : 'Create Account'}</SignInBtn>
+        <SignInBtn data-testid="signInBtn">{!register ? 'Sign In' : 'Create Account'}</SignInBtn>
 
         <a
           onClick={() => {

@@ -2,7 +2,7 @@ import NewsTopics from '.';
 import news from 'data/news.js';
 import { fireEvent, render, screen } from '@testing-library/react';
 
-describe(NewsTopics, () => {
+describe('NewsTopics Component', () => {
   test('Active topic should change on button click', () => {
     render(<NewsTopics />);
 

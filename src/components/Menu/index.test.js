@@ -3,7 +3,7 @@ import { fireEvent } from '@testing-library/react';
 import 'jest-styled-components';
 import Menu from '.';
 
-describe('Menu', () => {
+describe('Menu Component', () => {
   test('Popup should be visible after link hover', () => {
     render(<Menu />);
 

@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { eastTeams, westTeams } from 'data/teams';
 import Standings from '.';
 
-describe(Standings, () => {
+describe('Standings Component', () => {
   test('League standings should change on west button click', () => {
     render(<Standings />);
 

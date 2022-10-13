@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import Feed from '.';
 
-describe(Feed, () => {
+describe('Feed Component', () => {
   const title = 'test title';
 
   const data = [

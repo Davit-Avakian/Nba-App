@@ -1,7 +1,7 @@
 import { GlobalStyles, AppContainer } from './App.styled';
 import { ThemeProvider } from 'styled-components';
 import { Routes, Route } from 'react-router-dom';
-import Login from 'components/Login';
+import Login from 'components/Login/index.js';
 import Home from 'components/Home';
 import Header from 'components/Header';
 import Footer from 'components/Footer';

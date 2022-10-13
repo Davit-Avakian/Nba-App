@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import SocialMedias from '.';
 
-describe(SocialMedias, () => {
+describe('SocialMedias Component', () => {
   test('Icons container length should match icons count', () => {
     render(<SocialMedias />);
 

@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import Header from '.';
 
-describe(Header, () => {
+describe('Header Component', () => {
   test('Should call setShowMenu on menu button click', () => {
     const setShowMenu = jest.fn();
 

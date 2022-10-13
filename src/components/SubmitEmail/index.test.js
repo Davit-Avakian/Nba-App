@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import SubmitEmail from '.';
 
-describe(SubmitEmail, () => {
+describe('SubmitEmail Component', () => {
   test('email input should match typed value', () => {
     render(<SubmitEmail />);
 

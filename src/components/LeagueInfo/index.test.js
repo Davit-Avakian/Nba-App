@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import LeagueInfo from '.';
 import leagueInfo from 'data/leagueInfo';
 
-describe(LeagueInfo, () => {
+describe('LeagueInfo Component', () => {
   test('First League should be equal to given data', () => {
     render(<LeagueInfo />);
 
