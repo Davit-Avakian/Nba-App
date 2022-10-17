@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { fireEvent } from '@testing-library/react';
-import 'jest-styled-components';
+import userEvent from '@testing-library/user-event';
 import Menu from '.';
 
 describe('Menu Component', () => {
@@ -9,9 +8,8 @@ describe('Menu Component', () => {
 
     expect(screen.getByTestId('menuPopUp')).toHaveStyle('display: none');
 
-    // userEvent.hover(screen.getByTestId('menuLink'));
-    fireEvent.mouseOver(screen.getByTestId('menuLink'));
+    userEvent.hover(screen.getByTestId('menuLink'));
 
-    // expect(container.querySelector('[data-testid=menuLink]')).toHaveStyleRule('display', 'block');
+    expect(screen.getByTestId('menuLink')).toHaveStyle('display: block');
   });
 });
