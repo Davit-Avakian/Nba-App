@@ -186,7 +186,7 @@ export const TopContainer = styled.div`
 export const FooterContainer = styled.div`
   background-color: black;
   padding: 2rem;
-  margin-top: ${({ useMargin }) => (useMargin ? '228rem' : '3rem')};
+  margin-top: ${({ useMargin }) => (useMargin ? '228rem' : '')};
   display: flex;
   flex-direction: column;
   position: relative;
@@ -209,7 +209,7 @@ export const FooterContainer = styled.div`
 
   @media (max-width: 1050px) {
     width: 100%;
-    margin-top: 415rem;
+    margin-top: ${({ useMargin }) => (useMargin ? '415rem' : '')};
     padding: 0;
 
     ${TopContainer}, ${BottomContainer} {
@@ -227,18 +227,18 @@ export const FooterContainer = styled.div`
   }
 
   @media (max-width: 920px) {
-    margin-top: 440rem;
+    margin-top: ${({ useMargin }) => (useMargin ? '440rem' : '')};
   }
 
   @media (max-width: 740px) {
-    margin-top: 446rem;
+    margin-top: ${({ useMargin }) => (useMargin ? '446rem' : '')};
   }
 
   @media (max-width: 500px) {
-    margin-top: 450rem;
+    margin-top: ${({ useMargin }) => (useMargin ? '450rem' : '')};
   }
 
   @media (max-width: 380px) {
-    margin-top: 465rem;
+    margin-top: ${({ useMargin }) => (useMargin ? '465rem' : '')};
   }
 `;

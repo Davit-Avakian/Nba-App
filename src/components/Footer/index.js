@@ -13,11 +13,12 @@ import { drawPopUp } from 'helpers';
 
 /**
  *  Creates Footer component
+ *  @param {boolean} signedIn value for showing if user is signed in
  *  @returns {component} Footer Component shows all social media and shop links
  */
-const Footer = () => {
+const Footer = ({ signedIn }) => {
   return (
-    <FooterContainer useMargin={window.location.pathname === '/home'}>
+    <FooterContainer useMargin={signedIn}>
       <TopContainer>
         <div>
           <span>NBA ORGANIZATION</span>

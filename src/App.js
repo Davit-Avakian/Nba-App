@@ -43,7 +43,7 @@ function App() {
           </Route>
         </Routes>
 
-        <Footer />
+        <Footer signedIn={signedIn} />
       </ThemeProvider>
     </AppContainer>
   );

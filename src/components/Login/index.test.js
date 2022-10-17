@@ -1,39 +1,49 @@
-import { fireEvent, render, screen } from '@testing-library/react';
-import * as router from 'react-router';
+import { createBrowserHistory } from '@remix-run/router';
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { Router } from 'react-router';
 import Login from './index.js';
 
 describe('Login Component', () => {
-  const navigate = jest.fn();
+  const mockedNavigate = jest.fn();
+  const setSignedIn = jest.fn();
   const email = 'admin@gmail.com';
   const password = 'admin';
 
+  jest.mock('react-router-dom', () => ({
+    ...jest.requireActual('react-router-dom'),
+    useNavigate: () => mockedNavigate
+  }));
+
   beforeEach(() => {
-    jest.spyOn(router, 'useNavigate').mockImplementation(() => navigate);
+    const history = createBrowserHistory();
+
+    render(
+      <Router location={history.location} navigator={history}>
+        <Login setSignedIn={setSignedIn} />
+      </Router>
+    );
   });
 
-  test('Should redirect user to /home after successful sign in', () => {
-    render(<Login />);
+  test('Should not show error message and redirect user to /home after successful sign in', async () => {
+    userEvent.type(screen.getByLabelText('Email'), email);
 
-    fireEvent.change(screen.getByLabelText('Email'), { target: { value: email } });
+    userEvent.type(screen.getByTestId('passwordInput'), password);
 
-    fireEvent.change(screen.getByTestId('passwordInput'), { target: { value: password } });
+    userEvent.click(screen.getByTestId('signInBtn'));
 
-    fireEvent.click(screen.getByTestId('signInBtn'));
-
-    expect(screen.getByTestId('signInError')).not.toBeInTheDocument();
-    expect(navigate).toHaveBeenCalledWith('/home');
+    expect(screen.queryByTestId('signInError')).not.toBeInTheDocument();
+    await waitFor(() => expect(window.location.pathname).toBe('/home'));
   });
 
-  test('Should show error message after entering wrong login info', () => {
-    render(<Login />);
+  test('Should show error message after entering wrong login info', async () => {
+    userEvent.type(screen.getByLabelText('Email'), 'wrong@gmail.com');
 
-    fireEvent.change(screen.getByLabelText('Email'), { target: { value: 'wrong@gmail.com' } });
+    userEvent.type(screen.getByTestId('passwordInput'), 'wrong');
 
-    fireEvent.change(screen.getByTestId('passwordInput'), { target: { value: 'wrong' } });
+    userEvent.click(screen.getByTestId('signInBtn'));
 
-    fireEvent.click(screen.getByTestId('signInBtn'));
-
-    expect(screen.getByTestId('signInError')).toBeInTheDocument();
-    expect(navigate).toHaveBeenCalledTimes(0);
+    expect(await screen.findByTestId('signInError')).toBeInTheDocument();
+    expect(mockedNavigate).toHaveBeenCalledTimes(0);
   });
 });

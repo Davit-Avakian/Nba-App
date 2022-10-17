@@ -101,7 +101,20 @@ export const SignInBtn = styled.button`
 `;
 
 export const LoginContainer = styled.div`
-  width: 540px;
-  height: 470px;
-  margin: 6rem auto;
+  width: 30%;
+  height: 29rem;
+  margin: 7rem auto;
+
+  @media (max-width: 1000px) {
+    margin: 7rem 5rem;
+    width: 70%;
+
+    ${LoginTitle} h1 {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    margin: 7rem 1rem;
+  }
 `;

@@ -279,6 +279,11 @@ export const HeaderContainer = styled.div`
     ${MainContainer} div:nth-child(7) {
       display: none;
     }
+
+    ${MenuImage} {
+      height: 1.6rem;
+      margin-left: 0.3rem;
+    }
   }
 
   @media (max-width: 570px) {
