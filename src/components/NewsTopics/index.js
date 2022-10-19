@@ -1,10 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import news from 'data/news';
-import firstTopic from 'assets/images/firstTopic.png';
-import secondTopic from 'assets/images/secondTopic.png';
-import thirdTopic from 'assets/images/thirdTopic.png';
-import fourthTopic from 'assets/images/fourthTopic.png';
-import fifthTopic from 'assets/images/fifthTopic.png';
 import {
   ActiveImage,
   ActiveTopic,
@@ -14,15 +9,6 @@ import {
   TopicDesc,
   TopicsContainer
 } from './styles';
-
-// keeps imported images
-const images = {
-  firstTopic,
-  secondTopic,
-  thirdTopic,
-  fourthTopic,
-  fifthTopic
-};
 
 /**
  *  Creates component for main news
@@ -57,7 +43,7 @@ const NewsTopics = () => {
       <ActiveTopic>
         <div>
           <TopicDesc>
-            <span>{activeTopic.title}</span>
+            <span data-testid="activeTitle">{activeTopic.title}</span>
             <span>{activeTopic.description}</span>
 
             <a href="/">Read</a>
@@ -72,7 +58,7 @@ const NewsTopics = () => {
 
           <ActiveImage
             style={{
-              backgroundImage: `url(${images[activeTopic.image]})`
+              backgroundImage: `url(${activeTopic.image})`
             }}></ActiveImage>
         </div>
       </ActiveTopic>
@@ -81,6 +67,7 @@ const NewsTopics = () => {
         {news.map(({ id, title, type }, index) => {
           return (
             <div
+              data-testid={`news${id}`}
               style={{ opacity: `${activeTopic.id === id ? 1 : 0.6}` }}
               key={id}
               onClick={() => {
@@ -91,7 +78,7 @@ const NewsTopics = () => {
               <div></div>
               <p>{type}</p>
 
-              <span>{title}</span>
+              <span style={{ fontSize: '1rem' }}>{title}</span>
             </div>
           );
         })}

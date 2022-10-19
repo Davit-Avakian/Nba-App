@@ -7,7 +7,7 @@ import twitter from 'assets/images/twitter.svg';
 import youtube from 'assets/images/youtube.svg';
 import twitch from 'assets/images/twitch.svg';
 import { MediasContainer } from './styles';
-import { ContainerTitle } from '../../App.styled';
+import { ContainerTitle } from '../../App.styles';
 
 /**
  *  Creates component for social medias
@@ -20,28 +20,14 @@ const SocialMedias = () => {
         <h1>FOLLOW THE NBA</h1>
       </ContainerTitle>
 
-      <div>
-        <a>
-          <img src={facebook} />
-        </a>
-        <a>
-          <img src={instagram} />
-        </a>
-        <a>
-          <img src={snapchat} />
-        </a>
-        <a>
-          <img src={tiktok} />
-        </a>
-        <a>
-          <img src={twitter} />
-        </a>
-        <a>
-          <img src={youtube} />
-        </a>
-        <a>
-          <img src={twitch} />
-        </a>
+      <div data-testid="mediaIcons">
+        {[facebook, instagram, snapchat, tiktok, twitter, youtube, twitch].map((el) => {
+          return (
+            <a key={el}>
+              <img src={el} />
+            </a>
+          );
+        })}
       </div>
     </MediasContainer>
   );

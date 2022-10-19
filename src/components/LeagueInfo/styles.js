@@ -6,7 +6,7 @@ export const LeagueContainer = styled.div`
   top: -9rem;
   height: 420px;
   margin: 0 auto;
-  background-color: #ffff;
+  background-color: ${({ theme: { containerBgColor } }) => containerBgColor};
   padding: 1.25rem;
 
   ul {

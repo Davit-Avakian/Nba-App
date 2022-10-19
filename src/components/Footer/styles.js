@@ -89,7 +89,7 @@ export const BottomContainer = styled.div`
 `;
 
 export const Arrow = styled.img`
-  display: none !important;
+  display: none;
 `;
 
 export const TopContainer = styled.div`
@@ -107,7 +107,7 @@ export const TopContainer = styled.div`
 
   li {
     display: block;
-    width: 100%;
+    max-width: fit-content;
     list-style-type: none;
     margin-bottom: 0.7rem;
     white-space: nowrap;
@@ -123,7 +123,7 @@ export const TopContainer = styled.div`
       line-height: 1.25;
     }
 
-    a {
+    li {
       font-family: Roboto, Arial, sans-serif;
       font-weight: 400;
       font-size: 0.875rem;
@@ -154,7 +154,7 @@ export const TopContainer = styled.div`
 
     div {
       padding: 1.3rem 2rem;
-      cursor: default !important;
+      cursor: default;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -173,20 +173,20 @@ export const TopContainer = styled.div`
         display: none;
       }
     }
-  }
 
-  ${Arrow} {
-    display: block;
-    height: 0.6rem;
-    width: 1.2rem;
-    margin-right: 3rem;
+    ${Arrow} {
+      display: block;
+      height: 0.6rem;
+      width: 1.2rem;
+      margin-right: 3rem;
+    }
   }
 `;
 
 export const FooterContainer = styled.div`
   background-color: black;
   padding: 2rem;
-  margin-top: 213rem;
+  margin-top: ${({ useMargin }) => (useMargin ? '228rem' : '')};
   display: flex;
   flex-direction: column;
   position: relative;
@@ -207,13 +207,9 @@ export const FooterContainer = styled.div`
     }
   }
 
-  @media (max-width: 1350px) {
-    margin-top: 220rem;
-  }
-
   @media (max-width: 1050px) {
     width: 100%;
-    margin-top: 410rem;
+    margin-top: ${({ useMargin }) => (useMargin ? '415rem' : '')};
     padding: 0;
 
     ${TopContainer}, ${BottomContainer} {
@@ -226,19 +222,23 @@ export const FooterContainer = styled.div`
     }
 
     ${Arrow} {
-      display: block !important;
+      display: block;
     }
   }
 
-  @media (max-width: 800px) {
-    margin-top: 420rem;
+  @media (max-width: 920px) {
+    margin-top: ${({ useMargin }) => (useMargin ? '440rem' : '')};
   }
 
   @media (max-width: 740px) {
-    margin-top: 430rem;
+    margin-top: ${({ useMargin }) => (useMargin ? '446rem' : '')};
   }
 
-  @media (max-width: 670px) {
-    margin-top: 445rem;
+  @media (max-width: 500px) {
+    margin-top: ${({ useMargin }) => (useMargin ? '450rem' : '')};
+  }
+
+  @media (max-width: 380px) {
+    margin-top: ${({ useMargin }) => (useMargin ? '465rem' : '')};
   }
 `;

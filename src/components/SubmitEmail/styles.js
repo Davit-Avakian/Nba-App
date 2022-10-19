@@ -4,7 +4,7 @@ export const EmailContainer = styled.div`
   width: 112%;
   margin-bottom: 1.5rem;
   border-radius: 0.25rem;
-  background-color: #ffff;
+  background-color: ${({ theme: { containerBgColor } }) => containerBgColor};
 
   & div:first-child {
     display: flex;
@@ -72,7 +72,7 @@ export const EmailContainer = styled.div`
     line-height: 1.25;
 
     &:hover {
-      background-color: #ffff;
+      background-color: ${({ theme: { containerBgColor } }) => containerBgColor};
       color: #000;
       border: 1px solid #000;
     }

@@ -9,93 +9,45 @@ import ytImage from 'assets/images/footerYt.jpeg';
 import twitchImage from 'assets/images/footerTwitch.png';
 import downArrow from 'assets/images/downArrow.png';
 import { Arrow, BottomContainer, FooterContainer, TopContainer } from './styles';
+import { drawPopUp } from 'helpers';
 
 /**
  *  Creates Footer component
+ *  @param {boolean} signedIn value for showing if user is signed in
  *  @returns {component} Footer Component shows all social media and shop links
  */
-const Footer = () => {
+const Footer = ({ signedIn }) => {
   return (
-    <FooterContainer>
+    <FooterContainer useMargin={signedIn}>
       <TopContainer>
         <div>
           <span>NBA ORGANIZATION</span>
           <Arrow src={downArrow} />
-          <ul>
-            <li>
-              <a>NBA Official</a>
-            </li>
-            <li>
-              <a>NBA Careers</a>
-            </li>
-          </ul>
+          {drawPopUp(['NBA Official', 'NBA Careers'])}
         </div>
 
-        <div>
+        <div data-testid="footerLink">
           <span>NBA INITIATIVES</span>
           <Arrow src={downArrow} />
-          <ul>
-            <li>
-              <a>NBA Cares</a>
-            </li>
-            <li>
-              <a>Jr. NBA</a>
-            </li>
-            <li>
-              <a>NBA Foundation</a>
-            </li>
-            <li>
-              <a>Social Justice Coalition</a>
-            </li>
-          </ul>
+          {drawPopUp(['NBA Cares', 'Jr. NBA', 'NBA Foundation', 'Social Justice Coalition'])}
         </div>
 
         <div>
           <span>ACROSS THE LEAGUE</span>
           <Arrow src={downArrow} />
-          <ul>
-            <li>
-              <a>NBA Communications</a>
-            </li>
-            <li>
-              <a>Lockervision</a>
-            </li>
-            <li>
-              <a>NBA Transactions</a>
-            </li>
-          </ul>
+          {drawPopUp(['NBA Communications', 'Lockervision', 'NBA Foundation', 'NBA Transactions'])}
         </div>
 
         <div>
           <span>SHOP</span>
           <Arrow src={downArrow} />
-          <ul>
-            <li>
-              <a>Global Stores</a>
-            </li>
-            <li>
-              <a>NYC Store</a>
-            </li>
-            <li>
-              <a>NBA Auctions</a>
-            </li>
-            <li>
-              <a>NBA Photostore</a>
-            </li>
-          </ul>
+          {drawPopUp(['Global Stores', 'NYC Store', 'NBA Auctions', 'NBA Photostore'])}
         </div>
 
         <div>
           <span>SUBSCRIPTIONS</span>
           <Arrow src={downArrow} />
-          <ul>
-            <li>
-              <a>League Pass</a>
-            </li>
-            <li>
-              <a>Customer Support</a>
-            </li>
-          </ul>
+          {drawPopUp(['League Pass', 'Customer Support'])}
         </div>
       </TopContainer>
 
@@ -105,14 +57,14 @@ const Footer = () => {
         <div>
           <div>© 2022 NBA Media Ventures, LLC. All rights reserved.</div>
 
-          <ul>
-            <li>Privacy Policy</li>
-            <li>Terms of Use</li>
-            <li>Accessibility and Closed Captions</li>
-            <li>Do Not Sell My Personal Information</li>
-            <li>Cusomer Support</li>
-            <li>Manage Cookies</li>
-          </ul>
+          {drawPopUp([
+            'Privacy Policy',
+            'Terms of Use',
+            'Accessibility and Closed Captions',
+            'Do Not Sell My Personazl Information',
+            'Customef Support',
+            'Manage Cookies'
+          ])}
 
           <p>
             If you are having difficulty accessing any content on this website, please visit our{' '}
@@ -125,13 +77,11 @@ const Footer = () => {
         </div>
 
         <div>
-          <img src={fbImage} />
-          <img src={instaImage} />
-          <img src={snapImage} />
-          <img src={tiktokImage} />
-          <img src={twitterImage} />
-          <img src={ytImage} />
-          <img src={twitchImage} />
+          {[fbImage, instaImage, snapImage, tiktokImage, twitterImage, ytImage, twitchImage].map(
+            (el) => {
+              return <img key={el} src={el} />;
+            }
+          )}
         </div>
       </BottomContainer>
     </FooterContainer>

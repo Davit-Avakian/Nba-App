@@ -1,32 +1,18 @@
-import { useState } from 'react';
-import AroundNba from 'components/AroundNba';
-import Coverage from 'components/Coverage';
-import Footer from 'components/Footer';
-import Header from 'components/Header';
-import HeadLines from 'components/HeadLines';
-import LeagueInfo from 'components/LeagueInfo';
-import Menu from 'components/Menu';
-import NewsTopics from 'components/NewsTopics';
-import QuickLinks from 'components/QuickLinks';
-import SocialMedias from 'components/SocialMedias';
-import Standings from 'components/Standings';
-import SubmitEmail from 'components/SubmitEmail';
-import TeamsInDays from 'components/TeamsInDays';
-import Trending from 'components/Trending';
-import {
-  GlobalStyles,
-  AppContainer,
-  MainContent,
-  MainWrapper,
-  SecondWrapper,
-  SideBar
-} from './App.styled';
+import { GlobalStyles, AppContainer } from './App.styles';
 import { ThemeProvider } from 'styled-components';
+import { Routes, Route } from 'react-router-dom';
+import Login from 'components/Login/index.js';
+import Home from 'components/Home';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
+import { useState } from 'react';
+import RequireAuth from 'components/Auth/RequireAuth';
 
 const theme = {
   borderBottom: '1px solid #ebe9e7',
   secondaryTextColor: '#ebe9e7',
-  linkColor: '#1070d8'
+  linkColor: '#1070d8',
+  containerBgColor: '#ffff'
 };
 
 /**
@@ -37,40 +23,27 @@ function App() {
   // keeps boolean value for showing menu
   const [showMenu, setShowMenu] = useState(false);
 
+  // keeps boolean value for checking if user is signed in
+  const [signedIn, setSignedIn] = useState(false);
+
   return (
     <AppContainer>
       <GlobalStyles />
       <ThemeProvider theme={theme}>
         <Header setShowMenu={setShowMenu} showMenu={showMenu} />
-        {showMenu ? (
-          <Menu />
-        ) : (
-          <>
-            <MainWrapper>
-              <NewsTopics />
-              <HeadLines />
-            </MainWrapper>
 
-            <SecondWrapper>
-              <MainContent>
-                <Trending />
-                <Coverage />
-                <TeamsInDays />
-                <AroundNba />
-              </MainContent>
+        <Routes>
+          {/* PUBLIC ROUTE */}
+          <Route path="/" element={<Login setSignedIn={setSignedIn} />} />
+          <Route path="/register" element={<Login setSignedIn={setSignedIn} register />} />
 
-              <SideBar>
-                <LeagueInfo />
-                <SocialMedias />
-                <QuickLinks />
-                <Standings />
-                <SubmitEmail />
-              </SideBar>
-            </SecondWrapper>
+          {/* PROTECTED ROUTE */}
+          <Route element={<RequireAuth signedIn={signedIn} />}>
+            <Route path="/home" element={<Home showMenu={showMenu} />} />
+          </Route>
+        </Routes>
 
-            <Footer />
-          </>
-        )}
+        <Footer signedIn={signedIn} />
       </ThemeProvider>
     </AppContainer>
   );

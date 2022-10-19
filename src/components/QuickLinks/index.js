@@ -1,7 +1,19 @@
 import React from 'react';
 import share from 'assets/images/share.jpg';
 import { LinksContainer } from './styles';
-import { ContainerTitle } from '../../App.styled';
+import { ContainerTitle } from '../../App.styles';
+
+const Links = [
+  'Fantasy',
+  'NBA History',
+  'NBA Official',
+  'Key Dates',
+  'LockerVision',
+  'NBA Awards',
+  '2022 NBA Draft',
+  '2022 Summer League',
+  '2022 NBA Playoffs'
+];
 
 /**
  *  Creates Quick Links component
@@ -14,69 +26,17 @@ const QuickLinks = () => {
         <h1>QUICK LINKS</h1>
       </ContainerTitle>
 
-      <ul>
-        <li>
-          <a>
-            Fantasy
-            <img src={share} />
-          </a>
-        </li>
-
-        <li>
-          <a>
-            NBA History
-            <img src={share} />
-          </a>
-        </li>
-
-        <li>
-          <a>
-            NBA Official
-            <img src={share} />
-          </a>
-        </li>
-
-        <li>
-          <a>
-            Key Dates
-            <img src={share} />
-          </a>
-        </li>
-
-        <li>
-          <a>
-            LockerVision
-            <img src={share} />
-          </a>
-        </li>
-
-        <li>
-          <a>
-            NBA Awards
-            <img src={share} />
-          </a>
-        </li>
-
-        <li>
-          <a>
-            2022 NBA Draft
-            <img src={share} />
-          </a>
-        </li>
-
-        <li>
-          <a>
-            2022 Summer League
-            <img src={share} />
-          </a>
-        </li>
-
-        <li>
-          <a>
-            2022 NBA Playoffs
-            <img src={share} />
-          </a>
-        </li>
+      <ul data-testid={`quickLinks`}>
+        {Links.map((el) => {
+          return (
+            <li key={el}>
+              <a>
+                {el}
+                <img src={share} />
+              </a>
+            </li>
+          );
+        })}
       </ul>
     </LinksContainer>
   );

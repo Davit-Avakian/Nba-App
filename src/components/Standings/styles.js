@@ -1,5 +1,15 @@
 import styled from 'styled-components';
 
+export const EastButton = styled.button`
+  background-color: ${({ conference }) => (conference === 'East' ? 'black' : 'white')};
+  color: ${({ conference }) => (conference === 'East' ? 'white' : 'black')};
+`;
+
+export const WestButton = styled.button`
+  background-color: ${({ conference }) => (conference === 'West' ? 'black' : 'white')};
+  color: ${({ conference }) => (conference === 'West' ? 'white' : 'black')};
+`;
+
 export const ButtonsContainer = styled.div`
   display: flex;
   font-family: Roboto Condensed, Arial, sans-serif;
@@ -16,7 +26,6 @@ export const ButtonsContainer = styled.div`
     font-size: 0.75rem;
     line-height: 1.25rem;
     border-width: 1px;
-    background: #fff;
     border-color: #e5e7eb;
     border: 0.7px solid #e5e7eb;
     border-radius: 0.3rem;
@@ -27,7 +36,7 @@ export const TeamName = styled.span`
   text-transform: uppercase;
   font-family: titleFont;
   font-weight: 400;
-  font-size: 1rem !important;
+  font-size: 1rem;
   line-height: 1.25;
   color: ${({ theme: { linkColor } }) => linkColor};
 `;
@@ -57,7 +66,7 @@ export const TeamList = styled.div`
   }
 
   thead tr th {
-    background-color: #fff;
+    background-color: ${({ theme: { containerBgColor } }) => containerBgColor};
     color: #343232;
     border-color: #ebe9e7;
     vertical-align: bottom;
@@ -163,7 +172,7 @@ export const StandingsContainer = styled.div`
   width: 98%;
   min-height: 840px;
   height: fit-content;
-  background-color: #ffff;
+  background-color: ${({ theme: { containerBgColor } }) => containerBgColor};
   padding: 1.25rem;
   position: relative;
   top: -30%;

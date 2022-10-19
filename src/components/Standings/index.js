@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
-// import axios from 'axios';
-import { ContainerTitle } from '../../App.styled';
-import { ButtonsContainer, StandingsContainer, TeamList, TeamName } from './styles';
+import { ContainerTitle } from '../../App.styles';
+import {
+  ButtonsContainer,
+  EastButton,
+  StandingsContainer,
+  TeamList,
+  TeamName,
+  WestButton
+} from './styles';
 import { eastTeams, westTeams } from 'data/teams';
 
 /**
@@ -12,42 +18,6 @@ const Standings = () => {
   // keeps information about league type
   const [conference, setConference] = useState('East');
 
-  // keeps eastern teams data
-  // const [eastTeams, setEastTeams] = useState([]);
-
-  // keeps western teams data
-  // const [westTeams, setWestTeams] = useState([]);
-
-  // useEffect(() => {
-  //   (async () => {
-  //     const estTeams = [];
-  //     const wstTeams = [];
-
-  //     try {
-  //       // fetch teams data from api
-  //       const {
-  //         data: { data }
-  //       } = await axios.get(`http://api.isportsapi.com/sport/basketball/standing/league?api_key=oL4R9ztcBsE1CoZI
-  //       &leagueId=111&season=21-22`);
-
-  //       // split fetched data into 2 arrays by league type
-  //       data.forEach((team) => {
-  //         if (team.leagueName === 'NBA Eastern') {
-  //           estTeams.push(team);
-  //         } else {
-  //           wstTeams.push(team);
-  //         }
-  //       });
-
-  //       // store teams in state
-  //       setEastTeams(estTeams);
-  //       setWestTeams(wstTeams);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   })();
-  // }, []);
-
   return (
     <StandingsContainer>
       <ContainerTitle>
@@ -57,22 +27,18 @@ const Standings = () => {
 
       <div>
         <ButtonsContainer>
-          <button
-            style={{
-              backgroundColor: `${conference === 'East' ? 'black' : 'white'}`,
-              color: `${conference === 'East' ? 'white' : 'black'}`
-            }}
+          <EastButton
+            data-testid="eastBtn"
+            conference={conference}
             onClick={() => setConference('East')}>
             EASTERN
-          </button>
-          <button
-            style={{
-              backgroundColor: `${conference === 'West' ? 'black' : 'white'}`,
-              color: `${conference === 'West' ? 'white' : 'black'}`
-            }}
+          </EastButton>
+          <WestButton
+            data-testid="westBtn"
+            conference={conference}
             onClick={() => setConference('West')}>
             WESTERN
-          </button>
+          </WestButton>
         </ButtonsContainer>
 
         <TeamList>
@@ -109,7 +75,7 @@ const Standings = () => {
                               <span>
                                 <b>{index + 1}</b>
                               </span>
-                              <TeamName>{teamName.split(' ')[0]}</TeamName>
+                              <TeamName data-testid={`teamName${teamId}`}>{teamName}</TeamName>
                             </a>
                           </td>
 
@@ -157,7 +123,9 @@ const Standings = () => {
                               <span>
                                 <b>{index + 1}</b>
                               </span>
-                              <TeamName>{teamName.split(' ')[0]}</TeamName>
+                              <TeamName data-testid={`teamName${teamId}`}>
+                                {teamName.split(' ')[0]}
+                              </TeamName>
                             </a>
                           </td>
 

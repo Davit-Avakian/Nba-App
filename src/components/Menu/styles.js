@@ -1,38 +1,9 @@
 import styled from 'styled-components';
 
-export const Link = styled.div`
-  border-bottom: 1px solid #363940;
-  padding-left: 0.5rem;
-  font-family: Roboto, Arial, sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.25;
-  opacity: 0.6;
-
-  &:hover {
-    opacity: 1;
-  }
-
-  span {
-    display: block;
-    width: 100%;
-    text-align: left;
-    transition-property: opacity;
-    opacity: 1;
-    padding: 1rem 0.25rem;
-    transition-duration: 0.15s;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-weight: 900;
-  }
-`;
-
-const PopUp = styled.div`
+export const PopUp = styled.div`
   width: 100%;
   height: 100%;
-  visibility: hidden;
-  opacity: 0;
+  display: none;
   position: absolute;
   list-style-type: none;
   left: 31%;
@@ -71,105 +42,40 @@ const PopUp = styled.div`
   }
 `;
 
-export const GamesPopUp = styled(PopUp)``;
+export const Link = styled.div`
+  border-bottom: 1px solid #363940;
+  padding-left: 0.5rem;
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25;
+  opacity: 0.6;
 
-export const GamesLink = styled(Link)`
-  &:hover ${GamesPopUp} {
-    visibility: visible;
+  &:hover {
     opacity: 1;
   }
-`;
 
-export const SchedulePopUp = styled(PopUp)``;
+  &:hover ${PopUp} {
+    display: block;
+  }
 
-export const ScheduleLink = styled(Link)`
-  &:hover ${SchedulePopUp} {
-    visibility: visible;
+  span {
+    display: block;
+    width: 100%;
+    text-align: left;
+    transition-property: opacity;
     opacity: 1;
+    padding: 1rem 0.25rem;
+    transition-duration: 0.15s;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 900;
   }
 `;
-
-export const WatchPopUp = styled(PopUp)``;
-
-export const WatchLink = styled(Link)`
-  &:hover ${WatchPopUp} {
-    visibility: visible;
-    opacity: 1;
-  }
-`;
-
-export const NewsPopUp = styled(PopUp)``;
-
-export const NewsLink = styled(Link)`
-  &:hover ${NewsPopUp} {
-    visibility: visible;
-    opacity: 1;
-  }
-`;
-
-export const StatsPopUp = styled(PopUp)``;
-
-export const StatsLink = styled(Link)`
-  &:hover ${StatsPopUp} {
-    visibility: visible;
-    opacity: 1;
-  }
-`;
-
-export const StandingsPopUp = styled(PopUp)``;
-
-export const StandingsLink = styled(Link)`
-  &:hover ${StandingsPopUp} {
-    visibility: visible;
-    opacity: 1;
-  }
-`;
-
-export const PlayersPopUp = styled(PopUp)``;
-
-export const PlayersLink = styled(Link)`
-  &:hover ${PlayersPopUp} {
-    visibility: visible;
-    opacity: 1;
-  }
-`;
-
-export const NbaPopUp = styled(PopUp)``;
-
-export const NbaLink = styled(Link)`
-  &:hover ${NbaPopUp} {
-    visibility: visible;
-    opacity: 1;
-  }
-`;
-
-export const StorePopUp = styled(PopUp)``;
-
-export const StoreLink = styled(Link)`
-  &:hover ${StorePopUp} {
-    visibility: visible;
-    opacity: 1;
-  }
-`;
-
-export const TicketsPopUp = styled(PopUp)``;
-
-export const TicketsLink = styled(Link)`
-  &:hover ${TicketsPopUp} {
-    visibility: visible;
-    opacity: 1;
-  }
-`;
-
-export const AffiliatesPopUp = styled(PopUp)``;
 
 export const AffiliatesLink = styled(Link)`
   height: 100%;
-
-  &:hover ${AffiliatesPopUp} {
-    visibility: visible;
-    opacity: 1;
-  }
 
   li {
     display: flex;
