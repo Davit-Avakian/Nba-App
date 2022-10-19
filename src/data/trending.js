@@ -22,12 +22,7 @@ const trending = [
   },
   {
     id: 5,
-    image:
-      'https://cdn.nba.com/manage/2022/10/GettyImages-1306600548-1-e1664990501987.jpg?w=384&h=224',
-    title: "BULLS' BALL TO UNDERGO KNEE PROCEDURE, OUT 4-6..."
-  },
-  {
-    id: 6,
+    title: "BULLS' BALL TO UNDERGO KNEE PROCEDURE, OUT 4-6...",
     image: 'https://cdn.nba.com/manage/2022/10/porter-jr-driving-vs-bulls.jpg?w=384&h=224',
     title: 'WILL WALL OR BEVERLY MAKE A BIGGER IMPACT?'
   }
