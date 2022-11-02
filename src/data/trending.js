@@ -23,8 +23,7 @@ const trending = [
   {
     id: 5,
     title: "BULLS' BALL TO UNDERGO KNEE PROCEDURE, OUT 4-6...",
-    image: 'https://cdn.nba.com/manage/2022/10/porter-jr-driving-vs-bulls.jpg?w=384&h=224',
-    title: 'WILL WALL OR BEVERLY MAKE A BIGGER IMPACT?'
+    image: 'https://cdn.nba.com/manage/2022/10/porter-jr-driving-vs-bulls.jpg?w=384&h=224'
   }
 ];
 
