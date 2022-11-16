@@ -1,8 +1,11 @@
 import { createBrowserHistory } from '@remix-run/router';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import axios from 'axios';
 import { Router } from 'react-router';
 import Login from './index.js';
+
+jest.mock('axios');
 
 describe('Login Component', () => {
   const mockedNavigate = jest.fn();
@@ -26,6 +29,8 @@ describe('Login Component', () => {
   });
 
   test('Should not show error message and redirect user to /home after successful sign in', async () => {
+    axios.get.mockResolvedValueOnce({ data: [{ password }] });
+
     userEvent.type(screen.getByLabelText('Email'), email);
 
     userEvent.type(screen.getByTestId('passwordInput'), password);
